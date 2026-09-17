@@ -1,0 +1,47 @@
+---
+title: "Mouse & Rat Control in Sudbury & Northern Ontario | Zero Pest Control"
+description: "Professional rodent control for homes and businesses in Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie. Inspection, treatment, and entry-point sealing."
+order: 1
+pestName: "Rodents"
+pestIcon: "rodent"
+h1: "Mouse & Rat Control in Sudbury & Northern Ontario"
+tagline: "Why they appear, what attracts them, and when to take action."
+intro: "Hearing scratching in the walls, finding droppings, or seeing signs of mice or rats? Zero Pest Control provides rodent inspections, treatment, entry-point recommendations, and follow-up support."
+comeFrom:
+  - title: "Seasonal Behaviour"
+    text: "As Ontario winters set in, rodents look for warm, sheltered places to nest."
+  - title: "Entry Points"
+    text: "Mice can squeeze through openings as small as a dime; rats need only a gap the size of a quarter."
+  - title: "Shared Environments"
+    text: "Urban density, shared garbage areas, and nearby construction can all increase rodent activity."
+doAtHome:
+  - "Store dry food in airtight containers and clean up spills quickly."
+  - "Seal cracks and gaps around doors, vents, and foundations."
+  - "Check for droppings or gnaw marks as early warning signs."
+  - "Reduce clutter in storage areas to eliminate hiding spots."
+  - "Keep garbage bins sealed and emptied regularly."
+attracts:
+  - label: "Food availability"
+    text: "Unsealed dry goods, crumbs, pet food, and open garbage."
+  - label: "Cluttered storage"
+    text: "Boxes, fabric, and paper in basements, garages, or attics."
+  - label: "Moisture"
+    text: "Leaky pipes, condensation, or damp laundry rooms."
+concern:
+  - title: "Property Risks"
+    text: "Their constant gnawing can damage wiring, insulation, and furniture."
+  - title: "Hygiene Issues"
+    text: "Droppings, urine, and fur can contaminate food and surfaces."
+  - title: "Rapid Breeding"
+    text: "A small problem can quickly become a large infestation if not addressed."
+faqs:
+  - q: "How small an opening can a mouse fit through?"
+    a: "As little as 6 mm — about the size of a dime."
+  - q: "Is rodent activity seasonal?"
+    a: "They're active year-round, but activity increases in fall and winter as they move indoors."
+  - q: "Are all mouse droppings dangerous?"
+    a: "Not all, but droppings, urine, and hair can contaminate surfaces and food."
+  - q: "Can mice climb?"
+    a: "Yes. Mice are excellent climbers and can reach cupboards, shelves, and attics."
+closing: "Rodents are a fact of life in Ontario — but they don't have to take over your home or business. If you think you may be dealing with them, the first step is understanding the issue. The next step is knowing when it's time for professional help."
+---

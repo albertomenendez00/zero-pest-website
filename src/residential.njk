@@ -1,0 +1,143 @@
+---
+layout: layouts/base.njk
+title: "Residential Pest Control in Sudbury & Northern Ontario | Zero Pest Control"
+description: "Fast, reliable residential pest control for ants, mice, rats, bed bugs, cockroaches, wasps, and spiders. Serving Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie."
+permalink: /residential/
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / Residential</p>
+    <h1>Residential Pest Control in Sudbury &amp; Northern Ontario</h1>
+    <p class="lede">Fast, reliable pest control for ants, mice, rats, bed bugs, cockroaches, wasps, spiders, and other common household pests.</p>
+    <div class="page-hero-ctas">
+      <a class="btn btn--primary" href="/contact/">Free Estimate</a>
+      <a class="btn btn--outline" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split reverse reveal">
+      <div>
+        <p class="section-eyebrow">Why It Matters</p>
+        <h2>Protecting the Place You Call Home</h2>
+        <p>Pests make your home uncomfortable and can affect your health. Our licensed team removes pests safely and provides long-lasting solutions designed to protect your family and property.</p>
+      </div>
+      <div class="split-media">
+        <div class="photo-placeholder"><span>[ADD: photo of a technician treating a Sudbury-area home]</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">What We Treat</p>
+      <h2>Common Residential Pests We Treat</h2>
+      <p>We handle all common Ontario household pests. Whether you're in Sudbury, Espanola, or Manitoulin, our experienced team provides quick, proven pest removal and prevention.</p>
+    </div>
+    <div class="grid grid--3">
+      {% set pests = [
+        { name: "Mice & Rats", icon: "rodent", href: "/rodent-control/", blurb: "Find & seal entry points for lasting results." },
+        { name: "Bed Bugs", icon: "bedbug", href: "/bed-bug-treatment/", blurb: "Heat or spot solutions with follow-up." },
+        { name: "Ants", icon: "ant", href: "/ant-control/", blurb: "Target nests to stop colonies at the source." },
+        { name: "Cockroaches", icon: "roach", href: "/cockroach-control/", blurb: "Safe barriers keep pests out of sight." },
+        { name: "Wasps", icon: "wasp", href: "/wasp-hornet-removal/", blurb: "Quick nest removal with prevention tips." },
+        { name: "Spiders", icon: "spider", href: "/spider-control/", blurb: "Treat hotspots; reduce webs indoors." }
+      ] %}
+      {% for p in pests %}
+      <a class="card service-card reveal" href="{{ p.href }}">
+        <div class="icon-badge">{{ icon(p.icon) }}</div>
+        <h3>{{ p.name }}</h3>
+        <p>{{ p.blurb }}</p>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="text-center" style="margin-top:2rem; color:var(--ink-faint); font-size:0.9rem;">
+      For general information on pest control safety, see the
+      <a href="https://www.canada.ca/en/health-canada/services/consumer-product-safety/pesticides-pest-management.html" target="_blank" rel="noopener">Government of Canada's resource on pest management</a>.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">How It Works</p>
+      <h2>Our Simple Residential Service Process</h2>
+    </div>
+    <div class="grid grid--4">
+      {% set steps4 = [
+        { title: "1. Inspection", text: "We identify the pest, level of activity, hiding spots, and entry points." },
+        { title: "2. Treatment Plan", text: "You receive a clear plan based on your home and the type of pest." },
+        { title: "3. Safe Application", text: "All treatments follow Ontario regulations and are safe for families and pets." },
+        { title: "4. Prevention & Follow-Up", text: "We provide prevention tips, monitor results where needed, and explain any follow-up included with your service." }
+      ] %}
+      {% for s in steps4 %}
+      <div class="card reveal">
+        <h3 style="font-size:1.05rem;">{{ s.title }}</h3>
+        <p>{{ s.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">Why Zero Pest Control</p>
+      <h2>Why Sudbury Homeowners Choose Us</h2>
+      <p>From your first call to follow-up, we focus on reliability and safety. Here's what every residential customer can expect.</p>
+    </div>
+    <div class="grid grid--4">
+      {% set why = [
+        { icon: "clock", title: "Prompt Service", text: "Same-day or next-day appointments when available." },
+        { icon: "heart-pulse", title: "Safe Treatments", text: "Options designed with children and pets in mind." },
+        { icon: "file-text", title: "Clear Pricing", text: "Upfront estimates with no hidden fees." },
+        { icon: "shield", title: "Preventive Advice", text: "Simple tips to reduce future pest issues." }
+      ] %}
+      {% for w in why %}
+      <div class="card reveal text-center">
+        <div class="icon-badge" style="margin-inline:auto;">{{ icon(w.icon) }}</div>
+        <h3 style="font-size:1.05rem;">{{ w.title }}</h3>
+        <p>{{ w.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">Service Areas</p>
+      <h2>We Provide Residential Pest Control In:</h2>
+    </div>
+    <div class="area-grid">
+      {% for area in site.areas %}
+      <a class="area-chip reveal" href="/contact/?area={{ area.slug }}">{{ icon("map-pin") }} {{ area.name }}</a>
+      {% endfor %}
+    </div>
+    <p class="text-center" style="margin-top:1.75rem; color:var(--ink-faint);">If you're outside these areas, contact us — we may still be able to help.</p>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Book Your Free Home Estimate</h2>
+        <p>If you're dealing with ants, mice, bed bugs, spiders, or any other home pest, our residential pest control team is ready to help.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/contact/">Free Estimate</a>
+        <a class="btn btn--outline-invert" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>

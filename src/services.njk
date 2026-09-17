@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+title: "Pest Control Services | Zero Pest Control"
+description: "Explore all residential and commercial pest control services from Zero Pest Control, serving Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie."
+permalink: /services/
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / Services</p>
+    <h1>Pest Control Services</h1>
+    <p class="lede">Targeted treatment for every common Northern Ontario pest — backed by clear pricing, a written quote, and follow-up support.</p>
+    <div class="page-hero-ctas">
+      <a class="btn btn--primary" href="/contact/">Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid--3">
+      {% for item in collections.services %}
+      <a class="card service-card reveal" href="{{ item.url }}">
+        <div class="icon-badge">{{ icon(item.data.pestIcon or "bug") }}</div>
+        <h3>{{ item.data.pestName or item.data.title }}</h3>
+        <p>{{ item.data.tagline }}</p>
+        <span class="card-link">Learn More {{ icon("arrow-right") }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Not Sure Which Service You Need?</h2>
+        <p>Tell us what you're seeing and where — we'll help identify the pest and recommend the right treatment.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/contact/">Get a Free Quote</a>
+        <a class="btn btn--outline-invert" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>

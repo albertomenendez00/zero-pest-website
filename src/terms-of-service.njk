@@ -1,0 +1,59 @@
+---
+layout: layouts/base.njk
+title: "Terms of Service | Zero Pest Control"
+description: "Terms of service for using the Zero Pest Control website."
+permalink: /terms-of-service/
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / Terms of Service</p>
+    <h1>Terms of Service</h1>
+    <p class="lede">Last updated: [ADD: date of publication]</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <div class="draft-notice reveal">
+      {{ icon("alert-triangle") }}
+      <span>[DRAFT &ndash; REVIEW] This is a general terms of service template written for this rebuild. It is not legal advice. Please have it reviewed by a lawyer before publishing, especially the sections on service guarantees and liability.</span>
+    </div>
+
+    <div class="prose reveal">
+      <h2>Acceptance of Terms</h2>
+      <p>By using this website (zeropestcontrol.ca), you agree to these Terms of Service. If you do not agree, please do not use this website.</p>
+
+      <h2>Website Use</h2>
+      <p>This website is provided for informational purposes and to allow visitors to request pest control services. You agree to provide accurate information when submitting a quote request and not to misuse the website or its contact forms.</p>
+
+      <h2>Quotes & Service Estimates</h2>
+      <p>Information submitted through our quote request form is a request for service, not a binding agreement. Pricing and scope of work are confirmed in writing (or verbally, followed by written confirmation) before any service begins.</p>
+
+      <h2>Service Guarantee</h2>
+      <p>Where a service guarantee is offered (for example, our 60&ndash;90 day guarantee), specific terms and conditions will be provided at the time of service. [ADD: full, current guarantee terms and any exclusions].</p>
+
+      <h2>No Professional Advice</h2>
+      <p>Content on this website, including our Pest Library, is provided for general informational purposes only and should not be relied upon as a substitute for an in-person inspection or professional advice specific to your property.</p>
+
+      <h2>Intellectual Property</h2>
+      <p>The content, layout, and branding of this website are the property of Zero Pest Control unless otherwise noted, and may not be copied or reproduced without permission.</p>
+
+      <h2>Third-Party Links</h2>
+      <p>This website may link to third-party websites, including government resources, for informational purposes. We are not responsible for the content or practices of external sites.</p>
+
+      <h2>Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, Zero Pest Control is not liable for indirect, incidental, or consequential damages arising from use of this website. [ADD: review and finalize this section with a lawyer, particularly as it relates to on-site service work rather than website use].</p>
+
+      <h2>Governing Law</h2>
+      <p>These Terms of Service are governed by the laws of the Province of Ontario and the federal laws of Canada applicable within it.</p>
+
+      <h2>Changes to These Terms</h2>
+      <p>We may update these Terms of Service from time to time. Changes will be posted on this page with an updated revision date.</p>
+
+      <h2>Contact Us</h2>
+      <p>Questions about these Terms of Service can be directed to <a href="mailto:{{ site.email }}">{{ site.email }}</a> or <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>.</p>
+    </div>
+  </div>
+</section>

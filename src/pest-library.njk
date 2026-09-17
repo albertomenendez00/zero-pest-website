@@ -1,0 +1,54 @@
+---
+layout: layouts/base.njk
+title: "Pest Library | Identify Common Pests in Ontario | Zero Pest Control"
+description: "Browse our pest library to identify common ants, cockroaches, wasps, rodents, and more found in Sudbury and Northern Ontario homes and businesses."
+permalink: /pest-library/
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / Pest Library</p>
+    <h1>Identify Common Pests in Ontario</h1>
+    <p class="lede">Browse our pest library to quickly compare common insects and rodents found in Ontario homes and businesses.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="draft-notice reveal">
+      {{ icon("alert-triangle") }}
+      <span>[DRAFT &ndash; REVIEW] Every entry below was written to fill pages that had no content in the original site export. Please have a technician review each entry for accuracy before launch — see individual pages for details.</span>
+    </div>
+
+    {% set categories = collections.pestLibrary | groupby("data.category") %}
+    {% for category, items in categories %}
+    <div class="section-head reveal" style="margin-top: {% if loop.first %}0{% else %}3rem{% endif %};">
+      <h2>{{ category }}</h2>
+    </div>
+    <div class="pest-grid">
+      {% for item in items %}
+      <a class="card pest-card reveal" href="{{ item.url }}">
+        <div class="icon-badge">{{ icon(item.data.pestIcon) }}</div>
+        <h3 style="font-size:1rem;">{{ item.data.commonName }}</h3>
+      </a>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Don't See Your Pest Listed?</h2>
+        <p>We treat far more than what's listed here. Reach out and describe what you're seeing — we'll help identify it.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/contact/">Get a Free Quote</a>
+        <a class="btn btn--outline-invert" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>

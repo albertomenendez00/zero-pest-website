@@ -1,0 +1,78 @@
+---
+layout: layouts/base.njk
+title: "Pest Control Resources & Tips | Zero Pest Control"
+description: "Prevention tips and pest control resources for homeowners, landlords, property managers, and businesses across Sudbury and Northern Ontario."
+permalink: /blog-resources/
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / Blog &amp; Resources</p>
+    <h1>Pest Control Resources</h1>
+    <p class="lede">Helpful pest prevention tips for homeowners, landlords, property managers, and businesses across Sudbury and Northern Ontario.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Prevention Guides</p>
+      <h2>Pest-by-Pest Prevention Tips</h2>
+      <p>Each service page includes a full breakdown of where a pest comes from, what attracts it, and what you can do at home to prevent it.</p>
+    </div>
+    <div class="grid grid--4">
+      {% for item in collections.services %}
+      <a class="card reveal text-center" href="{{ item.url }}">
+        <div class="icon-badge" style="margin-inline:auto;">{{ icon(item.data.pestIcon or "bug") }}</div>
+        <h3 style="font-size:1rem; margin-top:0.8rem;">{{ item.data.pestName or item.data.title }}</h3>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Pest Identification</p>
+      <h2>Not Sure What You're Dealing With?</h2>
+      <p>Browse our Pest Library to compare appearance, habitat, and risk for common Ontario pests.</p>
+    </div>
+    <a class="btn btn--outline" href="/pest-library/">Visit the Pest Library {{ icon("arrow-right") }}</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid--2">
+      <div class="card reveal">
+        <div class="icon-badge">{{ icon("home") }}</div>
+        <h3>For Homeowners</h3>
+        <p>Seasonal pest patterns, DIY prevention steps, and when it's time to call a professional.</p>
+        <a class="card-link" href="/residential/">Residential Pest Control {{ icon("arrow-right") }}</a>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge">{{ icon("building") }}</div>
+        <h3>For Landlords & Businesses</h3>
+        <p>Compliance-focused guidance for property managers, restaurants, retail, and more.</p>
+        <a class="card-link" href="/commercial/">Commercial Pest Control {{ icon("arrow-right") }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Have a Question We Haven't Answered?</h2>
+        <p>Get in touch and we'll help you figure out what's going on and what to do next.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/contact/">Contact Us</a>
+        <a class="btn btn--outline-invert" href="/faq/">Read the FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>

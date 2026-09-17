@@ -1,0 +1,87 @@
+{% from "partials/icons.njk" import icon %}
+<div class="form-card">
+  <form
+    name="quote-request"
+    method="POST"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    data-netlify-ajax
+  >
+    <input type="hidden" name="form-name" value="quote-request">
+    <p class="honeypot-field">
+      <label>Don't fill this out if you're human: <input name="bot-field"></label>
+    </p>
+
+    <div class="form-row form-row--2">
+      <div class="field">
+        <label for="qf-name">Full name <span class="required">*</span></label>
+        <input type="text" id="qf-name" name="name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="qf-phone">Phone number <span class="required">*</span></label>
+        <input type="tel" id="qf-phone" name="phone" autocomplete="tel" pattern="[0-9()+\-\s]{7,}" required>
+      </div>
+    </div>
+
+    <div class="form-row form-row--2" style="margin-top:1.25rem;">
+      <div class="field">
+        <label for="qf-email">Email address <span class="required">*</span></label>
+        <input type="email" id="qf-email" name="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="qf-town">Town / city <span class="required">*</span></label>
+        <select id="qf-town" name="town" required>
+          <option value="" disabled selected>Select your town</option>
+          {% for area in site.areas %}
+          <option value="{{ area.name }}">{{ area.name }}</option>
+          {% endfor %}
+          <option value="Other">Other / not listed</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row" style="margin-top:1.25rem;">
+      <div class="field">
+        <label for="qf-pest">Pest or service type <span class="required">*</span></label>
+        <select id="qf-pest" name="pest_type" required>
+          <option value="" disabled selected>Select the closest match</option>
+          <option>Ants</option>
+          <option>Bed Bugs</option>
+          <option>Cockroaches</option>
+          <option>Mice / Rats</option>
+          <option>Wasps / Hornets</option>
+          <option>Spiders</option>
+          <option>Flies</option>
+          <option>Year-Round Protection Plan</option>
+          <option>Commercial / Business Account</option>
+          <option>Not sure / other</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row" style="margin-top:1.25rem;">
+      <div class="field">
+        <label for="qf-message">Tell us what's going on</label>
+        <textarea id="qf-message" name="message" rows="4" placeholder="Where are you seeing activity? How long has it been going on?"></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn--primary btn--block" style="margin-top:1.5rem;">
+      Request My Free Quote
+    </button>
+
+    <p class="form-footnote">
+      By submitting, you agree to be contacted by Zero Pest Control about your request. We never share your information. See our
+      <a href="/privacy-policy/">Privacy Policy</a>.
+    </p>
+  </form>
+
+  <div class="form-success" role="status">
+    {{ icon("check-circle") }}
+    <span>Thanks — your request has been sent! A technician will contact you shortly, usually within one business day. For anything urgent, call us at <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>.</span>
+  </div>
+  <div class="form-error" role="alert">
+    {{ icon("alert-triangle") }}
+    <span>Something went wrong sending your request. Please call us at <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a> or email <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</span>
+  </div>
+</div>

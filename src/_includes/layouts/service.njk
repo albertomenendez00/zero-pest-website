@@ -1,0 +1,133 @@
+---
+layout: layouts/base.njk
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / <a href="/services/">Services</a> / {{ title | replace(" | Zero Pest Control", "") }}</p>
+    <div class="icon-badge" style="margin-bottom:1.25rem;">{{ icon(pestIcon) }}</div>
+    <h1>{{ h1 }}</h1>
+    <p class="lede">{{ tagline }}</p>
+    <p class="lede" style="margin-top:0.5rem;">{{ intro }}</p>
+    <div class="page-hero-ctas">
+      <a class="btn btn--primary" href="/contact/">Get a Free Estimate</a>
+      <a class="btn btn--outline" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Where They Come From</p>
+      <h2>Where {{ pestName }} Come From</h2>
+    </div>
+    <div class="grid grid--3">
+      {% for c in comeFrom %}
+      <div class="card reveal">
+        <div class="icon-badge icon-badge--sm">{{ icon("search") }}</div>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="grid grid--2">
+      <div class="reveal">
+        <div class="section-head">
+          <p class="section-eyebrow">Prevention</p>
+          <h2>What You Can Do at Home</h2>
+        </div>
+        <ul class="check-list">
+          {% for tip in doAtHome %}
+          <li>{{ icon("check") }} <span>{{ tip }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="section-head">
+          <p class="section-eyebrow">Root Causes</p>
+          <h2>What Attracts Them to Homes</h2>
+        </div>
+        <ul class="check-list">
+          {% for a in attracts %}
+          <li>{{ icon("alert-triangle") }} <span><strong>{{ a.label }}:</strong> {{ a.text }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Why It Matters</p>
+      <h2>Why {{ pestName }} Are a Concern</h2>
+    </div>
+    <div class="grid grid--3">
+      {% for c in concern %}
+      <div class="card reveal">
+        <div class="icon-badge icon-badge--sm">{{ icon("alert-triangle") }}</div>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if faqs and faqs.length %}
+<section class="section section--soft">
+  <div class="container container--narrow">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">FAQ</p>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="accordion reveal">
+      {% for f in faqs %}
+      <details class="accordion-item">
+        <summary>{{ f.q }} {{ icon("chevron-down") }}</summary>
+        <div class="accordion-body"><p>{{ f.a }}</p></div>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>{{ closingHeading or "Ready for Fast, Reliable Help?" }}</h2>
+        <p>{{ closing }}</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/contact/">Get a Free Estimate</a>
+        <a class="btn btn--outline-invert" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for f in faqs %}
+    {
+      "@type": "Question",
+      "name": {{ f.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ f.a | dump | safe }} }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>

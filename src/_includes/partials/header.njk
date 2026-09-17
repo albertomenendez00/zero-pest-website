@@ -1,0 +1,96 @@
+{% from "partials/icons.njk" import icon %}
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Zero Pest Control, Sudbury &amp; Northern Ontario — home">
+      <img src="/assets/images/logo-mark.svg" alt="" width="42" height="42">
+      <span class="brand-text">Zero Pest Control<span>Sudbury &amp; Northern Ontario</span></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/residential/" {% if page.url == "/residential/" %}aria-current="page"{% endif %}>Residential</a>
+
+      <div class="has-dropdown">
+        <a href="/commercial/" {% if page.url == "/commercial/" %}aria-current="page"{% endif %}>Commercial</a>
+        <div class="dropdown">
+          <a href="/commercial/">Commercial Overview</a>
+          <a href="/commercial-pest-plans/">Commercial Pest Plans</a>
+          <a href="/safety-compliance/">Safety &amp; Compliance</a>
+        </div>
+      </div>
+
+      <div class="has-dropdown">
+        <a href="/services/">Services</a>
+        <div class="dropdown">
+          {% for item in collections.services %}
+          <a href="{{ item.url }}">{{ item.data.pestName or item.data.title }}</a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="has-dropdown">
+        <a href="/industries/">Industries</a>
+        <div class="dropdown">
+          {% for item in collections.industries %}
+          <a href="{{ item.url }}">{{ item.data.navLabel or item.data.h1 }}</a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="has-dropdown">
+        <a href="/pest-library/">Resources</a>
+        <div class="dropdown">
+          <a href="/pest-library/">Pest Library</a>
+          <a href="/blog-resources/">Blog &amp; Resources</a>
+          <a href="/faq/">FAQ</a>
+        </div>
+      </div>
+
+      <a href="/contact/" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="tap-to-call" href="tel:{{ site.phoneHref }}" aria-label="Call {{ site.name }} at {{ site.phone }}">
+        {{ icon("phone") }}
+        <span>{{ site.phone }}</span>
+      </a>
+      <a class="btn btn--primary btn--sm" href="/contact/">
+        <span class="long">Get a Free Quote</span><span class="short">Free Quote</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        {{ icon("menu") }}
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/">Home</a>
+  <a href="/residential/">Residential</a>
+  <a href="/commercial/">Commercial</a>
+  <a href="/commercial-pest-plans/">Commercial Pest Plans</a>
+  <a href="/safety-compliance/">Safety &amp; Compliance</a>
+  <p class="mobile-group-title">Services</p>
+  {% for item in collections.services %}
+  <a href="{{ item.url }}">{{ item.data.pestName or item.data.title }}</a>
+  {% endfor %}
+  <p class="mobile-group-title">Industries We Serve</p>
+  {% for item in collections.industries %}
+  <a href="{{ item.url }}">{{ item.data.navLabel or item.data.h1 }}</a>
+  {% endfor %}
+  <p class="mobile-group-title">Resources</p>
+  <a href="/pest-library/">Pest Library</a>
+  <a href="/blog-resources/">Blog &amp; Resources</a>
+  <a href="/faq/">FAQ</a>
+  <a href="/contact/">Contact</a>
+
+  <div class="mobile-cta">
+    <a class="btn btn--primary btn--block" href="/contact/">Get a Free Quote</a>
+    <a class="btn btn--outline btn--block" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+  </div>
+</div>
+
+<div class="mobile-call-bar">
+  <a class="btn btn--outline" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call Now</a>
+  <a class="btn btn--primary" href="/contact/">Free Quote</a>
+</div>

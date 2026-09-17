@@ -1,0 +1,61 @@
+---
+layout: layouts/base.njk
+title: "Privacy Policy | Zero Pest Control"
+description: "How Zero Pest Control collects, uses, and protects your personal information."
+permalink: /privacy-policy/
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / Privacy Policy</p>
+    <h1>Privacy Policy</h1>
+    <p class="lede">Last updated: [ADD: date of publication]</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <div class="draft-notice reveal">
+      {{ icon("alert-triangle") }}
+      <span>[DRAFT &ndash; REVIEW] This is a general privacy policy template written for this rebuild. It is not legal advice. Please have it reviewed by a lawyer familiar with Canadian and Ontario privacy law (including PIPEDA) before publishing.</span>
+    </div>
+
+    <div class="prose reveal">
+      <h2>Who We Are</h2>
+      <p>This website, zeropestcontrol.ca, is operated by Zero Pest Control, serving Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie, Ontario. [ADD: legal business name and business number, if different from "Zero Pest Control"].</p>
+
+      <h2>Information We Collect</h2>
+      <p>When you submit our quote request form, we collect the information you provide, which may include your name, phone number, email address, town or city, the type of pest or service you're inquiring about, and any message you include. We do not knowingly collect sensitive personal information beyond what is needed to respond to your request.</p>
+
+      <h2>How We Use Your Information</h2>
+      <ul>
+        <li>To respond to quote requests and schedule service.</li>
+        <li>To communicate with you about an existing or upcoming service.</li>
+        <li>To maintain records required for service documentation, invoicing, or regulatory compliance.</li>
+      </ul>
+      <p>We do not sell or rent your personal information to third parties.</p>
+
+      <h2>How Your Information Is Stored</h2>
+      <p>Quote requests submitted through this website are processed using Netlify Forms, a third-party form-handling service. Netlify may process and store submitted data on our behalf, subject to their own privacy and security practices. [ADD: confirm current form-handling provider if this changes in the future].</p>
+
+      <h2>Cookies</h2>
+      <p>This website does not use advertising or tracking cookies by default. [ADD: update this section if analytics tools, live chat, or advertising pixels are added in the future].</p>
+
+      <h2>Third-Party Links</h2>
+      <p>Our website may link to third-party websites, including government resources. We are not responsible for the privacy practices or content of external sites.</p>
+
+      <h2>Data Retention</h2>
+      <p>We retain quote request information for as long as needed to respond to your inquiry and to meet our record-keeping and legal obligations. [ADD: specific retention period, if a policy is established].</p>
+
+      <h2>Your Rights</h2>
+      <p>You may request access to, correction of, or deletion of personal information we hold about you by contacting us using the details below.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have questions about this Privacy Policy or how your information is handled, contact us at <a href="mailto:{{ site.email }}">{{ site.email }}</a> or <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
+    </div>
+  </div>
+</section>

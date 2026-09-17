@@ -1,0 +1,93 @@
+---
+layout: layouts/base.njk
+title: "Pest Control FAQ | Zero Pest Control"
+description: "Answers to common residential pest control questions for homeowners in Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie."
+permalink: /faq/
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / FAQ</p>
+    <h1>Residential Pest Control FAQs</h1>
+    <p class="lede">Quick answers to common questions about protecting your home.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <div class="accordion reveal">
+      {% set faqs = [
+        { q: "How fast can you respond?", a: "We offer fast response times, often same-day or next-day depending on availability." },
+        { q: "Are your treatments safe for my family?", a: "Yes. We use safe, approved treatments designed for residential environments." },
+        { q: "Do I need to leave my home during treatment?", a: "In most cases, no. We'll let you know in advance if any preparation is needed." },
+        { q: "What pests do you handle?", a: "We handle common household pests including ants, rodents, spiders, cockroaches, wasps, and more." },
+        { q: "What if the pests come back?", a: "If the issue returns, we'll follow up and make sure it's properly resolved." },
+        { q: "Should I get a one-time treatment or ongoing protection?", a: "If pests keep returning or you want long-term peace of mind, ongoing protection is the best option." },
+        { q: "How much does pest control cost?", a: "Pricing depends on the type of pest and level of treatment needed. We provide clear recommendations after inspection." }
+      ] %}
+      {% for item in faqs %}
+      <details class="accordion-item">
+        <summary>{{ item.q }} {{ icon("chevron-down") }}</summary>
+        <div class="accordion-body"><p>{{ item.a }}</p></div>
+      </details>
+      {% endfor %}
+    </div>
+
+    <p class="text-center" style="margin-top:2rem; color:var(--ink-faint);">
+      Have a question about a commercial account? See our <a href="/commercial-pest-plans/">Commercial Pest Plans</a> page or get in touch below.
+    </p>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Still Have Questions?</h2>
+        <p>We're here to help — get clear answers and fast support for your home.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/contact/">Get Fast Service Today</a>
+        <a class="btn btn--outline-invert" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question", "name": "How fast can you respond?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We offer fast response times, often same-day or next-day depending on availability." }
+    },
+    {
+      "@type": "Question", "name": "Are your treatments safe for my family?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We use safe, approved treatments designed for residential environments." }
+    },
+    {
+      "@type": "Question", "name": "Do I need to leave my home during treatment?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In most cases, no. We'll let you know in advance if any preparation is needed." }
+    },
+    {
+      "@type": "Question", "name": "What pests do you handle?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We handle common household pests including ants, rodents, spiders, cockroaches, wasps, and more." }
+    },
+    {
+      "@type": "Question", "name": "What if the pests come back?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If the issue returns, we'll follow up and make sure it's properly resolved." }
+    },
+    {
+      "@type": "Question", "name": "Should I get a one-time treatment or ongoing protection?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If pests keep returning or you want long-term peace of mind, ongoing protection is the best option." }
+    },
+    {
+      "@type": "Question", "name": "How much does pest control cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pricing depends on the type of pest and level of treatment needed. We provide clear recommendations after inspection." }
+    }
+  ]
+}
+</script>

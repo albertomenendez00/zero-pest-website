@@ -1,0 +1,142 @@
+---
+layout: layouts/base.njk
+title: "Commercial Pest Control in Sudbury & Northern Ontario | Zero Pest Control"
+description: "Discreet, scheduled commercial pest control programs for restaurants, property managers, retail, warehouses, and hotels in Sudbury and Northern Ontario."
+permalink: /commercial/
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / Commercial</p>
+    <h1>Commercial Pest Control in Sudbury &amp; Northern Ontario</h1>
+    <p class="lede">Discreet, scheduled pest control programs for restaurants, property managers, retail stores, warehouses, hotels, offices, and commercial facilities.</p>
+    <div class="page-hero-ctas">
+      <a class="btn btn--primary" href="/commercial-pest-plans/">Request a Commercial Pest Control Plan</a>
+      <a class="btn btn--outline" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-item">{{ icon("shield") }} Licensed &amp; Insured</div>
+    <div class="trust-bar-item">{{ icon("check-circle") }} Trained Professionals</div>
+    <div class="trust-bar-item">{{ icon("clipboard-check") }} Audit-Ready Compliance</div>
+    <div class="trust-bar-item">{{ icon("repeat") }} Guaranteed Service &amp; Follow-Ups</div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="split reveal">
+      <div>
+        <p class="section-eyebrow">Why It Matters</p>
+        <h2>Built for Businesses That Cannot Afford Pest Problems</h2>
+        <p>Pests don't just disrupt your operations — they can affect your reputation, compliance, and bottom line. Our commercial pest control services keep your workplace safe, clean, and fully compliant with Ontario regulations. We deliver discreet, reliable treatments that protect staff, customers, and your business brand.</p>
+        <p>Pest activity can lead to customer complaints, failed inspections, damaged inventory, and reputation issues. Zero Pest Control helps businesses stay protected with scheduled service, documentation, prevention, and fast response.</p>
+      </div>
+      <div class="split-media">
+        <div class="photo-placeholder"><span>[ADD: photo of a commercial technician servicing a local business]</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">Industries We Serve</p>
+      <h2>Tailored Programs for Every Industry</h2>
+    </div>
+    <div class="grid grid--3">
+      {% set industriesShort = [
+        { title: "Food Service & Hospitality", text: "Restaurants, cafés, hotels, catering.", icon: "utensils" },
+        { title: "Warehousing & Logistics", text: "Storage facilities, distribution centres.", icon: "warehouse" },
+        { title: "Industrial & Manufacturing", text: "Plants, workshops, production facilities.", icon: "building" },
+        { title: "Retail & Offices", text: "Stores, shopping centres, professional spaces.", icon: "store" },
+        { title: "Property Management", text: "Apartment buildings, condos, rental housing.", icon: "home" },
+        { title: "Healthcare & Education", text: "Clinics, long-term care, schools, campuses.", icon: "heart-pulse" }
+      ] %}
+      {% for i in industriesShort %}
+      <div class="card reveal">
+        <div class="icon-badge icon-badge--sm">{{ icon(i.icon) }}</div>
+        <h3>{{ i.title }}</h3>
+        <p>{{ i.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="text-center" style="margin-top:2rem;"><a class="btn btn--ghost" href="/industries/">See all industries we serve {{ icon("arrow-right") }}</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">What You Can Expect</p>
+      <h2>A Program Built Around Your Business</h2>
+    </div>
+    <div class="grid grid--3">
+      {% set expect = [
+        { icon: "spray", title: "Custom Programs", text: "Flexible plans tailored to your business needs." },
+        { icon: "eye", title: "Discreet Service", text: "Scheduled visits with minimal disruption to operations." },
+        { icon: "shield", title: "Safe & Compliant", text: "Treatments follow Ontario regulations and industry standards." },
+        { icon: "file-text", title: "Detailed Reporting", text: "Clear documentation for audits and health inspections." },
+        { icon: "clipboard-check", title: "Preventive Solutions", text: "Advice and monitoring to stop problems before they grow." }
+      ] %}
+      {% for e in expect %}
+      <div class="card reveal">
+        <div class="icon-badge icon-badge--sm">{{ icon(e.icon) }}</div>
+        <h3>{{ e.title }}</h3>
+        <p>{{ e.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">Service Areas</p>
+      <h2>We Provide Commercial Pest Control In:</h2>
+    </div>
+    <div class="area-grid">
+      {% for area in site.areas %}
+      <a class="area-chip reveal" href="/contact/?area={{ area.slug }}">{{ icon("map-pin") }} {{ area.name }}</a>
+      {% endfor %}
+    </div>
+    <p class="text-center" style="margin-top:1.75rem; color:var(--ink-faint);">If you're outside these areas, contact us — we may still be able to help.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split reverse reveal">
+      <div>
+        <p class="section-eyebrow">Trust &amp; Assurance</p>
+        <h2>Licensed, Insured, and Documented</h2>
+        <p>We are fully licensed and insured in Ontario. Our commercial pest control services are carried out by trained professionals using approved, safe treatment methods. For your peace of mind, every service includes documentation, follow-ups, and a service guarantee with every estimate.</p>
+        <a class="btn btn--outline" href="/safety-compliance/">Safety &amp; Compliance Standards {{ icon("arrow-right") }}</a>
+      </div>
+      <div class="split-media">
+        <div class="photo-placeholder"><span>[ADD: photo of service documentation / technician with clipboard]</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Protect Your Business Today</h2>
+        <p>Fast, professional pest control designed for commercial environments across Northern Ontario.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/commercial-pest-plans/">Request a Commercial Plan</a>
+        <a class="btn btn--outline-invert" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>

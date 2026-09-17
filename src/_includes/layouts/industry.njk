@@ -1,0 +1,84 @@
+---
+layout: layouts/base.njk
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / <a href="/industries/">Industries</a> / {{ h1 }}</p>
+    <div class="icon-badge" style="margin-bottom:1.25rem;">{{ icon(industryIcon) }}</div>
+    <h1>{{ h1 }}</h1>
+    <p class="lede">{{ tagline }}</p>
+    <div class="pill-row" style="margin-top:1.5rem;">
+      {% for b in badges %}<span class="pill">{{ b }}</span>{% endfor %}
+    </div>
+    <div class="page-hero-ctas">
+      <a class="btn btn--primary" href="/contact/">Get Fast Service Today</a>
+      <a class="btn btn--outline" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid--2">
+      <div class="reveal">
+        <h2 style="margin-bottom:1.25rem;">{{ problemsHeading }}</h2>
+        <ul class="problem-list check-list">
+          {% for p in problems %}
+          <li>{{ icon("x-circle") }} <span>{{ p }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="reveal">
+        <h2 style="margin-bottom:1.25rem;">{{ benefitsHeading }}</h2>
+        <ul class="check-list">
+          {% for b in benefits %}
+          <li>{{ icon("check") }} <span>{{ b }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">How It Works</p>
+      <h2>How We Protect {{ possessive or "Your Property" }}</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-number">1</div>
+        <h3>Inspect</h3>
+        <p>{{ stepInspect }}</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">2</div>
+        <h3>Treat</h3>
+        <p>{{ stepTreat }}</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">3</div>
+        <h3>Maintain</h3>
+        <p>{{ stepMaintain }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>{{ closingHeading }}</h2>
+        <p>{{ closingText }}</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/contact/">Get Fast Service Today</a>
+        <a class="btn btn--outline-invert" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>

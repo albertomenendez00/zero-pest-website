@@ -1,0 +1,120 @@
+---
+layout: layouts/base.njk
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="hero">
+  <div class="container">
+    <div class="reveal is-visible" style="max-width:760px;">
+      <div class="pill-row" style="margin-bottom:1.25rem;">
+        {% for b in badges %}<span class="pill">{{ b }}</span>{% endfor %}
+      </div>
+      <h1>{{ h1 }}</h1>
+      <p class="lede">{{ subtitle }}</p>
+      <div class="hero-ctas">
+        <a class="btn btn--primary" href="{{ primaryCtaHref or '/contact/' }}">{{ primaryCtaText or "Get a Free Quote" }}</a>
+        <a class="btn btn--outline" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="container">
+    {% for t in trustItems %}
+    <div class="trust-bar-item">{{ icon(t.icon) }} {{ t.text }}</div>
+    {% endfor %}
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid--2">
+      <div class="card reveal">
+        <div class="icon-badge">{{ icon(pathA.icon) }}</div>
+        <h3>{{ pathA.title }}</h3>
+        <p>{{ pathA.text }}</p>
+        <a class="btn btn--dark" style="margin-top:1rem;" href="{{ pathA.ctaHref }}">{{ pathA.ctaText }}</a>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge">{{ icon(pathB.icon) }}</div>
+        <h3>{{ pathB.title }}</h3>
+        <p>{{ pathB.text }}</p>
+        <a class="btn btn--outline" style="margin-top:1rem;" href="{{ pathB.ctaHref }}">{{ pathB.ctaText }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="grid grid--2">
+      <div class="reveal">
+        <h2 style="margin-bottom:1.25rem;">{{ problemList.heading }}</h2>
+        <ul class="problem-list check-list">
+          {% for item in problemList.items %}
+          <li>{{ icon("x-circle") }} <span>{{ item }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="reveal">
+        <h2 style="margin-bottom:1.25rem;">{{ solutionList.heading }}</h2>
+        <ul class="check-list">
+          {% for item in solutionList.items %}
+          <li>{{ icon("check") }} <span>{{ item }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if featureCards and featureCards.length %}
+<section class="section">
+  <div class="container">
+    <div class="grid grid--4">
+      {% for f in featureCards %}
+      <div class="card reveal">
+        <div class="icon-badge icon-badge--sm">{{ icon(f.icon) }}</div>
+        <h3 style="font-size:1.05rem;">{{ f.title }}</h3>
+        <p>{{ f.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">How It Works</p>
+      <h2>{{ stepsHeading or "How We Protect You" }}</h2>
+      <p>Fast response, clear steps, and guaranteed follow-ups for homes and businesses across Northern Ontario.</p>
+    </div>
+    <div class="steps">
+      {% for s in steps %}
+      <div class="step reveal">
+        <div class="step-number">{{ loop.index }}</div>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>{{ closing.heading }}</h2>
+        <p>{{ closing.text }}</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/contact/">{{ closing.ctaText or "Get a Free Quote" }}</a>
+        <a class="btn btn--outline-invert" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>

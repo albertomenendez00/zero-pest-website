@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+title: "Industries We Serve | Zero Pest Control"
+description: "Commercial pest control tailored to restaurants, property managers, retail stores, warehouses, and hotels across Sudbury and Northern Ontario."
+permalink: /industries/
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / Industries</p>
+    <h1>Industries We Serve</h1>
+    <p class="lede">We proudly serve a wide range of industries across Northern Ontario, with tailored pest control plans built for safety and compliance.</p>
+    <div class="page-hero-ctas">
+      <a class="btn btn--primary" href="/commercial-pest-plans/">Request a Commercial Plan</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid--3">
+      {% for item in collections.industries %}
+      <a class="card service-card reveal" href="{{ item.url }}">
+        <div class="icon-badge">{{ icon(item.data.industryIcon or "building") }}</div>
+        <h3>{{ item.data.h1 }}</h3>
+        <p>{{ item.data.tagline }}</p>
+        <span class="card-link">Learn More {{ icon("arrow-right") }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">Also Trusted By</p>
+      <h2>More Sectors We Support</h2>
+      <p>Beyond the industries above, we also support healthcare and long-term care, agriculture and greenhouses, and schools and childcare facilities with custom commercial pest plans.</p>
+    </div>
+    <div class="pill-row" style="justify-content:center;">
+      <span class="pill">{{ icon("heart-pulse") }} Healthcare &amp; Long-Term Care</span>
+      <span class="pill">{{ icon("sprout") }} Agriculture &amp; Greenhouses</span>
+      <span class="pill">{{ icon("graduation") }} Schools &amp; Childcare</span>
+    </div>
+    <p class="text-center" style="margin-top:2rem;"><a class="btn btn--outline" href="/commercial-pest-plans/">Get a Custom Plan for Your Industry</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Not Sure Your Industry Is Listed?</h2>
+        <p>We build custom commercial pest programs for all kinds of facilities across Northern Ontario. Get in touch and we'll help.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/contact/">Get a Free Quote</a>
+        <a class="btn btn--outline-invert" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>

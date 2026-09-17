@@ -1,0 +1,48 @@
+---
+title: "Fly & Cluster Fly Control in Sudbury & Northern Ontario | Zero Pest Control"
+description: "Targeted fly and cluster fly control for homes and businesses in Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie."
+order: 7
+pestName: "Flies"
+pestIcon: "fly"
+h1: "Fly & Cluster Fly Control in Sudbury & Northern Ontario"
+tagline: "Why they appear, what attracts them, and when to take action."
+intro: "Seeing flies around windows, drains, garbage areas, attics, or wall voids? Zero Pest Control helps identify the source and reduce fly activity with targeted treatment, sanitation guidance, and exclusion recommendations."
+comeFrom:
+  - title: "Seasonal Behaviour"
+    text: "In Ontario, cluster flies gather on sun-warmed walls in late summer and fall, then shelter in attics and wall voids over winter before reappearing on warm days in fall and spring."
+  - title: "Entry Points"
+    text: "Flies slip through torn screens, gaps at soffits and fascia, attic vents, window and door frames, and utility penetrations — especially on the south and southwest sides of homes."
+  - title: "Shared Environments"
+    text: "Garbage and compost areas, recyclables, floor drains, and neighbouring properties (farms, food businesses) can increase fly pressure and introduce new activity."
+doAtHome:
+  - "Keep windows and doors screened; repair tears and add door sweeps where needed."
+  - "Seal gaps at soffits, rooflines, attic vents, window casings, and utility lines."
+  - "Bag and remove garbage regularly; rinse recycling, especially sweet or greasy containers."
+  - "Store ripe fruit in the fridge; clean spills and food residues daily, including pet bowls."
+  - "Scrub and flush kitchen, bath, and laundry drains; remove organic buildup where drain flies breed."
+  - "Vacuum slow, sleepy cluster flies you find indoors; empty the vacuum canister outside."
+attracts:
+  - label: "Fermenting/organic matter"
+    text: "Ripe fruit, food residues, compost, garbage, and recycling film."
+  - label: "Moisture & drains"
+    text: "Organic buildup inside drains, traps, and sump pits supports drain and \"moth\" flies."
+  - label: "Warm shelter (cluster flies)"
+    text: "Sun-exposed siding, attics, and wall voids for overwintering."
+concern:
+  - title: "Hygiene Issues"
+    text: "House flies can transfer bacteria as they move between waste and food or contact surfaces; fruit and drain flies contaminate food prep areas."
+  - title: "Property Risks"
+    text: "Heavy activity can stain walls and windows, foul light fixtures, and lead to maggots in garbage areas if sanitation is missed."
+  - title: "Rapid Breeding"
+    text: "Small fly species cycle quickly; missing breeding sites like drains, mops, or compost allows reinfestation even after surface sprays."
+faqs:
+  - q: "What are cluster flies, and how are they different?"
+    a: "They're larger, slower flies that breed outdoors in soil; adults slip into structures in late summer and fall to overwinter, then emerge on warm, sunny days."
+  - q: "Are the flies in my kitchen coming from food or drains?"
+    a: "Sometimes both. Fruit flies breed on fermenting produce and residues; drain flies breed in the organic buildup lining drains. We identify which and target the source."
+  - q: "How do I clean out a drain properly?"
+    a: "Physically remove the buildup: scrub inside the drain throat, overflow, and P-trap, then flush with hot water. Enzyme cleaners help after mechanical cleaning."
+  - q: "Will spraying get rid of flies for good?"
+    a: "No. Sprays only knock down adults you see. Long-term success comes from sealing entry points and removing breeding sources (garbage, fruit, drains), paired with targeted treatments."
+closing: "Flies are a fact of life in Ontario — but they don't have to take over your home or business. If you think you may be dealing with them, the first step is understanding the issue. The next step is knowing when it's time for professional help."
+---

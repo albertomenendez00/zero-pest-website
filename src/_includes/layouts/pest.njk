@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="/">Home</a> / <a href="/pest-library/">Pest Library</a> / {{ commonName }}</p>
+    <span class="category-tag">{{ category }}</span>
+    <div class="icon-badge" style="margin-bottom:1.25rem;">{{ icon(pestIcon) }}</div>
+    <h1>{{ commonName }}</h1>
+    <p class="lede">{{ summary }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <div class="draft-notice reveal">
+      {{ icon("alert-triangle") }}
+      <span>[DRAFT &ndash; REVIEW] This pest library entry was written to fill a page that had no content in the original site export. It covers general, well-established pest-identification facts. Please have it reviewed by a Zero Pest Control technician for accuracy and local relevance before publishing.</span>
+    </div>
+
+    <div class="prose reveal">
+      <h2>Appearance &amp; Identification</h2>
+      <p>{{ appearance }}</p>
+
+      <h2>Habitat &amp; Behaviour</h2>
+      <p>{{ habitat }}</p>
+
+      <h2>Why It's a Concern</h2>
+      <ul>
+        {% for r in risks %}<li>{{ r }}</li>{% endfor %}
+      </ul>
+
+      <h2>Prevention Tips</h2>
+      <ul>
+        {% for t in preventionTips %}<li>{{ t }}</li>{% endfor %}
+      </ul>
+    </div>
+
+    <div class="cta-banner reveal" style="margin-top:2.5rem;">
+      <div>
+        <h2>Seeing Signs of {{ commonName }}?</h2>
+        <p>Get a fast inspection and clear quote from a licensed local technician.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/contact/">Get a Free Quote</a>
+        {% if relatedService %}<a class="btn btn--outline-invert" href="{{ relatedService }}">Related Service {{ icon("arrow-right") }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>

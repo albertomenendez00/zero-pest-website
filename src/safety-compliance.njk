@@ -1,0 +1,155 @@
+---
+layout: layouts/base.njk
+title: "Safety & Compliance Standards | Zero Pest Control"
+description: "Ontario-compliant pest control for regulated commercial environments — approved products, documented reporting, and audit-ready service."
+permalink: /safety-compliance/
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="hero">
+  <div class="container">
+    <div class="reveal is-visible" style="max-width:760px;">
+      <div class="pill-row" style="margin-bottom:1.25rem;">
+        <span class="pill">Regulation-Compliant</span>
+        <span class="pill">Safe Applications</span>
+        <span class="pill">Audit-Ready Support</span>
+      </div>
+      <h1>Safety &amp; Compliance Standards</h1>
+      <p class="lede">Professional pest control service using approved methods, clear documentation, and safety-conscious treatment practices.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--primary" href="/contact/">Get Protected Today</a>
+        <a class="btn btn--outline" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-item">{{ icon("shield") }} Licensed &amp; Insured</div>
+    <div class="trust-bar-item">{{ icon("check-circle") }} Certified Technicians</div>
+    <div class="trust-bar-item">{{ icon("file-text") }} Documented Reporting</div>
+    <div class="trust-bar-item">{{ icon("repeat") }} Guaranteed Service &amp; Care</div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="split reveal">
+      <div>
+        <p class="section-eyebrow">Compliance</p>
+        <h2>We Follow Ontario Pest Control Regulations</h2>
+        <p>Our services follow all applicable Ontario standards for pesticide use, safety, and environmental responsibility. We ensure treatments are applied properly, documented, and aligned with regulatory requirements.</p>
+        <ul class="check-list">
+          <li>{{ icon("check") }} <span>Licensed under Ontario pesticide regulations</span></li>
+          <li>{{ icon("check") }} <span>Use of approved products only</span></li>
+          <li>{{ icon("check") }} <span>Proper application and handling procedures</span></li>
+          <li>{{ icon("check") }} <span>Clear documentation and reporting</span></li>
+          <li>{{ icon("check") }} <span>Safe for regulated environments</span></li>
+        </ul>
+      </div>
+      <div class="split-media">
+        <div class="photo-placeholder"><span>[ADD: photo of a technician completing a service log/report]</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">Why It Matters</p>
+      <h2>Why Compliance Matters for Your Business</h2>
+    </div>
+    <div class="grid grid--4">
+      {% set reasons = ["Avoid fines and regulatory issues", "Protect your reputation and inspections", "Ensure safety for staff and customers", "Maintain operational standards"] %}
+      {% for r in reasons %}
+      <div class="card reveal text-center">
+        <div class="icon-badge" style="margin-inline:auto;">{{ icon("shield") }}</div>
+        <p style="font-weight:700; color:var(--ink); margin-top:0.75rem;">{{ r }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">Our Approach</p>
+      <h2>Built for Safety, Compliance &amp; Accountability</h2>
+    </div>
+    <div class="grid grid--4">
+      {% set built = [
+        { icon: "shield", title: "Safe & Approved Treatments" },
+        { icon: "file-text", title: "Documented Service & Reporting" },
+        { icon: "eye", title: "Discreet, Professional Technicians" },
+        { icon: "repeat", title: "Ongoing Monitoring & Prevention" }
+      ] %}
+      {% for b in built %}
+      <div class="card reveal">
+        <div class="icon-badge icon-badge--sm">{{ icon(b.icon) }}</div>
+        <h3 style="font-size:1.02rem;">{{ b.title }}</h3>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">Our Compliance-Focused Process</p>
+      <h2>How We Keep Your Business Compliant</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-number">1</div>
+        <h3>Inspect</h3>
+        <p>We identify risks and compliance requirements specific to your facility.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">2</div>
+        <h3>Treat</h3>
+        <p>We apply approved, regulation-compliant solutions.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">3</div>
+        <h3>Maintain</h3>
+        <p>We provide reports and ensure ongoing compliance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">Regulated Industries</p>
+      <h2>Trusted Across Regulated Industries</h2>
+    </div>
+    <div class="pill-row" style="justify-content:center;">
+      <span class="pill">Food Service &amp; Hospitality</span>
+      <span class="pill">Retail &amp; Offices</span>
+      <span class="pill">Warehousing &amp; Logistics</span>
+      <span class="pill">Property Management</span>
+      <span class="pill">Healthcare &amp; Education</span>
+      <span class="pill">Industrial &amp; Manufacturing</span>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Stay Compliant. Stay Protected.</h2>
+        <p>Professional pest control designed to meet safety and regulatory standards.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/contact/">Get Compliant Pest Control</a>
+        <a class="btn btn--outline-invert" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>

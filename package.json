@@ -1,0 +1,25 @@
+{
+  "name": "zero-pest-website",
+  "version": "1.0.0",
+  "description": "Zero Pest Control — static marketing website built with Eleventy",
+  "private": true,
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "debug": "DEBUG=Eleventy* eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertomenendez00/zero-pest-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albertomenendez00/zero-pest-website/issues"
+  },
+  "homepage": "https://github.com/albertomenendez00/zero-pest-website#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

@@ -1,0 +1,47 @@
+---
+title: "Bed Bug Treatment in Sudbury & Northern Ontario | Zero Pest Control"
+description: "Discreet, professional bed bug treatment for homes, apartments, rentals, and hotels across Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie."
+order: 2
+pestName: "Bed Bugs"
+pestIcon: "bedbug"
+h1: "Bed Bug Treatment in Sudbury & Northern Ontario"
+tagline: "Why they appear, what attracts them, and when to take action."
+intro: "Discreet, professional bed bug treatment for homes, apartments, rentals, hotels, and shared living spaces. We help identify the issue, explain preparation steps, and provide targeted treatment options."
+comeFrom:
+  - title: "Travel & Movement"
+    text: "Bed bugs often hitchhike in luggage, clothing, or used furniture after travel or second-hand purchases."
+  - title: "Shared Spaces"
+    text: "They can spread quickly through apartments, hotels, dorms, and other multi-unit buildings."
+  - title: "Clutter & Hiding Spots"
+    text: "Bed bugs thrive in areas with lots of cracks, seams, and fabrics where they can hide during the day."
+doAtHome:
+  - "Wash and heat-dry bedding, linens, and recently worn clothes."
+  - "Reduce clutter around beds and sofas to eliminate hiding spots."
+  - "Inspect mattress seams, headboards, and upholstered furniture regularly."
+  - "Use protective mattress and box spring covers designed for bed bugs."
+  - "Be cautious when bringing in used furniture or luggage from trips."
+attracts:
+  - label: "Human presence"
+    text: "Bed bugs are drawn to body heat and carbon dioxide."
+  - label: "Clutter"
+    text: "The more hiding places available, the faster infestations spread."
+  - label: "Travel activity"
+    text: "Frequent travel increases the risk of carrying them home."
+concern:
+  - title: "Discomfort & Bites"
+    text: "Bed bugs feed at night, causing itchy red bites that disturb sleep."
+  - title: "Rapid Spread"
+    text: "They breed quickly and can infest multiple rooms in weeks if untreated."
+  - title: "Difficult to Eliminate"
+    text: "DIY methods often fail, as bed bugs hide in cracks and resist many sprays."
+faqs:
+  - q: "How do I know if I have bed bugs?"
+    a: "Look for small reddish-brown bugs, tiny black spots (droppings), and clusters of bites on skin."
+  - q: "Do bed bugs only live in mattresses?"
+    a: "No, they can hide in couches, chairs, baseboards, outlets, and even behind wallpaper."
+  - q: "Do bed bugs spread disease?"
+    a: "While they are not known to transmit diseases, their bites cause itching, discomfort, and stress."
+  - q: "Can professional treatment fully eliminate bed bugs?"
+    a: "Yes. Professional heat treatments and targeted methods can eliminate all life stages, including eggs."
+closing: "Bed bugs are a growing concern in Ontario — but they don't have to disrupt your home or business. If you notice the signs, the first step is understanding the problem. The next step is knowing when professional treatment is needed."
+---

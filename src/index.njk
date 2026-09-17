@@ -1,0 +1,246 @@
+---
+layout: layouts/base.njk
+title: "Pest Control in Sudbury & Northern Ontario | Zero Pest Control"
+description: "Fast, licensed pest control for homes and businesses in Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie. Same-day and next-day service. Get a free quote."
+permalink: /
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal is-visible">
+      <p class="hero-eyebrow">{{ icon("phone") }} Need pest control fast? Call now.</p>
+      <h1>Fast, Local Pest Control in Sudbury &amp; Northern Ontario</h1>
+      <p class="lede">Same-day and next-day pest control for homes and businesses. We treat rodents, ants, bed bugs, cockroaches, wasps, spiders, and more — with clear pricing and professional local service.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--primary" href="/contact/">Get a Free Quote</a>
+        <a class="btn btn--outline" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">{{ icon("shield") }} Licensed &amp; Insured</div>
+        <div class="hero-trust-item">{{ icon("heart-pulse") }} Family &amp; Pet-Conscious</div>
+        <div class="hero-trust-item">{{ icon("repeat") }} 60–90 Day Guarantee</div>
+      </div>
+    </div>
+    <div class="hero-visual reveal is-visible">
+      <div class="photo-placeholder">
+        <span>[ADD: photo of a Zero Pest Control technician servicing a Sudbury-area home]</span>
+      </div>
+      <div class="visual-badge">
+        <div class="icon-badge">{{ icon("shield") }}</div>
+        <div>
+          <strong>Licensed &amp; Insured</strong>
+          <span>Local technicians across Northern Ontario</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-item">{{ icon("shield") }} Licensed &amp; Insured</div>
+    <div class="trust-bar-item">{{ icon("heart-pulse") }} Family &amp; Pet-Conscious</div>
+    <div class="trust-bar-item">{{ icon("repeat") }} 60–90 Day Guarantee</div>
+    <div class="trust-bar-item">{{ icon("map-pin") }} Local Northern Ontario Technicians</div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">What We Treat</p>
+      <h2>Our Pest Control Services</h2>
+      <p>From rodents and bed bugs to ants, cockroaches, wasps, and spiders, Zero Pest Control helps homeowners and businesses across Sudbury and Northern Ontario get fast, professional pest control service.</p>
+    </div>
+    <div class="grid grid--3">
+      {% set homeServices = [
+        { slug: "rodent-control", icon: "rodent", blurb: "Find & seal entry points for lasting results." },
+        { slug: "bed-bug-treatment", icon: "bedbug", blurb: "Heat or spot solutions with follow-up." },
+        { slug: "ant-control", icon: "ant", blurb: "Target nests to stop colonies at the source." },
+        { slug: "cockroach-control", icon: "roach", blurb: "Safe barriers keep pests out of sight." },
+        { slug: "wasp-hornet-removal", icon: "wasp", blurb: "Quick nest removal with prevention tips." },
+        { slug: "spider-control", icon: "spider", blurb: "Treat hotspots; reduce webs indoors." }
+      ] %}
+      {% for hs in homeServices %}
+        {% set svc = collections.services | findBy("fileSlug", hs.slug) %}
+        <a class="card service-card reveal" href="/{{ hs.slug }}/">
+          <div class="icon-badge">{{ icon(hs.icon) }}</div>
+          <h3>{{ svc.data.title if svc else hs.slug }}</h3>
+          <p>{{ hs.blurb }}</p>
+        </a>
+      {% endfor %}
+    </div>
+    <div class="text-center" style="margin-top:2.5rem;">
+      <a class="btn btn--outline" href="/services/">View All Services {{ icon("arrow-right") }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="grid grid--2">
+      <div class="card reveal">
+        <div class="icon-badge">{{ icon("home") }}</div>
+        <h2>For Your Home</h2>
+        <p>Safe, effective treatments for ants, rodents, bed bugs, cockroaches, wasps &amp; more. Trusted by Sudbury-area families for reliable residential pest control.</p>
+        <a class="card-link" href="/residential/">Residential Pest Control Services {{ icon("arrow-right") }}</a>
+      </div>
+      <div class="card reveal">
+        <div class="icon-badge">{{ icon("building") }}</div>
+        <h2>For Your Business</h2>
+        <p>Reliable pest control for offices, restaurants, schools &amp; warehouses. Fast, compliant, and preventative commercial programs across Northern Ontario.</p>
+        <a class="card-link" href="/commercial/">Commercial Pest Control Programs {{ icon("arrow-right") }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">How It Works</p>
+      <h2>Our Pest Control Process — Step by Step</h2>
+      <p>Fast response, clear steps, and follow-up support for homes and businesses across Northern Ontario.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-number">1</div>
+        <h3>Inspection &amp; Quote</h3>
+        <p>We check entry points and hotspots, then give you a clear written quote before any work begins.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">2</div>
+        <h3>Treatment &amp; Proofing</h3>
+        <p>Family-safe treatment and sealing designed to stop pests from finding their way back in.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">3</div>
+        <h3>Follow-Up &amp; Tips</h3>
+        <p>We confirm results and share simple prevention tips to help keep your property protected.</p>
+      </div>
+    </div>
+    <p class="text-center" style="margin-top:2.5rem; max-width:60ch; margin-inline:auto;">We keep every step transparent — from inspection to follow-up — so your home or business stays protected long term.</p>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">Industries We Serve</p>
+      <h2>Trusted Across Northern Ontario Businesses</h2>
+      <p>We proudly serve a wide range of industries — from restaurants and hotels to schools and healthcare facilities. Each sector gets a tailored pest control plan built for safety and compliance.</p>
+    </div>
+    <div class="grid grid--4">
+      {% set homeIndustries = [
+        { name: "Property & Apartment Management", icon: "building", href: "/property-management/" },
+        { name: "Restaurants & Food Services", icon: "utensils", href: "/restaurants/" },
+        { name: "Retail Stores & Shopping Centres", icon: "store", href: "/retail-stores/" },
+        { name: "Healthcare & Long-Term Care", icon: "heart-pulse", href: "/commercial-pest-plans/" },
+        { name: "Warehousing & Distribution", icon: "warehouse", href: "/warehouse-storage/" },
+        { name: "Hotels, Motels & Lodges", icon: "hotel", href: "/hotels-hospitality/" },
+        { name: "Agriculture & Greenhouses", icon: "sprout", href: "/commercial-pest-plans/" },
+        { name: "Schools & Childcare", icon: "graduation", href: "/commercial-pest-plans/" }
+      ] %}
+      {% for ind in homeIndustries %}
+        <a class="card reveal text-center" href="{{ ind.href }}">
+          <div class="icon-badge" style="margin-inline:auto;">{{ icon(ind.icon) }}</div>
+          <h3 style="font-size:1rem; margin-top:0.9rem;">{{ ind.name }}</h3>
+        </a>
+      {% endfor %}
+    </div>
+    <p class="text-center" style="margin-top:2rem; color:var(--ink-faint);">Serving all types of properties across Sudbury, Espanola, Manitoulin, Blind River, Elliot Lake, and Sault Ste. Marie.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <p class="section-eyebrow">{{ icon("clipboard-check") }} Commercial Programs</p>
+        <h2>Scheduled Pest Control for Businesses</h2>
+        <p>Ongoing programs with service documentation, prevention recommendations, and support for food-service and commercial environments.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/commercial-pest-plans/">Request Commercial Plan {{ icon("arrow-right") }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">Service Areas</p>
+      <h2>Proudly Serving Northern Ontario</h2>
+      <p>We provide residential and commercial pest control across the following communities. Outside these areas? Contact us — we may still be able to help.</p>
+    </div>
+    <div class="area-grid">
+      {% for area in site.areas %}
+      <a class="area-chip reveal" href="/contact/?area={{ area.slug }}">{{ icon("map-pin") }} {{ area.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split reveal">
+      <div>
+        <p class="section-eyebrow">{{ icon("repeat") }} Our Guarantee</p>
+        <h2>60–90 Day Service Guarantee</h2>
+        <p>Most eligible services include a 60-day service guarantee, with select programs extending up to 90 days. If covered pests reappear during the guarantee period, we'll return to make it right — according to the service terms provided with your quote.</p>
+        <a class="btn btn--outline" href="/contact/" style="margin-top:0.5rem;">Ask About Your Guarantee</a>
+      </div>
+      <div class="split-media">
+        <div class="photo-placeholder">
+          <span>[ADD: photo of a completed treatment or a happy customer's home/business]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft" id="faq">
+  <div class="container container--narrow">
+    <div class="section-head center reveal">
+      <p class="section-eyebrow" style="justify-content:center;">FAQ</p>
+      <h2>Frequently Asked Questions</h2>
+      <p>Here are the most common pest control questions from homeowners and businesses across Sudbury, Espanola, and Northern Ontario.</p>
+    </div>
+    <div class="accordion reveal">
+      {% set homeFaqs = [
+        { q: "Are treatments safe for kids, pets, and food areas?", a: "We use approved products and apply them according to label directions, with family, pet, and food-area considerations in mind. We also explain any preparation or re-entry instructions before treatment." },
+        { q: "How quickly will I see results after treatment?", a: "Many pests show reduced activity within 24–48 hours. For issues like rodents or cockroaches, complete control may take a few visits depending on the size of the infestation." },
+        { q: "Do you offer a service guarantee?", a: "Yes. If pests return within the guarantee period, we'll come back at no additional charge to make it right." },
+        { q: "What's included in the first visit?", a: "Your technician will inspect the property, identify pests and entry points, explain treatment options, and provide a clear written quote before starting any work." },
+        { q: "Do I need to leave during treatment?", a: "Usually not. Most treatments are safe to stay on-site for, but if special prep is needed (like for bed bugs), we'll give you clear instructions in advance." },
+        { q: "How often should pest control be done?", a: "It depends. One-time treatments solve many issues, but restaurants, offices, and warehouses often choose monthly or quarterly plans for prevention and compliance." },
+        { q: "Can you provide documentation for audits?", a: "Yes. Our commercial programs include service reports, logbooks, and HACCP-aware documentation to help meet regulatory requirements." },
+        { q: "What if I see pests between scheduled visits?", a: "Call us. We'll schedule a follow-up at no extra cost if it's within your service plan or guarantee period." }
+      ] %}
+      {% for item in homeFaqs %}
+      <details class="accordion-item">
+        <summary>{{ item.q }} {{ icon("chevron-down") }}</summary>
+        <div class="accordion-body"><p>{{ item.a }}</p></div>
+      </details>
+      {% endfor %}
+    </div>
+    <p class="text-center" style="margin-top:2rem;"><a class="btn btn--ghost" href="/faq/">See all residential FAQs {{ icon("arrow-right") }}</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Ready to Get Rid of Pests for Good?</h2>
+        <p>Get a fast, clear quote from a local, licensed pest control team serving Sudbury and Northern Ontario.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a class="btn btn--primary" href="/contact/">Get a Free Quote</a>
+        <a class="btn btn--outline-invert" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>

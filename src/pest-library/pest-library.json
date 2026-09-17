@@ -1,0 +1,6 @@
+{
+  "layout": "layouts/pest.njk",
+  "eleventyComputed": {
+    "permalink": "/pest-library/{{ page.fileSlug }}/"
+  }
+}
