@@ -3,6 +3,7 @@ title: "Mouse & Rat Control in Sudbury & Northern Ontario | Zero Pest Control"
 description: "Professional rodent control for homes and businesses in Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie. Inspection, treatment, and entry-point sealing."
 order: 1
 pestName: "Rodents"
+cardTitle: "Rodent Control"
 pestIcon: "rodent"
 h1: "Mouse & Rat Control in Sudbury & Northern Ontario"
 tagline: "Why they appear, what attracts them, and when to take action."

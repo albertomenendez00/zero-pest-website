@@ -25,7 +25,7 @@ permalink: /blog-resources/
       {% for item in collections.services %}
       <a class="card reveal text-center" href="{{ item.url }}">
         <div class="icon-badge" style="margin-inline:auto;">{{ icon(item.data.pestIcon or "bug") }}</div>
-        <h3 style="font-size:1rem; margin-top:0.8rem;">{{ item.data.pestName or item.data.title }}</h3>
+        <h3 style="font-size:1rem; margin-top:0.8rem;">{{ item.data.cardTitle or item.data.pestName or item.data.title }}</h3>
       </a>
       {% endfor %}
     </div>

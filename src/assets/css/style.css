@@ -304,6 +304,15 @@ body.nav-open { overflow: hidden; }
 
 .service-card { display: flex; flex-direction: column; }
 
+/* ---- Compact link-cards (e.g. "For Your Home" / "For Your Business") ----
+   The whole card is a single <a>; the "button" inside is a non-interactive
+   span styled like .btn so there's no invalid nested <a>/<button>. */
+.card--compact { padding: var(--space-150); }
+.card--compact .icon-badge { margin-bottom: var(--space-75); }
+.card--compact h2 { font-size: var(--text-h3); margin-bottom: var(--space-45); }
+.card-cta { margin-top: var(--space-100); pointer-events: none; }
+.card-cta svg { width: 16px; height: 16px; }
+
 /* ---- Process steps ---- */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-steps); counter-reset: step; }
 @media (max-width: 780px) { .steps { grid-template-columns: 1fr; } }

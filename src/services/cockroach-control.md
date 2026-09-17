@@ -3,6 +3,7 @@ title: "Cockroach Control in Sudbury & Northern Ontario | Zero Pest Control"
 description: "Fast, targeted cockroach control for homes, apartments, and commercial kitchens in Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie."
 order: 5
 pestName: "Cockroaches"
+cardTitle: "Cockroach Control"
 pestIcon: "roach"
 h1: "Cockroach Control in Sudbury & Northern Ontario"
 tagline: "Why they appear, what attracts them, and when to take action."

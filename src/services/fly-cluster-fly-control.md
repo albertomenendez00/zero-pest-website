@@ -3,6 +3,7 @@ title: "Fly & Cluster Fly Control in Sudbury & Northern Ontario | Zero Pest Cont
 description: "Targeted fly and cluster fly control for homes and businesses in Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie."
 order: 7
 pestName: "Flies"
+cardTitle: "Fly & Cluster Fly Control"
 pestIcon: "fly"
 h1: "Fly & Cluster Fly Control in Sudbury & Northern Ontario"
 tagline: "Why they appear, what attracts them, and when to take action."

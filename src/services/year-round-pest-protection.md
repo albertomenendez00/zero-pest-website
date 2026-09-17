@@ -4,6 +4,7 @@ title: "Year-Round Pest Protection Plans | Zero Pest Control"
 description: "Seasonal pest protection plans for Sudbury and Northern Ontario homes, designed to stop recurring pest issues before they start."
 order: 8
 pestName: "Year-Round Protection"
+cardTitle: "Year-Round Protection"
 pestIcon: "shield"
 badges: ["Year-Round Protection", "Priority Service", "Guaranteed Coverage"]
 h1: "Year-Round Pest Protection Plans"

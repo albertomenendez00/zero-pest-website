@@ -48,6 +48,25 @@ permalink: /
 
 <section class="section">
   <div class="container">
+    <div class="grid grid--2">
+      <a class="card card--compact reveal" href="/residential/">
+        <div class="icon-badge icon-badge--sm">{{ icon("home") }}</div>
+        <h2>For Your Home</h2>
+        <p>Safe, effective treatments for ants, rodents, bed bugs, cockroaches, wasps &amp; more. Trusted by Sudbury-area families for reliable residential pest control.</p>
+        <span class="btn btn--primary card-cta">Residential Services {{ icon("arrow-right") }}</span>
+      </a>
+      <a class="card card--compact reveal" href="/commercial/">
+        <div class="icon-badge icon-badge--sm">{{ icon("building") }}</div>
+        <h2>For Your Business</h2>
+        <p>Reliable pest control for offices, restaurants, schools &amp; warehouses. Fast, compliant, and preventative commercial programs across Northern Ontario.</p>
+        <span class="btn btn--primary card-cta">Commercial Programs {{ icon("arrow-right") }}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container">
     <div class="section-head center reveal">
       <p class="section-eyebrow" style="justify-content:center;">What We Treat</p>
       <h2>Our Pest Control Services</h2>
@@ -66,32 +85,13 @@ permalink: /
         {% set svc = collections.services | findBy("fileSlug", hs.slug) %}
         <a class="card service-card reveal" href="/{{ hs.slug }}/">
           <div class="icon-badge">{{ icon(hs.icon) }}</div>
-          <h3>{{ svc.data.title if svc else hs.slug }}</h3>
+          <h3>{{ svc.data.cardTitle if svc else hs.slug }}</h3>
           <p>{{ hs.blurb }}</p>
         </a>
       {% endfor %}
     </div>
     <div class="text-center" style="margin-top:2.5rem;">
       <a class="btn btn--outline" href="/services/">View All Services {{ icon("arrow-right") }}</a>
-    </div>
-  </div>
-</section>
-
-<section class="section section--soft">
-  <div class="container">
-    <div class="grid grid--2">
-      <div class="card reveal">
-        <div class="icon-badge">{{ icon("home") }}</div>
-        <h2>For Your Home</h2>
-        <p>Safe, effective treatments for ants, rodents, bed bugs, cockroaches, wasps &amp; more. Trusted by Sudbury-area families for reliable residential pest control.</p>
-        <a class="card-link" href="/residential/">Residential Pest Control Services {{ icon("arrow-right") }}</a>
-      </div>
-      <div class="card reveal">
-        <div class="icon-badge">{{ icon("building") }}</div>
-        <h2>For Your Business</h2>
-        <p>Reliable pest control for offices, restaurants, schools &amp; warehouses. Fast, compliant, and preventative commercial programs across Northern Ontario.</p>
-        <a class="card-link" href="/commercial/">Commercial Pest Control Programs {{ icon("arrow-right") }}</a>
-      </div>
     </div>
   </div>
 </section>
