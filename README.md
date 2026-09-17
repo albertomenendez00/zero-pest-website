@@ -30,7 +30,8 @@ src/
     layouts/                 ← page templates (base, service, plan, industry, pest)
     partials/                ← header, footer, icon library, quote form
   assets/
-    css/style.css            ← the entire design system (colours, spacing, components)
+    css/variables.css        ← every font, font size, colour, and spacing value (edit here)
+    css/style.css            ← the design system's components/layout (reads variables.css)
     js/main.js                ← mobile menu, scroll animation, form handling
     images/                  ← logo, favicons
   services/                  ← the 8 "pest treatment" pages (Ant Control, Bed Bugs, etc.)
@@ -79,7 +80,154 @@ Same pattern, in `src/pest-library/`. Copy any file (e.g. `house-mouse.md`), ren
 
 ### Change colours, fonts, spacing
 
-Everything lives in `src/assets/css/style.css`, controlled by CSS custom properties at the top of the file (`--red`, `--ink`, `--radius`, etc.). Changing `--red` there changes every button, accent, and icon colour site-wide.
+Every font, font size, colour, and spacing value used anywhere on the site is a CSS custom property defined in one file: **`src/assets/css/variables.css`**. `src/assets/css/style.css` (the actual page styling) only ever references these variables — it has no hardcoded fonts, sizes, colours, or spacing of its own. Change a value in `variables.css` and it updates everywhere that value is used across the whole site. See [Design tokens](#design-tokens) below for the full list.
+
+## Design tokens
+
+All design tokens live in `src/assets/css/variables.css`, inside a single `:root { ... }` block, grouped into the sections below. Nothing else in the codebase defines a font, font size, colour, or spacing value — they all come from here.
+
+Sizes named after their value (e.g. `--text-88`, `--space-125`) are named that way because the original design uses many closely tuned values rather than a small handful of steps (e.g. `--text-88` = `0.88rem`, `--space-125` = `1.25rem` — take the number, divide by 100, that's the rem value). Everything else is named by what it's for.
+
+### Fonts
+
+| Variable | Value | Used for |
+|---|---|---|
+| `--font-display` | `"Poppins", "Segoe UI", system-ui, -apple-system, sans-serif` | All headings (`h1`–`h4`), the logo wordmark, step numbers |
+| `--font-body` | `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif` | Body text, nav, buttons, everything else |
+| `--fw-medium` | `500` | Dropdown nav links |
+| `--fw-semibold` | `600` | Nav links, form labels, footer links, pills |
+| `--fw-bold` | `700` | Headings, buttons, section eyebrows, most emphasis |
+| `--fw-extrabold` | `800` | `h1`, the logo wordmark, step-number circles |
+
+### Font sizes
+
+Responsive (scale with viewport width):
+
+| Variable | Value | Used for |
+|---|---|---|
+| `--text-h1` | `clamp(2.1rem, 4.6vw, 3.4rem)` | `h1` |
+| `--text-h2` | `clamp(1.6rem, 3.2vw, 2.35rem)` | `h2` |
+| `--text-h3` | `clamp(1.15rem, 1.8vw, 1.4rem)` | `h3` |
+| `--text-lede` | `clamp(1.05rem, 1.6vw, 1.2rem)` | `.lede` intro paragraphs |
+
+Fixed:
+
+| Variable | Value | Variable | Value |
+|---|---|---|---|
+| `--text-base` | `16px` (body base size) | `--text-92` | `0.92rem` |
+| `--text-62` | `0.62rem` | `--text-94` | `0.94rem` |
+| `--text-75` | `0.75rem` | `--text-95` | `0.95rem` |
+| `--text-78` | `0.78rem` | `--text-96` | `0.96rem` |
+| `--text-80` | `0.8rem` | `--text-98` | `0.98rem` |
+| `--text-82` | `0.82rem` | `--text-100` | `1rem` |
+| `--text-85` | `0.85rem` | `--text-105` | `1.05rem` (also `--text-h4`) |
+| `--text-88` | `0.88rem` | `--text-110` | `1.1rem` |
+| `--text-90` | `0.9rem` | | |
+
+### Colours
+
+Base palette:
+
+| Variable | Value | Used for |
+|---|---|---|
+| `--ink` | `#16181b` | Primary text, dark section/footer backgrounds |
+| `--ink-soft` | `#4c5258` | Secondary/body text |
+| `--ink-faint` | `#585e64` | Tertiary text (tagline, hints, breadcrumbs) |
+| `--paper` | `#ffffff` | Page background, card/input backgrounds |
+| `--paper-soft` | `#f6f7f8` | Alternating section backgrounds |
+| `--paper-tint` | `#fbf4f2` | Hero/page-hero background tint |
+| `--line` | `#e7e9eb` | Borders, dividers |
+| `--line-soft` | `#f0f1f2` | Lighter borders (mobile nav) |
+| `--red` | `#d6291e` | **The one accent colour** — buttons, links, icons, focus outline |
+| `--red-dark` | `#a91f16` | Accent hover state |
+| `--red-tint` | `#fdeceb` | Accent background tint (badges, focus ring, error background) |
+| `--ink-invert` | `#ffffff` | White text/icons placed on dark or red backgrounds |
+| `--black` | `#000000` | `.btn--dark` hover background |
+
+White overlays & text-on-dark (translucent white, used on dark backgrounds):
+
+| Variable | Value | Used for |
+|---|---|---|
+| `--overlay-header` | `rgba(255,255,255,0.92)` | Sticky header background |
+| `--overlay-badge` | `rgba(255,255,255,0.96)` | Hero visual badge background |
+| `--overlay-border` | `rgba(255,255,255,0.4)` | Outline button border, on dark backgrounds |
+| `--overlay-texture` | `rgba(255,255,255,0.06)` | Photo-placeholder diagonal texture |
+| `--overlay-icon-dark` | `rgba(255,255,255,0.08)` | Icon badge background on dark sections |
+| `--text-on-dark` | `rgba(255,255,255,0.85)` | Footer base text colour |
+| `--text-on-dark-soft` | `rgba(255,255,255,0.75)` | CTA banner paragraph, footer-bottom link |
+| `--text-on-dark-muted` | `rgba(255,255,255,0.68)` | Footer column links |
+| `--text-on-dark-faint` | `rgba(255,255,255,0.62)` | Footer paragraph |
+| `--text-on-dark-faintest` | `rgba(255,255,255,0.55)` | Photo-placeholder caption, footer copyright text |
+| `--border-on-dark` | `rgba(255,255,255,0.12)` | Footer-bottom top border |
+
+Shadows & glows:
+
+| Variable | Value | Used for |
+|---|---|---|
+| `--shadow-sm` | `0 2px 10px -4px rgba(22,24,27,0.12)` | Small lift (skip link etc.) |
+| `--shadow` | `0 16px 40px -18px rgba(22,24,27,0.28)` | Cards, dropdowns, form card on hover/default |
+| `--shadow-lg` | `0 26px 60px -20px rgba(22,24,27,0.32)` | Hero visual |
+| `--shadow-mobile-bar` | `0 -8px 24px -12px rgba(0,0,0,0.18)` | Sticky mobile call bar |
+| `--glow-red` | `rgba(214,41,30,0.55)` | Primary button shadow |
+| `--glow-red-strong` | `rgba(214,41,30,0.6)` | Primary button hover shadow |
+
+Component-specific:
+
+| Variable | Value | Used for |
+|---|---|---|
+| `--success-bg` / `--success-text` / `--success-border` | `#ecf8f0` / `#1f6b3a` / `#cdeed8` | Form success message |
+| `--error-border` | `#f8d3d0` | Form error message border (bg/text reuse `--red-tint`/`--red-dark`) |
+| `--draft-bg` / `--draft-border` / `--draft-text` / `--draft-icon` | `#fff8e6` / `#f3e2ad` / `#7a5a00` / `#a97c00` | The `[DRAFT – REVIEW]` notice on Pest Library pages |
+| `--eyebrow-on-dark` | `#ff9a90` | Section eyebrow label on dark (`.section--ink`) backgrounds |
+| `--placeholder-gradient-start` | `#2a2d31` | Photo-placeholder background gradient (paired with `--ink`) |
+
+### Spacing
+
+Fixed scale (used for padding, margin, and gap):
+
+| Variable | Value | Variable | Value | Variable | Value |
+|---|---|---|---|---|---|
+| `--space-10` | `0.1rem` | `--space-75` | `0.75rem` | `--space-150` | `1.5rem` |
+| `--space-15` | `0.15rem` | `--space-80` | `0.8rem` | `--space-160` | `1.6rem` |
+| `--space-25` | `0.25rem` | `--space-85` | `0.85rem` | `--space-175` | `1.75rem` |
+| `--space-30` | `0.3rem` | `--space-90` | `0.9rem` | `--space-190` | `1.9rem` |
+| `--space-35` | `0.35rem` | `--space-95` | `0.95rem` | `--space-200` | `2rem` |
+| `--space-40` | `0.4rem` | `--space-100` | `1rem` | `--space-225` | `2.25rem` |
+| `--space-45` | `0.45rem` | `--space-110` | `1.1rem` | `--space-250` | `2.5rem` |
+| `--space-50` | `0.5rem` | `--space-115` | `1.15rem` | | |
+| `--space-55` | `0.55rem` | `--space-120` | `1.2rem` | | |
+| `--space-60` | `0.6rem` | `--space-125` | `1.25rem` | | |
+| `--space-65` | `0.65rem` | `--space-130` | `1.3rem` | | |
+| `--space-70` | `0.7rem` | `--space-140` | `1.4rem` | `--space-300` | `3rem` |
+
+Responsive (section and component padding/gaps that scale with viewport width):
+
+| Variable | Value | Used for |
+|---|---|---|
+| `--space-section` | `clamp(3.5rem, 7vw, 6rem)` | Standard section top/bottom padding |
+| `--space-section-tight` | `clamp(2.5rem, 5vw, 4rem)` | `.section--tight` padding |
+| `--space-section-head` | `clamp(2rem, 4vw, 3rem)` | Space below a section heading block |
+| `--space-hero` | `clamp(2.75rem, 7vw, 5.5rem)` | Homepage hero padding |
+| `--space-page-hero` | `clamp(2.75rem, 6vw, 4rem)` | Inner-page hero padding |
+| `--space-footer-top` | `clamp(3rem, 6vw, 4.5rem)` | Footer top padding |
+| `--space-cta-banner` | `clamp(2rem, 5vw, 3.25rem)` | CTA banner padding |
+| `--space-form-card` | `clamp(1.5rem, 4vw, 2.5rem)` | Quote form card padding |
+| `--gap-grid` | `clamp(1.25rem, 2.5vw, 2rem)` | Default grid gap |
+| `--gap-steps` | `clamp(1.5rem, 3vw, 2.5rem)` | 3-step process grid gap |
+| `--gap-split` | `clamp(2rem, 5vw, 4rem)` | Two-column split section gap |
+| `--gutter` | `clamp(1.25rem, 4vw, 2.5rem)` | Page side margins (`.container`) |
+
+### Other tokens (layout & shape)
+
+These aren't fonts, sizes, colours, or spacing, but live in `variables.css` alongside them since they were already variables before this change:
+
+| Variable | Value | Used for |
+|---|---|---|
+| `--radius-sm` / `--radius` / `--radius-lg` | `8px` / `14px` / `22px` | Corner rounding, small to large |
+| `--container` / `--container-narrow` | `1200px` / `820px` | Max page width |
+| `--header-h` | `76px` | Sticky header height |
+
+**Not tokenized:** a handful of one-off, structural values (e.g. the skip-link's off-screen `-3rem`, the honeypot field's `-9999px`, the `74px` mobile-call-bar body offset, small decorative pixel sizes like icon widths/heights and underline thickness) are implementation details rather than design choices, and were left as plain values to avoid any risk of changing layout behaviour.
 
 ## The quote form (Netlify Forms)
 

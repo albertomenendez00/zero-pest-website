@@ -1,0 +1,156 @@
+/* ==========================================================================
+   Zero Pest Control — Design Tokens
+   ==========================================================================
+   Every font, font size, colour, and spacing value used in style.css lives
+   here. Change a value in this file and it updates everywhere that value
+   is used across the whole site. See README.md for a full description of
+   what each token controls.
+   ========================================================================== */
+
+:root {
+  /* ---- Fonts (font-family) ---- */
+  --font-display: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* ---- Font weights ---- */
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* ---- Font sizes: responsive headings & lede ---- */
+  --text-h1: clamp(2.1rem, 4.6vw, 3.4rem);
+  --text-h2: clamp(1.6rem, 3.2vw, 2.35rem);
+  --text-h3: clamp(1.15rem, 1.8vw, 1.4rem);
+  --text-h4: 1.05rem;
+  --text-lede: clamp(1.05rem, 1.6vw, 1.2rem);
+
+  /* ---- Font sizes: fixed scale ----
+     Named by value (rem * 100) since the original site uses many closely
+     tuned sizes rather than a small handful of steps. */
+  --text-base: 16px;
+  --text-62: 0.62rem;
+  --text-75: 0.75rem;
+  --text-78: 0.78rem;
+  --text-80: 0.8rem;
+  --text-82: 0.82rem;
+  --text-85: 0.85rem;
+  --text-88: 0.88rem;
+  --text-90: 0.9rem;
+  --text-92: 0.92rem;
+  --text-94: 0.94rem;
+  --text-95: 0.95rem;
+  --text-96: 0.96rem;
+  --text-98: 0.98rem;
+  --text-100: 1rem;
+  --text-105: 1.05rem;
+  --text-110: 1.1rem;
+
+  /* ---- Colours: base palette ---- */
+  --ink: #16181b;
+  --ink-soft: #4c5258;
+  --ink-faint: #585e64;
+  --paper: #ffffff;
+  --paper-soft: #f6f7f8;
+  --paper-tint: #fbf4f2;
+  --line: #e7e9eb;
+  --line-soft: #f0f1f2;
+  --red: #d6291e;
+  --red-dark: #a91f16;
+  --red-tint: #fdeceb;
+  --ink-invert: #ffffff; /* white text/icons placed on dark or red backgrounds */
+  --black: #000000;
+
+  /* ---- Colours: white overlays & text-on-dark scale ----
+     All the translucent-white values used on dark backgrounds (header,
+     footer, hero visual, cta banners). */
+  --overlay-header: rgba(255, 255, 255, 0.92);
+  --overlay-badge: rgba(255, 255, 255, 0.96);
+  --overlay-border: rgba(255, 255, 255, 0.4);
+  --overlay-texture: rgba(255, 255, 255, 0.06);
+  --overlay-icon-dark: rgba(255, 255, 255, 0.08);
+  --text-on-dark: rgba(255, 255, 255, 0.85);
+  --text-on-dark-soft: rgba(255, 255, 255, 0.75);
+  --text-on-dark-muted: rgba(255, 255, 255, 0.68);
+  --text-on-dark-faint: rgba(255, 255, 255, 0.62);
+  --text-on-dark-faintest: rgba(255, 255, 255, 0.55);
+  --border-on-dark: rgba(255, 255, 255, 0.12);
+
+  /* ---- Colours: shadows & glows ---- */
+  --shadow-sm: 0 2px 10px -4px rgba(22, 24, 27, 0.12);
+  --shadow: 0 16px 40px -18px rgba(22, 24, 27, 0.28);
+  --shadow-lg: 0 26px 60px -20px rgba(22, 24, 27, 0.32);
+  --shadow-mobile-bar: 0 -8px 24px -12px rgba(0, 0, 0, 0.18);
+  --glow-red: rgba(214, 41, 30, 0.55);
+  --glow-red-strong: rgba(214, 41, 30, 0.6);
+
+  /* ---- Colours: component-specific ---- */
+  --success-bg: #ecf8f0;
+  --success-text: #1f6b3a;
+  --success-border: #cdeed8;
+  --error-border: #f8d3d0;
+  --draft-bg: #fff8e6;
+  --draft-border: #f3e2ad;
+  --draft-text: #7a5a00;
+  --draft-icon: #a97c00;
+  --eyebrow-on-dark: #ff9a90;
+  --placeholder-gradient-start: #2a2d31;
+
+  /* ---- Spacing: fixed scale ----
+     Named by value (rem * 100) for the same reason as the font-size scale
+     above — the original design uses many closely tuned values. */
+  --space-10: 0.1rem;
+  --space-15: 0.15rem;
+  --space-25: 0.25rem;
+  --space-30: 0.3rem;
+  --space-35: 0.35rem;
+  --space-40: 0.4rem;
+  --space-45: 0.45rem;
+  --space-50: 0.5rem;
+  --space-55: 0.55rem;
+  --space-60: 0.6rem;
+  --space-65: 0.65rem;
+  --space-70: 0.7rem;
+  --space-75: 0.75rem;
+  --space-80: 0.8rem;
+  --space-85: 0.85rem;
+  --space-90: 0.9rem;
+  --space-95: 0.95rem;
+  --space-100: 1rem;
+  --space-110: 1.1rem;
+  --space-115: 1.15rem;
+  --space-120: 1.2rem;
+  --space-125: 1.25rem;
+  --space-130: 1.3rem;
+  --space-140: 1.4rem;
+  --space-150: 1.5rem;
+  --space-160: 1.6rem;
+  --space-175: 1.75rem;
+  --space-190: 1.9rem;
+  --space-200: 2rem;
+  --space-225: 2.25rem;
+  --space-250: 2.5rem;
+  --space-300: 3rem;
+
+  /* ---- Spacing: responsive (section/component padding & gaps) ---- */
+  --space-section: clamp(3.5rem, 7vw, 6rem);
+  --space-section-tight: clamp(2.5rem, 5vw, 4rem);
+  --space-section-head: clamp(2rem, 4vw, 3rem);
+  --space-hero: clamp(2.75rem, 7vw, 5.5rem);
+  --space-page-hero: clamp(2.75rem, 6vw, 4rem);
+  --space-footer-top: clamp(3rem, 6vw, 4.5rem);
+  --space-cta-banner: clamp(2rem, 5vw, 3.25rem);
+  --space-form-card: clamp(1.5rem, 4vw, 2.5rem);
+  --gap-grid: clamp(1.25rem, 2.5vw, 2rem);
+  --gap-steps: clamp(1.5rem, 3vw, 2.5rem);
+  --gap-split: clamp(2rem, 5vw, 4rem);
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  /* ---- Layout & shape (unchanged from before; kept here alongside the rest) ---- */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --container: 1200px;
+  --container-narrow: 820px;
+  --header-h: 76px;
+}
