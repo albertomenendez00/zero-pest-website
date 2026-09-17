@@ -304,14 +304,36 @@ body.nav-open { overflow: hidden; }
 
 .service-card { display: flex; flex-direction: column; }
 
-/* ---- Compact link-cards (e.g. "For Your Home" / "For Your Business") ----
-   The whole card is a single <a>; the "button" inside is a non-interactive
-   span styled like .btn so there's no invalid nested <a>/<button>. */
-.card--compact { padding: var(--space-150); }
+/* ---- Compact nav-cards (e.g. "For Your Home" / "For Your Business") ----
+   The whole card is a single <a>; the link row at the bottom is a
+   non-interactive span (not a nested <a>/<button>) styled as plain text,
+   so these read as navigation rather than a second call to action. Equal
+   padding on all sides, and a flex column with the link row pushed to the
+   bottom (margin-top: auto) so both cards line up at the same height and
+   the link row sits flush with the bottom regardless of description length. */
+.card--compact {
+  display: flex; flex-direction: column; align-items: flex-start;
+  padding: var(--space-150);
+}
 .card--compact .icon-badge { margin-bottom: var(--space-75); }
 .card--compact h2 { font-size: var(--text-h3); margin-bottom: var(--space-45); }
-.card-cta { margin-top: var(--space-100); pointer-events: none; }
-.card-cta svg { width: 16px; height: 16px; }
+.card.card--compact:hover {
+  border-color: var(--red);
+  /* Restated with extra specificity: once .reveal has added is-visible,
+     .reveal.is-visible's translateY(0) is equal-specificity to and later
+     in the stylesheet than the base .card:hover lift, so it would
+     otherwise silently cancel the hover lift. */
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.nav-link-row {
+  display: inline-flex; align-items: center; gap: var(--space-35);
+  color: var(--red); font-weight: var(--fw-bold); font-size: var(--text-90);
+  margin-top: auto; padding-top: var(--space-100);
+}
+.nav-link-row svg { width: 18px; height: 18px; stroke: var(--red); flex-shrink: 0; transition: transform 0.2s ease; }
+.card--compact:hover .nav-link-row svg { transform: translateX(4px); }
 
 /* ---- Process steps ---- */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-steps); counter-reset: step; }
