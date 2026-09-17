@@ -240,9 +240,12 @@ body.nav-open { overflow: hidden; }
 .hero h1 { margin-bottom: var(--space-110); }
 .hero .lede { margin-bottom: var(--space-175); max-width: 46ch; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: var(--space-90); margin-bottom: var(--space-225); }
-.hero-trust { display: flex; flex-wrap: wrap; gap: var(--space-150) var(--space-200); }
-.hero-trust-item { display: flex; align-items: center; gap: var(--space-55); font-weight: var(--fw-bold); font-size: var(--text-88); color: var(--ink-soft); }
-.hero-trust-item svg { width: 22px; height: 22px; stroke: var(--red); flex-shrink: 0; }
+.hero-ctas--tight { margin-bottom: var(--space-150); }
+.hero-service-areas {
+  display: flex; align-items: flex-start; gap: var(--space-40);
+  color: var(--ink-faint); font-size: var(--text-85);
+}
+.hero-service-areas svg { width: 16px; height: 16px; stroke: var(--ink-faint); flex-shrink: 0; margin-top: var(--space-10); }
 
 .hero-visual {
   position: relative; aspect-ratio: 4/3.2; border-radius: var(--radius-lg);
