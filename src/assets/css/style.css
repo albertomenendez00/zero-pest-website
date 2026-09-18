@@ -340,11 +340,11 @@ body.nav-open { overflow: hidden; }
 }
 
 .nav-link-row {
-  display: inline-flex; align-items: center; gap: var(--space-35);
-  color: var(--red); font-weight: var(--fw-bold); font-size: var(--text-90);
-  margin-top: auto; padding-top: var(--space-100);
+  display: inline-flex; align-items: center; gap: var(--space-50);
+  color: var(--red); font-weight: var(--fw-semibold); font-size: var(--text-95);
+  margin-top: auto; padding-top: var(--space-125);
 }
-.nav-link-row svg { width: 16px; height: 16px; stroke: var(--red); flex-shrink: 0; transition: transform 0.2s ease; }
+.nav-link-row svg { width: 16px; height: 16px; stroke: currentColor; fill: none; flex-shrink: 0; transition: transform 0.2s ease; }
 .card--compact:hover .nav-link-row svg { transform: translateX(4px); }
 
 /* ---- Process steps ---- */
