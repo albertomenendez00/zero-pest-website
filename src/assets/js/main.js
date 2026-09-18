@@ -9,6 +9,7 @@
       var isOpen = mobileNav.classList.toggle("is-open");
       document.body.classList.toggle("nav-open", isOpen);
       toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
     });
 
     mobileNav.querySelectorAll("a").forEach(function (link) {
@@ -16,6 +17,7 @@
         mobileNav.classList.remove("is-open");
         document.body.classList.remove("nav-open");
         toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
       });
     });
   }

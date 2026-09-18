@@ -153,6 +153,13 @@ p { color: var(--ink-soft); }
 .btn--block { width: 100%; }
 .btn--sm { padding: var(--space-65) var(--space-115); font-size: var(--text-88); }
 
+/* On the narrowest phones a long button label (e.g. "Get Your Custom
+   Protection Plan") can be wider than the screen itself; let it wrap
+   instead of forcing horizontal overflow. */
+@media (max-width: 480px) {
+  .btn { white-space: normal; text-align: center; }
+}
+
 /* ---- Header ---- */
 .site-header {
   position: sticky; top: 0; z-index: 100;
@@ -201,9 +208,18 @@ p { color: var(--ink-soft); }
 .tap-to-call svg { width: 18px; height: 18px; stroke: var(--red); flex-shrink: 0; }
 
 .nav-toggle {
-  display: none; background: none; border: none; padding: var(--space-40); margin-left: var(--space-25);
+  display: none; align-items: center; justify-content: center;
+  width: 44px; height: 44px; flex-shrink: 0;
+  background: var(--paper); border: 2px solid var(--line); border-radius: 999px; margin-left: var(--space-25);
+  transition: border-color 0.18s ease, background-color 0.18s ease;
 }
-.nav-toggle svg { width: 26px; height: 26px; }
+.nav-toggle svg { width: 22px; height: 22px; stroke: var(--ink); }
+.nav-toggle:hover { border-color: var(--red); }
+.nav-toggle-icon--close { display: none; }
+.nav-toggle[aria-expanded="true"] { background: var(--ink); border-color: var(--ink); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon--open { display: none; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon--close { display: flex; }
+.nav-toggle[aria-expanded="true"] svg { stroke: var(--ink-invert); }
 
 .header-actions .btn--primary .short { display: none; }
 
@@ -214,8 +230,17 @@ p { color: var(--ink-soft); }
   .header-actions .btn--primary .long { display: none; }
   .header-actions .btn--primary .short { display: inline; }
 }
-@media (max-width: 520px) {
-  .tap-to-call span { display: none; }
+/* Below this width the fixed mobile-call-bar already offers Call Now /
+   Free Quote, so the header keeps only the brand and menu button —
+   avoids duplicate actions competing for the same cramped row. */
+@media (max-width: 720px) {
+  .tap-to-call, .header-actions .btn--primary { display: none; }
+}
+/* Narrow phones: drop the brand subtitle so the logo + wordmark never
+   competes with the menu button for space (root cause of the header
+   overflowing the viewport and forcing users to pinch-zoom out). */
+@media (max-width: 480px) {
+  .brand-text span { display: none; }
 }
 
 .mobile-nav {
