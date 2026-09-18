@@ -304,8 +304,7 @@ body.nav-open { overflow: hidden; }
 .card .icon-badge { margin-bottom: var(--space-110); }
 .card h3 { margin-bottom: var(--space-50); }
 .card p { font-size: var(--text-95); margin-bottom: 0; }
-.card .card-link { display: inline-flex; align-items: center; gap: var(--space-35); margin-top: var(--space-90); font-weight: var(--fw-bold); color: var(--red); font-size: var(--text-90); }
-.card-link svg { width: 16px; height: 16px; stroke: var(--red); flex-shrink: 0; }
+.card a.card-link { display: inline-flex; align-items: center; gap: var(--space-35); margin-top: var(--space-90); font-weight: var(--fw-bold); color: var(--red); font-size: var(--text-90); }
 
 .icon-badge {
   width: 54px; height: 54px; border-radius: 14px; background: var(--red-tint);
