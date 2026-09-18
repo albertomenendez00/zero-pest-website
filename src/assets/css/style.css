@@ -151,7 +151,7 @@ p { color: var(--ink-soft); }
 .btn--ghost:hover { color: var(--red-dark); }
 
 .btn--block { width: 100%; }
-.btn--sm { padding: var(--space-65) var(--space-115); font-size: var(--text-88); }
+.btn--sm { padding: var(--space-80) var(--space-115); font-size: var(--text-88); }
 
 /* On the narrowest phones a long button label (e.g. "Get Your Custom
    Protection Plan") can be wider than the screen itself; let it wrap
