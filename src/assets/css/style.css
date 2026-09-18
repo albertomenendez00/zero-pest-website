@@ -394,6 +394,8 @@ body.nav-open { overflow: hidden; }
   justify-content: space-between; gap: var(--space-175);
 }
 .cta-banner h2 { color: var(--ink-invert); margin-bottom: var(--space-50); }
+.cta-banner--eyebrow .section-eyebrow { margin-bottom: var(--space-125); }
+.cta-banner--eyebrow h2 { margin-bottom: var(--space-100); }
 .cta-banner p { color: var(--text-on-dark-soft); margin-bottom: 0; max-width: 46ch; }
 .cta-banner-actions { display: flex; flex-wrap: wrap; gap: var(--space-85); }
 
