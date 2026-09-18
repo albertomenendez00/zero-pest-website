@@ -248,7 +248,7 @@ p { color: var(--ink-soft); }
   overflow-y: auto; padding: var(--space-150) var(--gutter) var(--space-300);
 }
 .mobile-nav.is-open { display: block; }
-.mobile-nav a {
+.mobile-nav > a {
   display: block; padding: var(--space-90) 0; font-weight: var(--fw-semibold); font-size: var(--text-110);
   border-bottom: 1px solid var(--line-soft);
 }
