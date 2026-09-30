@@ -312,10 +312,13 @@ body.nav-open { overflow: hidden; }
   color: var(--ink-faint); font-size: var(--text-85);
 }
 
+/* The card is not overflow:hidden so the award badge can hang off its
+   corner; the photo, placeholder and overlay round their own corners. */
 .hero-visual {
   position: relative; aspect-ratio: 4/3.2; border-radius: var(--radius-lg);
-  background: var(--ink); overflow: hidden; box-shadow: var(--shadow-lg);
+  background: var(--ink); box-shadow: var(--shadow-lg);
 }
+.hero-visual .photo-placeholder, .hero-visual .hero-photo { border-radius: var(--radius-lg); }
 .hero-visual .photo-placeholder { position: absolute; inset: 0; }
 /* Real hero photo: fills the card, framed on the technician's face and
    the logo on his suit (the badge overlaps the lower part). */
@@ -345,18 +348,28 @@ body.nav-open { overflow: hidden; }
   box-shadow: inset 0 0 0 1px var(--photo-edge);
 }
 .hero-visual .visual-badge { z-index: 1; }
-/* Award badge: white card pinned to the photo's top-right corner, same
-   inset as the Licensed & Insured card at the bottom so the two frame
-   the photo symmetrically. */
+/* Award badge: a white "seal" card hanging off the photo's top-right
+   corner — only its lower-left part overlaps the photo. It sticks out
+   upward into the hero's top padding and sideways into the page gutter
+   (never past it, so there's no sideways scrolling). */
 .award-badge {
-  position: absolute; top: var(--space-125); right: var(--space-125); z-index: 1;
-  width: clamp(150px, 38%, 210px);
-  background: var(--paper); border-radius: var(--radius); padding: var(--space-50);
-  box-shadow: var(--shadow);
+  --award-out-x: calc(var(--gutter) * 0.6);
+  position: absolute; top: 0; right: 0; z-index: 2;
+  width: clamp(170px, 40%, 236px);
+  transform: translate(var(--award-out-x), -42%);
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: var(--space-50);
+  box-shadow: var(--shadow-lg);
 }
 .award-badge img { display: block; width: 100%; height: auto; border-radius: var(--radius-sm); }
+/* Stacked layout: the photo sits at the top of the hero, so give the
+   hanging badge room below the header. */
+@media (max-width: 900px) {
+  .hero-visual { margin-top: var(--space-150); }
+  .award-badge { width: clamp(150px, 30%, 210px); }
+}
 @media (max-width: 560px) {
-  .award-badge { top: var(--space-75); right: var(--space-75); width: 36%; padding: var(--space-35); }
+  .award-badge { width: 44%; padding: var(--space-35); transform: translate(var(--award-out-x), -36%); }
 }
 .hero-visual .visual-badge {
   position: absolute; left: var(--space-125); bottom: var(--space-125); right: var(--space-125);
