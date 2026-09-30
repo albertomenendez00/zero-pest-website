@@ -3,6 +3,8 @@
 {
   "name": "zero-pest-website",
   "compatibility_date": "2026-09-01",
+  // Keep the free zero-pest-website.<account>.workers.dev preview link on
+  "workers_dev": true,
   "assets": {
     // Eleventy builds the finished site into _site/
     "directory": "./_site",
