@@ -1,6 +1,6 @@
 ---
 title: "Wasp & Hornet Nest Removal in Sudbury & Northern Ontario | Zero Pest Control"
-description: "Fast, safe wasp and hornet nest removal for homes and businesses in Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie."
+description: "Fast, safe wasp and hornet nest removal for homes and businesses in Sudbury, Espanola, Elliot Lake, Blind River, and Manitoulin."
 order: 4
 pestName: "Wasps & Hornets"
 cardTitle: "Wasp & Hornet Removal"

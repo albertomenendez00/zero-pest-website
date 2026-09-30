@@ -1,6 +1,6 @@
 ---
 title: "Spider Control in Sudbury & Northern Ontario | Zero Pest Control"
-description: "Reduce spiders, webs, and egg sacs with targeted spider control for homes and businesses in Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie."
+description: "Reduce spiders, webs, and egg sacs with targeted spider control for homes and businesses in Sudbury, Espanola, Elliot Lake, Blind River, and Manitoulin."
 order: 6
 pestName: "Spiders"
 cardTitle: "Spider Control"

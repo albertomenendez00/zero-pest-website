@@ -1,6 +1,6 @@
 ---
 title: "Bed Bug Treatment in Sudbury & Northern Ontario | Zero Pest Control"
-description: "Discreet, professional bed bug treatment for homes, apartments, rentals, and hotels across Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie."
+description: "Discreet, professional bed bug treatment for homes, apartments, rentals, and hotels across Sudbury, Espanola, Elliot Lake, Blind River, and Manitoulin."
 order: 2
 pestName: "Bed Bugs"
 cardTitle: "Bed Bug Treatment"

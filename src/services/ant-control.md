@@ -1,6 +1,6 @@
 ---
 title: "Ant Control in Sudbury & Northern Ontario | Zero Pest Control"
-description: "Targeted ant control and colony treatment for homes and businesses in Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie."
+description: "Targeted ant control and colony treatment for homes and businesses in Sudbury, Espanola, Elliot Lake, Blind River, and Manitoulin."
 order: 3
 pestName: "Ants"
 cardTitle: "Ant Control"

@@ -526,9 +526,12 @@ body.nav-open { overflow: hidden; }
 .cta-banner-actions { display: flex; flex-wrap: wrap; gap: var(--space-85); }
 
 /* ---- Area chips ---- */
-.area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-100); }
-@media (max-width: 780px) { .area-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .area-grid { grid-template-columns: 1fr; } }
+/* Flex rather than grid so an incomplete last row is centred (e.g. five
+   areas show as 3 + 2) instead of leaving a gap on the right. */
+.area-grid { --area-cols: 3; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-100); }
+.area-grid > * { flex: 0 0 calc((100% - (var(--area-cols) - 1) * var(--space-100)) / var(--area-cols)); }
+@media (max-width: 780px) { .area-grid { --area-cols: 2; } }
+@media (max-width: 480px) { .area-grid { --area-cols: 1; } }
 .area-chip {
   display: flex; align-items: center; gap: var(--space-75); background: var(--paper); border: 1px solid var(--line);
   border-radius: var(--radius); padding: var(--space-110) var(--space-125); font-weight: var(--fw-bold);

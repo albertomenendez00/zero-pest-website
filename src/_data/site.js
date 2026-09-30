@@ -3,7 +3,7 @@ module.exports = {
   shortName: "Zero Pest Control",
   tagline: "Fast, Local Pest Control in Sudbury & Northern Ontario",
   description:
-    "Licensed, insured pest control for homes and businesses across Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin, and Sault Ste. Marie.",
+    "Licensed, insured pest control for homes and businesses across Sudbury, Espanola, Elliot Lake, Blind River, and Manitoulin.",
   url: "https://zeropestcontrol.ca",
   phone: "(705) 980-2006",
   phoneHref: "+17059802006",
@@ -28,7 +28,6 @@ module.exports = {
     { name: "Elliot Lake", slug: "elliot-lake" },
     { name: "Blind River", slug: "blind-river" },
     { name: "Manitoulin Island", slug: "manitoulin-island" },
-    { name: "Sault Ste. Marie", slug: "sault-ste-marie" },
   ],
   social: {
     // [ADD: Facebook / Google Business Profile / Instagram links, if any]
