@@ -95,6 +95,10 @@
   --draft-icon: #a97c00;
   --eyebrow-on-dark: #ff9a90;
   --placeholder-gradient-start: #2a2d31;
+  --photo-shade-strong: rgba(22,24,27,0.72);
+  --photo-shade-soft: rgba(22,24,27,0.22);
+  --photo-tint-red: rgba(214,41,30,0.34);
+  --photo-edge: rgba(255,255,255,0.10);
 
   /* ---- Spacing: fixed scale ----
      Named by value (rem * 100) for the same reason as the font-size scale

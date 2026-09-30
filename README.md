@@ -180,6 +180,9 @@ Component-specific:
 | `--draft-bg` / `--draft-border` / `--draft-text` / `--draft-icon` | `#fff8e6` / `#f3e2ad` / `#7a5a00` / `#a97c00` | The `[DRAFT – REVIEW]` notice on Pest Library pages |
 | `--eyebrow-on-dark` | `#ff9a90` | Section eyebrow label on dark (`.section--ink`) backgrounds |
 | `--placeholder-gradient-start` | `#2a2d31` | Photo-placeholder background gradient (paired with `--ink`) |
+| `--photo-shade-strong` / `--photo-shade-soft` | `rgba(22,24,27,0.72)` / `rgba(22,24,27,0.22)` | Dark fade over the bottom of the hero photo |
+| `--photo-tint-red` | `rgba(214,41,30,0.34)` | Brand-red wash across the top corner of the hero photo |
+| `--photo-edge` | `rgba(255,255,255,0.10)` | Thin inner edge highlight around the hero photo |
 
 ### Spacing
 
