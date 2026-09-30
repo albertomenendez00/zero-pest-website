@@ -75,7 +75,7 @@ permalink: /residential/
       <p class="section-eyebrow" style="justify-content:center;">How It Works</p>
       <h2>Our Simple Residential Service Process</h2>
     </div>
-    <div class="grid grid--4">
+    <div class="grid grid--4 grid--aligned">
       {% set steps4 = [
         { title: "1. Inspection", text: "We identify the pest, level of activity, hiding spots, and entry points." },
         { title: "2. Treatment Plan", text: "You receive a clear plan based on your home and the type of pest." },
@@ -84,7 +84,7 @@ permalink: /residential/
       ] %}
       {% for s in steps4 %}
       <div class="card reveal">
-        <h3 style="font-size:1.05rem;">{{ s.title }}</h3>
+        <h3 style="font-size:1.05rem;">{{ s.title | escape | replace("Follow-Up", '<span class="fw-nowrap">Follow-Up</span>') | safe }}</h3>
         <p>{{ s.text }}</p>
       </div>
       {% endfor %}

@@ -425,6 +425,12 @@ body.nav-open { overflow: hidden; }
 .card .icon-badge { margin-bottom: var(--space-110); }
 .card h3 { margin-bottom: var(--space-50); }
 .card p { font-size: var(--text-95); margin-bottom: 0; }
+/* Aligned cards: every card in a row shares the same title height, so the
+   body text starts on the same line even when one title wraps to two
+   lines. Uses CSS subgrid (each card = title row + text row). */
+@supports (grid-template-rows: subgrid) {
+  .grid--aligned > .card { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; }
+}
 .card a.card-link { display: inline-flex; align-items: center; gap: var(--space-35); margin-top: var(--space-90); font-weight: var(--fw-bold); color: var(--red); font-size: var(--text-90); }
 
 .icon-badge {
