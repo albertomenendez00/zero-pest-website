@@ -345,6 +345,19 @@ body.nav-open { overflow: hidden; }
   box-shadow: inset 0 0 0 1px var(--photo-edge);
 }
 .hero-visual .visual-badge { z-index: 1; }
+/* Award badge: white card pinned to the photo's top-right corner, same
+   inset as the Licensed & Insured card at the bottom so the two frame
+   the photo symmetrically. */
+.award-badge {
+  position: absolute; top: var(--space-125); right: var(--space-125); z-index: 1;
+  width: clamp(150px, 38%, 210px);
+  background: var(--paper); border-radius: var(--radius); padding: var(--space-50);
+  box-shadow: var(--shadow);
+}
+.award-badge img { display: block; width: 100%; height: auto; border-radius: var(--radius-sm); }
+@media (max-width: 560px) {
+  .award-badge { top: var(--space-75); right: var(--space-75); width: 36%; padding: var(--space-35); }
+}
 .hero-visual .visual-badge {
   position: absolute; left: var(--space-125); bottom: var(--space-125); right: var(--space-125);
   background: var(--overlay-badge); border-radius: var(--radius); padding: var(--space-100) var(--space-115);
