@@ -3,9 +3,9 @@ layout: layouts/base.njk
 ---
 {% from "partials/icons.njk" import icon %}
 
-<section class="hero">
-  <div class="container">
-    <div class="reveal is-visible" style="max-width:760px;">
+<section class="hero hero--plan">
+  <div class="container{% if heroImage %} hero-grid{% endif %}">
+    <div class="reveal is-visible"{% if not heroImage %} style="max-width:760px;"{% endif %}>
       <div class="pill-row" style="margin-bottom:1.25rem;">
         {% for b in badges %}<span class="pill">{{ b }}</span>{% endfor %}
       </div>
@@ -16,6 +16,25 @@ layout: layouts/base.njk
         <a class="btn btn--outline" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
       </div>
     </div>
+    {% if heroImage %}
+    {# Optional hero photo. Front matter: heroImage: { name, alt, width, height, focus, badge: { icon, title, text } }
+       Expects src/assets/images/<name>-800.(webp|jpg) and <name>-1200.(webp|jpg). #}
+    <div class="hero-visual reveal is-visible">
+      <picture>
+        <source type="image/webp" srcset="/assets/images/{{ heroImage.name }}-800.webp 800w, /assets/images/{{ heroImage.name }}-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 560px">
+        <img class="hero-photo" src="/assets/images/{{ heroImage.name }}-1200.jpg" srcset="/assets/images/{{ heroImage.name }}-800.jpg 800w, /assets/images/{{ heroImage.name }}-1200.jpg 1200w" sizes="(max-width: 900px) 100vw, 560px" alt="{{ heroImage.alt }}" width="{{ heroImage.width or 1200 }}" height="{{ heroImage.height or 800 }}" fetchpriority="high"{% if heroImage.focus %} style="object-position: {{ heroImage.focus }};"{% endif %}>
+      </picture>
+      {% if heroImage.badge %}
+      <div class="visual-badge">
+        <div class="icon-badge">{{ icon(heroImage.badge.icon) }}</div>
+        <div>
+          <strong>{{ heroImage.badge.title }}</strong>
+          <span>{{ heroImage.badge.text }}</span>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
   </div>
 </section>
 

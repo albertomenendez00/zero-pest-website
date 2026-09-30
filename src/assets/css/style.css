@@ -319,6 +319,8 @@ body.nav-open { overflow: hidden; }
   background: var(--ink); box-shadow: var(--shadow-lg);
 }
 .hero-visual .photo-placeholder, .hero-visual .hero-photo { border-radius: var(--radius-lg); }
+/* Plan pages: balance long headings so no single word sits alone on the last line. */
+.hero--plan h1 { text-wrap: balance; }
 .hero-visual .photo-placeholder { position: absolute; inset: 0; }
 /* Real hero photo: fills the card, framed on the technician's face and
    the logo on his suit (the badge overlaps the lower part). */
