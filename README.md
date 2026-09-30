@@ -78,6 +78,10 @@ Same pattern, in `src/pest-library/`. Copy any file (e.g. `house-mouse.md`), ren
 
 **Every Pest Library entry currently on the site is marked `[DRAFT – REVIEW]`** — the original site's Pest Library posts had no content at all, so these were written from scratch using general, publicly known pest-identification facts. Please have a technician confirm each one is accurate before removing the draft notice (delete the `draft-notice` block in `src/_includes/layouts/pest.njk`'s usage, or simply leave individual entries as-is once reviewed — the notice is site-wide, so remove it from `layouts/pest.njk` once every entry has been checked).
 
+### Add a photo to a section
+
+Save web-sized copies of the photo in `src/assets/images/` (about 1200px and 800px wide, WebP plus JPG), then replace the section's `photo-placeholder` block with a `photo-frame` block, copying the one used for the homepage guarantee in `src/index.njk`. Every `photo-frame` automatically gets the site's brand overlay (red corner wash plus bottom fade). Adjust `style="--focus: 30% 40%;"` to choose which part of the photo stays in view when it's cropped: the first number moves the focus left or right, the second up or down.
+
 ### Change colours, fonts, spacing
 
 Every font, font size, colour, and spacing value used anywhere on the site is a CSS custom property defined in one file: **`src/assets/css/variables.css`**. `src/assets/css/style.css` (the actual page styling) only ever references these variables — it has no hardcoded fonts, sizes, colours, or spacing of its own. Change a value in `variables.css` and it updates everywhere that value is used across the whole site. See [Design tokens](#design-tokens) below for the full list.
