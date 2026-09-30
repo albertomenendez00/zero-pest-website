@@ -454,8 +454,37 @@ body.nav-open { overflow: hidden; }
   margin-bottom: var(--space-110); font-size: var(--text-105);
 }
 .section--ink .step-number { background: var(--red); }
+.section-head h2 { text-wrap: balance; }
 .step h3 { margin-bottom: var(--space-50); }
 .step p { font-size: var(--text-95); }
+/* Dashed connector from each step number to the next (side-by-side
+   layout only). The number's ring in the section background keeps the
+   line from touching the circle. */
+.step-number { position: relative; z-index: 1; box-shadow: 0 0 0 8px var(--paper); }
+.section--soft .step-number { box-shadow: 0 0 0 8px var(--paper-soft); }
+.section--ink .step-number { box-shadow: 0 0 0 8px var(--ink); }
+.step:not(:last-child)::after {
+  content: ""; position: absolute; top: calc(var(--space-25) + 21px);
+  left: 44px; right: calc(-1 * var(--gap-steps));
+  border-top: 2px dashed var(--step-connector);
+}
+.section--ink .step:not(:last-child)::after { border-top-color: var(--border-on-dark); }
+@media (max-width: 780px) { .step:not(:last-child)::after { display: none; } }
+
+/* Closing statement under the process steps: a quiet panel with a shield
+   icon so it reads as a promise, not a stray paragraph. */
+.process-promise {
+  display: flex; align-items: center; gap: var(--space-110);
+  max-width: 780px; margin: var(--space-section-head) auto 0;
+  padding: var(--space-110) var(--space-150);
+  background: var(--paper-soft); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.process-promise .icon-badge { flex-shrink: 0; }
+.process-promise p { margin: 0; font-size: var(--text-98); color: var(--ink-soft); }
+.process-promise strong { color: var(--ink); }
+@media (max-width: 560px) {
+  .process-promise { align-items: flex-start; padding: var(--space-110); gap: var(--space-90); }
+}
 
 /* ---- Bullet lists ---- */
 .check-list { display: grid; gap: var(--space-85); }

@@ -99,6 +99,7 @@
   --photo-shade-soft: rgba(22,24,27,0.22);
   --photo-tint-red: rgba(214,41,30,0.34);
   --photo-edge: rgba(255,255,255,0.10);
+  --step-connector: rgba(214,41,30,0.35);
 
   /* ---- Spacing: fixed scale ----
      Named by value (rem * 100) for the same reason as the font-size scale

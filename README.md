@@ -187,6 +187,7 @@ Component-specific:
 | `--photo-shade-strong` / `--photo-shade-soft` | `rgba(22,24,27,0.72)` / `rgba(22,24,27,0.22)` | Dark fade over the bottom of the hero photo |
 | `--photo-tint-red` | `rgba(214,41,30,0.34)` | Brand-red wash across the top corner of the hero photo |
 | `--photo-edge` | `rgba(255,255,255,0.10)` | Thin inner edge highlight around the hero photo |
+| `--step-connector` | `rgba(214,41,30,0.35)` | Dashed line joining the numbered process steps |
 
 ### Spacing
 
