@@ -696,6 +696,7 @@ body.nav-open { overflow: hidden; }
 .split-copy p + p { margin-top: var(--space-100); }
 .copy-closer { color: var(--ink); font-weight: var(--fw-semibold); }
 .split-copy > .btn { margin-top: var(--space-150); }
+.split-copy > .check-list { margin-top: var(--space-125); }
 
 /* ---- Content prose (privacy/terms) ---- */
 .prose { max-width: 74ch; }

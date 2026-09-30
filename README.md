@@ -267,7 +267,7 @@ The form on `/contact/` (`src/_includes/partials/quote-form.njk`) is wired for [
 
 Search the codebase for `[ADD:` and `[DRAFT` to find every spot flagged during this rebuild. As of this build, that includes:
 
-- **Photos.** No real photos of your team, vehicles, or completed jobs were available to include (the original site's stock photography wasn't something I could safely relicense for you, and no new photos were provided). Every hero/section image is currently a dark placeholder block. Replace `.photo-placeholder` `<div>` blocks in `src/index.njk`, `src/residential.njk`, and `src/commercial.njk` with real `<img>` tags once you have photos — drop image files into `src/assets/images/` and reference them.
+- **Photos.** All photo spots now use real photos (`photo-frame` blocks in `src/index.njk`, `src/residential.njk`, `src/commercial.njk` and `src/safety-compliance.njk`). See *Add a photo to a section* above to add more.
 - **Street address & postal code** — `src/_data/site.js` (`address` object), used in the SEO schema.
 - **Pest Library entries** — all 17 are marked `[DRAFT – REVIEW]`; written from general pest-identification knowledge since the originals were empty. Please have a technician verify accuracy.
 - **Honey bee removal policy** — `src/pest-library/honey-bees.md` flags that we don't know whether you offer live removal/relocation or refer out to a beekeeper.
