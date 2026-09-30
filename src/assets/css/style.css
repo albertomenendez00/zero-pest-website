@@ -518,6 +518,54 @@ body.nav-open { overflow: hidden; }
   .process-promise { align-items: flex-start; padding: var(--space-110); gap: var(--space-90); }
 }
 
+/* ---- Path chooser (plan pages): one split panel, urgent vs. planned ----
+   Left half is dark with the red call button for "I need help now";
+   right half is light with an outline button for long-term plans. An
+   "or" disc sits on the seam between them. */
+.path-panel {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+.path {
+  position: relative; display: flex; flex-direction: column; align-items: flex-start;
+  padding: var(--space-form-card) clamp(1.5rem, 4vw, 3rem);
+}
+.path h3 { margin-bottom: var(--space-50); text-wrap: balance; }
+.path p { margin-bottom: var(--space-150); }
+.path .btn { margin-top: auto; }
+.path .btn svg { width: 18px; height: 18px; }
+.path-head { display: flex; align-items: center; gap: var(--space-85); margin-bottom: var(--space-110); }
+.path-tag {
+  font-size: var(--text-75); font-weight: var(--fw-bold); letter-spacing: 0.12em; text-transform: uppercase;
+  padding: var(--space-30) var(--space-75); border-radius: 999px;
+}
+.path--urgent { background: var(--ink); }
+.path--urgent h3 { color: var(--ink-invert); }
+.path--urgent p { color: var(--text-on-dark-soft); }
+.path--urgent .icon-badge { background: var(--red); }
+.path--urgent .icon-badge svg { stroke: var(--ink-invert); }
+.path--urgent .path-tag { background: var(--overlay-icon-dark); color: var(--eyebrow-on-dark); }
+.path--urgent .btn svg { stroke: currentColor; }
+.path--planned { background: var(--paper); }
+.path--planned .icon-badge svg { stroke: var(--red); }
+.path--planned .path-tag { background: var(--red-tint); color: var(--red-dark); }
+.path--planned .btn svg { stroke: var(--red); }
+.path-or {
+  position: absolute; left: 0; top: 50%; transform: translate(-50%, -50%); z-index: 1;
+  width: 46px; height: 46px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow-sm);
+  font-family: var(--font-display); font-weight: var(--fw-extrabold); font-size: var(--text-80);
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink);
+}
+@media (max-width: 780px) {
+  .path-panel { grid-template-columns: 1fr; }
+  .path-or { left: 50%; top: 0; }
+  .path--urgent { padding-bottom: calc(var(--space-form-card) + var(--space-100)); }
+  .path--planned { padding-top: calc(var(--space-form-card) + var(--space-100)); }
+}
+
 /* ---- Bullet lists ---- */
 .check-list { display: grid; gap: var(--space-85); }
 .check-list li { display: flex; align-items: flex-start; gap: var(--space-75); font-size: var(--text-98); color: var(--ink-soft); }

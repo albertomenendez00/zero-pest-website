@@ -29,18 +29,25 @@ layout: layouts/base.njk
 
 <section class="section">
   <div class="container">
-    <div class="grid grid--2">
-      <div class="card reveal">
-        <div class="icon-badge">{{ icon(pathA.icon) }}</div>
+    <div class="path-panel reveal">
+      <div class="path path--urgent">
+        <div class="path-head">
+          <div class="icon-badge">{{ icon(pathA.icon) }}</div>
+          <span class="path-tag">{{ pathA.tag or "Urgent" }}</span>
+        </div>
         <h3>{{ pathA.title }}</h3>
         <p>{{ pathA.text }}</p>
-        <a class="btn btn--dark" style="margin-top:1rem;" href="{{ pathA.ctaHref }}">{{ pathA.ctaText }}</a>
+        <a class="btn btn--primary" href="{{ pathA.ctaHref }}">{{ icon("phone") }} {{ pathA.ctaText }}</a>
       </div>
-      <div class="card reveal">
-        <div class="icon-badge">{{ icon(pathB.icon) }}</div>
+      <div class="path path--planned">
+        <span class="path-or" aria-hidden="true">or</span>
+        <div class="path-head">
+          <div class="icon-badge">{{ icon(pathB.icon) }}</div>
+          <span class="path-tag">{{ pathB.tag or "Prevention" }}</span>
+        </div>
         <h3>{{ pathB.title }}</h3>
         <p>{{ pathB.text }}</p>
-        <a class="btn btn--outline" style="margin-top:1rem;" href="{{ pathB.ctaHref }}">{{ pathB.ctaText }}</a>
+        <a class="btn btn--outline" href="{{ pathB.ctaHref }}">{{ pathB.ctaText }} {{ icon("chevron-down") }}</a>
       </div>
     </div>
   </div>
