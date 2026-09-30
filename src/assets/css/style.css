@@ -171,10 +171,18 @@ p { color: var(--ink-soft); }
 .header-inner {
   height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-100);
 }
-.brand { display: flex; align-items: center; gap: var(--space-65); flex-shrink: 0; }
-.brand img { height: 42px; width: auto; }
-.brand-text { font-family: var(--font-display); font-weight: var(--fw-extrabold); font-size: var(--text-105); letter-spacing: -0.01em; line-height: 1.05; }
-.brand-text span { display: block; font-family: var(--font-body); font-weight: var(--fw-semibold); font-size: var(--text-62); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); }
+/* Brand: full logo, a hairline divider, then the service-area tagline
+   stacked on two lines so it sits level with the logo's height. */
+.brand { display: flex; align-items: center; gap: var(--space-90); flex-shrink: 0; }
+.brand-logo { height: 46px; width: auto; display: block; }
+.brand-tagline {
+  display: flex; flex-direction: column; justify-content: center; gap: var(--space-15);
+  padding-left: var(--space-90); border-left: 1px solid var(--line);
+  min-height: 34px;
+  font-family: var(--font-body); font-weight: var(--fw-bold); font-size: var(--text-62);
+  letter-spacing: 0.16em; line-height: 1.25; text-transform: uppercase; color: var(--ink-faint);
+  white-space: nowrap;
+}
 
 .main-nav { display: flex; align-items: center; gap: var(--space-190); }
 .main-nav a {
@@ -236,11 +244,13 @@ p { color: var(--ink-soft); }
 @media (max-width: 720px) {
   .tap-to-call, .header-actions .btn--primary { display: none; }
 }
-/* Narrow phones: drop the brand subtitle so the logo + wordmark never
-   competes with the menu button for space (root cause of the header
+/* Narrow phones: tighten the logo and tagline so the brand never
+   competes with the menu button for space (keeps the header from
    overflowing the viewport and forcing users to pinch-zoom out). */
 @media (max-width: 480px) {
-  .brand-text span { display: none; }
+  .brand { gap: var(--space-65); }
+  .brand-logo { height: 38px; }
+  .brand-tagline { padding-left: var(--space-65); font-size: var(--text-62); letter-spacing: 0.12em; min-height: 28px; }
 }
 
 .mobile-nav {
