@@ -642,6 +642,11 @@ body.nav-open { overflow: hidden; }
 .split.reverse .split-media { order: -1; }
 @media (max-width: 860px) { .split.reverse .split-media { order: 0; } }
 .split-media .photo-placeholder { border-radius: var(--radius-lg); aspect-ratio: 4/3; }
+/* Text column of a split section: breathing room between heading and
+   paragraphs, plus an optional short closing line in bold ink. */
+.split-copy h2 { margin-bottom: var(--space-100); }
+.split-copy p + p { margin-top: var(--space-100); }
+.copy-closer { color: var(--ink); font-weight: var(--fw-semibold); }
 
 /* ---- Content prose (privacy/terms) ---- */
 .prose { max-width: 74ch; }
