@@ -317,6 +317,12 @@ body.nav-open { overflow: hidden; }
   background: var(--ink); overflow: hidden; box-shadow: var(--shadow-lg);
 }
 .hero-visual .photo-placeholder { position: absolute; inset: 0; }
+/* Real hero photo: fills the card, framed on the technician's face and
+   the logo on his suit (the badge overlaps the lower part). */
+.hero-visual .hero-photo {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 30%;
+}
 .hero-visual .visual-badge {
   position: absolute; left: var(--space-125); bottom: var(--space-125); right: var(--space-125);
   background: var(--overlay-badge); border-radius: var(--radius); padding: var(--space-100) var(--space-115);
@@ -324,11 +330,24 @@ body.nav-open { overflow: hidden; }
 }
 .visual-badge svg { width: 34px; height: 34px; stroke: var(--red); flex-shrink: 0; }
 .visual-badge strong { display: block; font-size: var(--text-95); }
-.visual-badge span { font-size: var(--text-80); color: var(--ink-faint); }
+.visual-badge span { font-size: var(--text-80); color: var(--ink-faint); line-height: 1.4; display: block; }
 
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-visual { order: -1; aspect-ratio: 16/10; }
+  .hero-visual { order: -1; aspect-ratio: 4/3; }
+}
+/* Phones: slimmer badge so it sits below the technician and the logo
+   on his suit instead of covering them. */
+@media (max-width: 560px) {
+  .hero-visual .hero-photo { object-position: 50% 20%; }
+  .hero-visual .visual-badge {
+    left: var(--space-75); right: var(--space-75); bottom: var(--space-75);
+    padding: var(--space-60) var(--space-85); gap: var(--space-65);
+  }
+  .hero-visual .visual-badge .icon-badge { width: 38px; height: 38px; border-radius: 10px; }
+  .hero-visual .visual-badge svg { width: 22px; height: 22px; }
+  .visual-badge strong { font-size: var(--text-88); }
+  .visual-badge span { font-size: var(--text-75); }
 }
 
 /* Generic photo placeholder (used when a real photo hasn't been supplied yet) */

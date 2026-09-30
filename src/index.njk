@@ -19,9 +19,10 @@ permalink: /
       <p class="hero-service-areas">Serving Sudbury, Espanola, Elliot Lake, Blind River, Manitoulin &amp; Sault Ste. Marie</p>
     </div>
     <div class="hero-visual reveal is-visible">
-      <div class="photo-placeholder">
-        <span>[ADD: photo of a Zero Pest Control technician servicing a Sudbury-area home]</span>
-      </div>
+      <picture>
+        <source type="image/webp" srcset="/assets/images/hero-technician-800.webp 800w, /assets/images/hero-technician-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 560px">
+        <img class="hero-photo" src="/assets/images/hero-technician-1200.jpg" srcset="/assets/images/hero-technician-800.jpg 800w, /assets/images/hero-technician-1200.jpg 1200w" sizes="(max-width: 900px) 100vw, 560px" alt="Zero Pest Control technician in a protective suit holding a sprayer" width="1200" height="800" fetchpriority="high">
+      </picture>
       <div class="visual-badge">
         <div class="icon-badge">{{ icon("shield") }}</div>
         <div>
