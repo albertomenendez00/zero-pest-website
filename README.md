@@ -36,7 +36,7 @@ src/
     images/                  ← logo, favicons
   services/                  ← the 8 "pest treatment" pages (Ant Control, Bed Bugs, etc.)
   industries/                ← the 5 industry pages (Restaurants, Hotels, etc.)
-  pest-library/              ← the 17 Pest Library identification pages
+  pest-library/              ← the 40 Pest Library pages (photos go in assets/images/pests/)
   index.njk, residential.njk, commercial.njk, contact.njk, faq.njk, etc.
     ← the one-off pages
 ```
