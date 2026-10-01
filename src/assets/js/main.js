@@ -83,8 +83,6 @@
       new FormData(form).forEach(function (value, key) {
         if (key !== "botcheck") payload[key] = value;
       });
-      // Let "Reply" in the business inbox go straight to the customer
-      if (payload.email) payload.replyto = payload.email;
 
       fetch(form.action, {
         method: "POST",

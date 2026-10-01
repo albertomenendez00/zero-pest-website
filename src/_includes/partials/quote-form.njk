@@ -6,10 +6,11 @@
     method="POST"
     data-ajax-form
   >
-    {# Web3Forms emails each submission to the inbox the access key was created with. #}
+    {# Web3Forms emails each submission to the recipient set in the Web3Forms
+       dashboard. Subject and sender name are set there too (Settings → Email
+       Configuration) — not here — because a sender name matching our own domain
+       gets quarantined by the receiving mail server as look-alike email. #}
     <input type="hidden" name="access_key" value="{{ site.web3formsKey }}">
-    <input type="hidden" name="subject" value="New quote request from zeropestcontrol.ca">
-    <input type="hidden" name="from_name" value="Zero Pest Control Website">
     <p class="honeypot-field">
       <label>Don't fill this out if you're human: <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
     </p>
