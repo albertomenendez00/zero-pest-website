@@ -5,6 +5,13 @@
   "compatibility_date": "2026-09-01",
   // Keep the free zero-pest-website.<account>.workers.dev preview link on
   "workers_dev": true,
+  // Live domains (added in the dashboard on 2026-10-01). Listed here so every
+  // automatic deploy keeps them attached. www redirects to the root via a
+  // Cloudflare Redirect Rule.
+  "routes": [
+    { "pattern": "zeropestcontrol.ca", "custom_domain": true },
+    { "pattern": "www.zeropestcontrol.ca", "custom_domain": true }
+  ],
   "assets": {
     // Eleventy builds the finished site into _site/
     "directory": "./_site",
