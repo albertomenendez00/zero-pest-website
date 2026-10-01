@@ -1,61 +1,64 @@
 ---
 layout: layouts/base.njk
 title: "Privacy Policy | Zero Pest Control"
-description: "How Zero Pest Control collects, uses, and protects your personal information."
+description: "How Zero Pest Control Inc. collects, uses and protects your personal information."
 permalink: /privacy-policy/
 ---
-{% from "partials/icons.njk" import icon %}
-
 <section class="page-hero">
   <div class="container">
     <p class="breadcrumb"><a href="/">Home</a> / Privacy Policy</p>
     <h1>Privacy Policy</h1>
-    <p class="lede">Last updated: [ADD: date of publication]</p>
+    <p class="lede">Last updated: October 1, 2026</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container container--narrow">
-    <div class="draft-notice reveal">
-      {{ icon("alert-triangle") }}
-      <span>[DRAFT &ndash; REVIEW] This is a general privacy policy template written for this rebuild. It is not legal advice. Please have it reviewed by a lawyer familiar with Canadian and Ontario privacy law (including PIPEDA) before publishing.</span>
-    </div>
-
-    <div class="prose reveal">
-      <h2>Who We Are</h2>
-      <p>This website, zeropestcontrol.ca, is operated by Zero Pest Control, serving Sudbury, Espanola, Elliot Lake, Blind River, and Manitoulin, Ontario. [ADD: legal business name and business number, if different from "Zero Pest Control"].</p>
+    <div class="prose">
+      <p>This Privacy Policy explains how {{ site.legalName }} ("Zero Pest Control", "we", "us") collects, uses and protects personal information through this website, zeropestcontrol.ca. We follow Canada's <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA).</p>
 
       <h2>Information We Collect</h2>
-      <p>When you submit our quote request form, we collect the information you provide, which may include your name, phone number, email address, town or city, the type of pest or service you're inquiring about, and any message you include. We do not knowingly collect sensitive personal information beyond what is needed to respond to your request.</p>
+      <p><strong>Information you give us.</strong> When you request a quote, we collect what you enter in the form: your name, phone number, email address, town, the pest or service you're asking about, and your message. We also receive the information you share when you call or email us.</p>
+      <p><strong>Information collected automatically.</strong> We use Google Analytics to understand how visitors use our website — for example, which pages are viewed, how visitors found us, the type of device and browser used, and general location (city or region). This information is collected using cookies and does not tell us who you are.</p>
 
       <h2>How We Use Your Information</h2>
       <ul>
-        <li>To respond to quote requests and schedule service.</li>
-        <li>To communicate with you about an existing or upcoming service.</li>
-        <li>To maintain records required for service documentation, invoicing, or regulatory compliance.</li>
+        <li>To respond to your request, provide a quote and schedule service.</li>
+        <li>To contact you about a service you've requested or booked.</li>
+        <li>To keep records needed for invoicing, service documentation and legal or regulatory requirements.</li>
+        <li>To understand and improve our website and advertising.</li>
       </ul>
-      <p>We do not sell or rent your personal information to third parties.</p>
+      <p>We do not sell, rent or trade your personal information.</p>
 
-      <h2>How Your Information Is Stored</h2>
-      <p>Quote requests submitted through this website are delivered to our business email using Web3Forms, a third-party form-handling service. Web3Forms processes submitted data on our behalf to deliver it to us, subject to its own privacy and security practices.</p>
+      <h2>Service Providers</h2>
+      <p>We use trusted service providers to run this website, and they process information only on our behalf:</p>
+      <ul>
+        <li><strong>Web3Forms</strong> delivers quote requests from our website form to our business email.</li>
+        <li><strong>Google Analytics</strong> (Google LLC) provides website usage statistics.</li>
+        <li><strong>Cloudflare</strong> hosts and delivers this website securely.</li>
+      </ul>
+      <p>Some of these providers may store or process information outside Canada, including in the United States, where it may be subject to the laws of that country.</p>
 
       <h2>Cookies</h2>
-      <p>This website does not use advertising or tracking cookies by default. [ADD: update this section if analytics tools, live chat, or advertising pixels are added in the future].</p>
+      <p>Cookies are small files stored in your browser. We use them only for Google Analytics. You can block or delete cookies in your browser settings at any time, and you can opt out of Google Analytics using Google's browser add-on at <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">tools.google.com/dlpage/gaoptout</a>. The website will still work if cookies are blocked.</p>
 
-      <h2>Third-Party Links</h2>
-      <p>Our website may link to third-party websites, including government resources. We are not responsible for the privacy practices or content of external sites.</p>
+      <h2>How We Protect Your Information</h2>
+      <p>This website uses a secure (HTTPS) connection. Access to customer information is limited to our team members who need it to provide service.</p>
 
-      <h2>Data Retention</h2>
-      <p>We retain quote request information for as long as needed to respond to your inquiry and to meet our record-keeping and legal obligations. [ADD: specific retention period, if a policy is established].</p>
+      <h2>How Long We Keep It</h2>
+      <p>We keep personal information only as long as needed to respond to your request, provide service, and meet our legal, tax and record-keeping obligations. After that, it is securely deleted.</p>
 
-      <h2>Your Rights</h2>
-      <p>You may request access to, correction of, or deletion of personal information we hold about you by contacting us using the details below.</p>
+      <h2>Your Choices and Rights</h2>
+      <p>You may ask to see the personal information we hold about you, ask us to correct it, or ask us to delete it where we are not required to keep it. You may also withdraw your consent to being contacted at any time. To make a request, contact us using the details below.</p>
+
+      <h2>Links to Other Websites</h2>
+      <p>Our website links to other sites, such as our social media pages and government resources. We are not responsible for their privacy practices.</p>
 
       <h2>Contact Us</h2>
-      <p>If you have questions about this Privacy Policy or how your information is handled, contact us at <a href="mailto:{{ site.email }}">{{ site.email }}</a> or <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>.</p>
+      <p>Questions or requests about your privacy can be sent to {{ site.legalName }} at <a href="mailto:{{ site.email }}">{{ site.email }}</a> or <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>.</p>
 
       <h2>Changes to This Policy</h2>
-      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
+      <p>We may update this policy from time to time. The "Last updated" date at the top of this page shows when it was last changed.</p>
     </div>
   </div>
 </section>

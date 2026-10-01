@@ -13,6 +13,12 @@
           <li>{{ icon("mail") }} <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
           <li>{{ icon("clock") }} <span>{{ site.hoursShort }}</span></li>
         </ul>
+        {% if site.social.instagram or site.social.facebook %}
+        <div class="footer-social">
+          {% if site.social.facebook %}<a href="{{ site.social.facebook }}" target="_blank" rel="noopener" aria-label="Zero Pest Control on Facebook">{{ icon("facebook") }}</a>{% endif %}
+          {% if site.social.instagram %}<a href="{{ site.social.instagram }}" target="_blank" rel="noopener" aria-label="Zero Pest Control on Instagram">{{ icon("instagram") }}</a>{% endif %}
+        </div>
+        {% endif %}
       </div>
 
       <div class="footer-col">
@@ -50,7 +56,7 @@
 
   <div class="footer-bottom">
     <div class="container">
-      <p>&copy; {% year %} Zero Pest Control. All rights reserved.</p>
+      <p>&copy; {% year %} {{ site.legalName }} All rights reserved.</p>
       <div class="footer-legal">
         <a href="/privacy-policy/">Privacy Policy</a>
         <a href="/terms-of-service/">Terms of Service</a>

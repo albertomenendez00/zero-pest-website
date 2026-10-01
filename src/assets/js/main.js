@@ -97,6 +97,8 @@
         .then(function () {
           form.reset();
           if (successBox) successBox.classList.add("is-visible");
+          // Analytics: count a lead (can be imported into Google Ads as a conversion)
+          if (typeof gtag === "function") gtag("event", "generate_lead", { form_name: "quote_request" });
         })
         .catch(function () {
           if (errorBox) errorBox.classList.add("is-visible");
@@ -166,3 +168,9 @@
   });
   if (search) search.addEventListener("input", apply);
 })();
+
+/* Analytics: count taps on any phone number link as a call lead. */
+document.addEventListener("click", function (e) {
+  var link = e.target.closest && e.target.closest('a[href^="tel:"]');
+  if (link && typeof gtag === "function") gtag("event", "phone_call_click", { link_text: link.textContent.trim() });
+});

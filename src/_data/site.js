@@ -1,5 +1,6 @@
 module.exports = {
   name: "Zero Pest Control",
+  legalName: "Zero Pest Control Inc.",
   shortName: "Zero Pest Control",
   tagline: "Fast, Local Pest Control in Sudbury & Northern Ontario",
   description:
@@ -19,12 +20,11 @@ module.exports = {
   ],
   hoursShort: "Mon–Fri, 8 am–5 pm",
   guarantee: "60–90 Day Service Guarantee",
+  // Service-area business: no public street address is shown. Google gets the
+  // city/province plus the list of service areas below.
   address: {
-    // [ADD: street address for LocalBusiness schema and Google Business Profile consistency]
-    streetAddress: "[ADD: street address]",
     addressLocality: "Sudbury",
     addressRegion: "ON",
-    postalCode: "[ADD: postal code]",
     addressCountry: "CA",
   },
   areas: [
@@ -34,9 +34,14 @@ module.exports = {
     { name: "Blind River", slug: "blind-river" },
     { name: "Manitoulin Island", slug: "manitoulin-island" },
   ],
+  // Shown as icons in the footer and listed for Google (schema "sameAs").
   social: {
-    // [ADD: Facebook / Google Business Profile / Instagram links, if any]
+    instagram: "https://www.instagram.com/zeropestcontrol.ca/",
+    facebook: "https://www.facebook.com/profile.php?id=61583884144410",
   },
+  // Google Analytics 4 / Google tag ID (Google tag "zeropestcontrol.ca").
+  // Leave empty ("") to turn tracking off.
+  googleTagId: "G-1HJWP46Y4W",
   credentials: [
     "Licensed & Insured",
     "Family & Pet-Conscious Treatments",

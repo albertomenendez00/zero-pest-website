@@ -314,10 +314,10 @@ The form on `/contact/` (`src/_includes/partials/quote-form.njk`) sends each sub
 Search the codebase for `[ADD:` and `[DRAFT` to find every spot flagged during this rebuild. As of this build, that includes:
 
 - **Photos.** All photo spots now use real photos (`photo-frame` blocks in `src/index.njk`, `src/residential.njk`, `src/commercial.njk` and `src/safety-compliance.njk`). See *Add a photo to a section* above to add more.
-- **Street address & postal code** — `src/_data/site.js` (`address` object), used in the SEO schema.
 - **Pest Library entries** — all 40 show a `[DRAFT – REVIEW]` notice until a technician checks them (see *Pest Library* above). Photos still need adding to `src/assets/images/pests/`.
-- **Privacy Policy & Terms of Service** — both are general small-business templates, not legal advice. Have a lawyer review before launch, especially the guarantee/liability language in the Terms and the data-retention specifics in the Privacy Policy.
-- **Social/Google Business Profile links** — `src/_data/site.js` (`social` object) is empty; add if you have active profiles.
+- **Privacy Policy & Terms of Service** — completed for Zero Pest Control Inc. (Oct 1, 2026). Plain-language, not legal advice; update the "Last updated" date whenever they change.
+- **Social links** — Instagram and Facebook are set in `src/_data/site.js` (`social`). Add a Google Business Profile or LinkedIn link there when available.
+- **Analytics** — Google Analytics 4 (`googleTagId` in `site.js`) sends `generate_lead` on form submissions and `phone_call_click` on phone taps; both can be marked as key events in GA4 and imported into Google Ads.
 - **Reviews, awards, certifications, and specific pricing** were not in the WordPress export, and none have been invented — none appear on the site. Add them once you can confirm the exact wording/numbers.
 
 ## What didn't carry over from the old site

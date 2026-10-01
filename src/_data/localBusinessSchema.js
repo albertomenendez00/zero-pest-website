@@ -4,6 +4,7 @@ module.exports = {
   "@context": "https://schema.org",
   "@type": "PestControl",
   name: site.name,
+  legalName: site.legalName,
   url: site.url,
   telephone: site.phoneHref,
   email: site.email,
@@ -16,6 +17,7 @@ module.exports = {
       ([, v]) => v && !String(v).startsWith("[ADD")
     )
   ),
+  sameAs: Object.values(site.social || {}),
   areaServed: site.areas.map((a) => ({ "@type": "City", name: a.name })),
   openingHoursSpecification: [
     {

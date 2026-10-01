@@ -31,6 +31,16 @@
 <script type="application/ld+json">{{ schema | dump | safe }}</script>
 {% endif %}
 <script type="application/ld+json">{{ localBusinessSchema | dump | safe }}</script>
+{% if site.googleTagId %}
+<!-- Google tag (gtag.js): Google Analytics 4. Lead events are sent from main.js. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.googleTagId }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.googleTagId }}');
+</script>
+{% endif %}
 </head>
 <body>
 {% include "partials/header.njk" %}
