@@ -11,6 +11,16 @@ h1: "Year-Round Pest Protection Plans"
 subtitle: "Seasonal pest protection for Sudbury and Northern Ontario homes, designed to reduce recurring pest issues before they become bigger problems."
 primaryCtaText: "Get Protected Today"
 primaryCtaHref: "/contact/"
+heroImage:
+  name: "year-round-home"
+  alt: "Well-kept family home protected year-round"
+  width: 1200
+  height: 778
+  focus: "45% 55%"
+  badge:
+    icon: "repeat"
+    title: "Priority & Ongoing Service"
+    text: "Seasonal protection for Northern Ontario homes"
 trustItems:
   - icon: "shield"
     text: "Licensed & Insured"
