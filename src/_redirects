@@ -1,5 +1,92 @@
 # Permanent (301) redirects from old WordPress addresses to the new pages.
 # Keeps Google rankings and old links working after the switch.
 # Format: old-path  new-path  301
+
+# Old fly service page
 /fly-clusterflie/          /fly-cluster-fly-control/   301
 /fly-clusterflie           /fly-cluster-fly-control/   301
+
+# Old WordPress Pest Library posts (covers /slug/, /pest-library/slug/ and dated /YYYY/MM/DD/slug/ addresses)
+/cluster-flies/   /pest-library/cluster-fly/   301
+/cluster-flies   /pest-library/cluster-fly/   301
+/pest-library/cluster-flies/   /pest-library/cluster-fly/   301
+/:y/:m/:d/cluster-flies/   /pest-library/cluster-fly/   301
+/house-mouse/   /pest-library/house-mouse/   301
+/house-mouse   /pest-library/house-mouse/   301
+/pest-library/house-mouse/   /pest-library/house-mouse/   301
+/:y/:m/:d/house-mouse/   /pest-library/house-mouse/   301
+/silverfish/   /pest-library/silverfish/   301
+/silverfish   /pest-library/silverfish/   301
+/pest-library/silverfish/   /pest-library/silverfish/   301
+/:y/:m/:d/silverfish/   /pest-library/silverfish/   301
+/spiders/   /pest-library/spider/   301
+/spiders   /pest-library/spider/   301
+/pest-library/spiders/   /pest-library/spider/   301
+/:y/:m/:d/spiders/   /pest-library/spider/   301
+/honey-bees/   /pest-library/   301
+/honey-bees   /pest-library/   301
+/pest-library/honey-bees/   /pest-library/   301
+/:y/:m/:d/honey-bees/   /pest-library/   301
+/bald-faced-hornet/   /pest-library/hornet/   301
+/bald-faced-hornet   /pest-library/hornet/   301
+/pest-library/bald-faced-hornet/   /pest-library/hornet/   301
+/:y/:m/:d/bald-faced-hornet/   /pest-library/hornet/   301
+/yellowjackets/   /pest-library/yellow-jacket/   301
+/yellowjackets   /pest-library/yellow-jacket/   301
+/pest-library/yellowjackets/   /pest-library/yellow-jacket/   301
+/:y/:m/:d/yellowjackets/   /pest-library/yellow-jacket/   301
+/paper-wasps/   /pest-library/wasp/   301
+/paper-wasps   /pest-library/wasp/   301
+/pest-library/paper-wasps/   /pest-library/wasp/   301
+/:y/:m/:d/paper-wasps/   /pest-library/wasp/   301
+/brown-banded-cockroaches/   /pest-library/brown-banded-cockroach/   301
+/brown-banded-cockroaches   /pest-library/brown-banded-cockroach/   301
+/pest-library/brown-banded-cockroaches/   /pest-library/brown-banded-cockroach/   301
+/:y/:m/:d/brown-banded-cockroaches/   /pest-library/brown-banded-cockroach/   301
+/american-cockroaches/   /pest-library/american-cockroach/   301
+/american-cockroaches   /pest-library/american-cockroach/   301
+/pest-library/american-cockroaches/   /pest-library/american-cockroach/   301
+/:y/:m/:d/american-cockroaches/   /pest-library/american-cockroach/   301
+/german-cockroaches/   /pest-library/german-cockroach/   301
+/german-cockroaches   /pest-library/german-cockroach/   301
+/pest-library/german-cockroaches/   /pest-library/german-cockroach/   301
+/:y/:m/:d/german-cockroaches/   /pest-library/german-cockroach/   301
+/oriental-cockroaches/   /pest-library/oriental-cockroach/   301
+/oriental-cockroaches   /pest-library/oriental-cockroach/   301
+/pest-library/oriental-cockroaches/   /pest-library/oriental-cockroach/   301
+/:y/:m/:d/oriental-cockroaches/   /pest-library/oriental-cockroach/   301
+/bed-bugs/   /pest-library/bed-bug/   301
+/bed-bugs   /pest-library/bed-bug/   301
+/pest-library/bed-bugs/   /pest-library/bed-bug/   301
+/:y/:m/:d/bed-bugs/   /pest-library/bed-bug/   301
+/carpenter-ants/   /pest-library/carpenter-ant/   301
+/carpenter-ants   /pest-library/carpenter-ant/   301
+/pest-library/carpenter-ants/   /pest-library/carpenter-ant/   301
+/:y/:m/:d/carpenter-ants/   /pest-library/carpenter-ant/   301
+/pavement-ants/   /pest-library/pavement-ant/   301
+/pavement-ants   /pest-library/pavement-ant/   301
+/pest-library/pavement-ants/   /pest-library/pavement-ant/   301
+/:y/:m/:d/pavement-ants/   /pest-library/pavement-ant/   301
+/pharaoh-ants/   /pest-library/pharaoh-ant/   301
+/pharaoh-ants   /pest-library/pharaoh-ant/   301
+/pest-library/pharaoh-ants/   /pest-library/pharaoh-ant/   301
+/:y/:m/:d/pharaoh-ants/   /pest-library/pharaoh-ant/   301
+/odorous-house-ants/   /pest-library/   301
+/odorous-house-ants   /pest-library/   301
+/pest-library/odorous-house-ants/   /pest-library/   301
+/:y/:m/:d/odorous-house-ants/   /pest-library/   301
+/elementor-3708/   /   301
+/elementor-3708   /   301
+/pest-library/elementor-3708/   /   301
+/:y/:m/:d/elementor-3708/   /   301
+
+# WordPress archive, feed and admin addresses
+/category/*   /blog-resources/   301
+/author/*   /   301
+/feed/   /   301
+/feed   /   301
+/comments/feed/   /   301
+/wp-admin   /   301
+/wp-admin/*   /   301
+/wp-login.php   /   301
+/page/*   /blog-resources/   301
