@@ -433,7 +433,7 @@ body.nav-open { overflow: hidden; }
 @supports (grid-template-rows: subgrid) {
   .grid--aligned > .card { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; }
 }
-.card a.card-link { display: inline-flex; align-items: center; gap: var(--space-35); margin-top: var(--space-90); font-weight: var(--fw-bold); color: var(--red); font-size: var(--text-90); }
+.card .card-link { display: inline-flex; align-items: center; gap: var(--space-35); margin-top: var(--space-90); font-weight: var(--fw-bold); color: var(--red); font-size: var(--text-90); }
 
 .icon-badge {
   width: 54px; height: 54px; border-radius: 14px; background: var(--red-tint);
@@ -459,7 +459,7 @@ body.nav-open { overflow: hidden; }
   padding: var(--space-150);
 }
 .card--compact .icon-badge { margin-bottom: var(--space-75); }
-.card--compact h2 { font-size: var(--text-h3); margin-bottom: var(--space-45); }
+.card--compact h2, .card--compact h3 { font-size: var(--text-h3); margin-bottom: var(--space-45); }
 .card.card--compact:hover {
   border-color: var(--red);
   /* Restated with extra specificity: once .reveal has added is-visible,
