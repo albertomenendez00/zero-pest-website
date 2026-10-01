@@ -9,14 +9,13 @@ module.exports = {
   email: site.email,
   image: `${site.url}/assets/images/icon-512.png`,
   priceRange: "$$",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: site.address.streetAddress,
-    addressLocality: site.address.addressLocality,
-    addressRegion: site.address.addressRegion,
-    postalCode: site.address.postalCode,
-    addressCountry: site.address.addressCountry,
-  },
+  // Placeholder values ("[ADD: ...]") and blanks are left out, so Google never
+  // sees unfinished text. A service-area business can leave the street blank.
+  address: Object.fromEntries(
+    Object.entries({ "@type": "PostalAddress", ...site.address }).filter(
+      ([, v]) => v && !String(v).startsWith("[ADD")
+    )
+  ),
   areaServed: site.areas.map((a) => ({ "@type": "City", name: a.name })),
   openingHoursSpecification: [
     {

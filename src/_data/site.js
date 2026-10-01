@@ -8,11 +8,10 @@ module.exports = {
   phone: "(705) 980-2006",
   phoneHref: "+17059802006",
   email: "service@zeropestcontrol.ca",
-  // Web3Forms access key for the quote form. Create it at https://web3forms.com
-  // with the inbox that should receive quote requests, then paste it here.
-  // Shows the "[DRAFT – REVIEW]" notice on the Pest Library until a technician
-  // has checked every entry. Set to false to hide it everywhere.
-  pestLibraryDraft: true,
+  // Shows the "[DRAFT – REVIEW]" notice on the Pest Library. Technician review
+  // is done, so it's off; set to true to show it again.
+  pestLibraryDraft: false,
+  // Web3Forms access key for the quote form (sends to the inbox it was created with).
   web3formsKey: "c39e6e0a-6450-4caf-8e5f-a5dd7c43226e",
   hours: [
     { label: "Monday – Friday", value: "8:00 am – 5:00 pm" },
