@@ -1,0 +1,5 @@
+# Permanent (301) redirects from old WordPress addresses to the new pages.
+# Keeps Google rankings and old links working after the switch.
+# Format: old-path  new-path  301
+/fly-clusterflie/          /fly-cluster-fly-control/   301
+/fly-clusterflie           /fly-cluster-fly-control/   301
