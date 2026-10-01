@@ -112,3 +112,59 @@
     });
   });
 })();
+
+/* Pest Library: live search + category filter chips */
+(function () {
+  var root = document.querySelector("[data-pest-library]");
+  if (!root) return;
+  var search = document.getElementById("pest-search");
+  var buttons = root.querySelectorAll("[data-pest-filter]");
+  var groups = root.querySelectorAll("[data-pest-group]");
+  var results = root.querySelector("[data-pest-results]");
+  var empty = root.querySelector("[data-pest-empty]");
+  var active = "all";
+
+  // Every typed word must match the start of a word in the pest's name or
+  // category ("ant" finds ants, not "pantry"; "fly" finds all flies).
+  function matches(text, q) {
+    if (!q) return true;
+    var words = text.split(/[^a-z0-9]+/);
+    return q.split(/\s+/).every(function (term) {
+      return words.some(function (w) { return w.indexOf(term) === 0; });
+    });
+  }
+
+  function apply() {
+    var q = (search ? search.value : "").trim().toLowerCase();
+    var shown = 0;
+    groups.forEach(function (group) {
+      var inCat = active === "all" || group.getAttribute("data-pest-group") === active;
+      var groupShown = 0;
+      group.querySelectorAll(".pest-card").forEach(function (card) {
+        var match = inCat && matches(card.getAttribute("data-pest-name"), q);
+        card.hidden = !match;
+        if (match) groupShown++;
+      });
+      group.hidden = groupShown === 0;
+      shown += groupShown;
+    });
+    if (empty) empty.hidden = shown !== 0;
+    if (results) {
+      results.textContent = shown === 0 ? "No matching pests" :
+        (q || active !== "all") ? "Showing " + shown + (shown === 1 ? " pest" : " pests") : "Showing all " + shown + " pests";
+    }
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      active = btn.getAttribute("data-pest-filter");
+      buttons.forEach(function (b) {
+        var on = b === btn;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      apply();
+    });
+  });
+  if (search) search.addEventListener("input", apply);
+})();

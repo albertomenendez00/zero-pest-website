@@ -1,0 +1,13 @@
+{# One Pest Library card. Expects `item` (a pestLibrary collection item). #}
+{% set photo = item.fileSlug | pestPhoto %}
+<a class="pest-card" href="{{ item.url }}" data-pest-name="{{ item.data.commonName | lower }} {{ item.data.category | lower }} {{ item.data.keywords | default('') | lower }}">
+  <div class="pest-photo pest-photo--thumb{% if not photo %} pest-photo--empty{% endif %}">
+    {% if photo %}<img src="{{ photo }}" alt="{{ item.data.commonName }}" loading="lazy" decoding="async" width="400" height="300">{% else %}<span>Photo coming soon</span>{% endif %}
+  </div>
+  <div class="pest-card-body">
+    <span class="risk-badge risk-badge--{{ item.data.riskLevel | lower }}">{{ item.data.riskLevel }} risk</span>
+    <h3>{{ item.data.commonName }}</h3>
+    <p>{{ item.data.cardSummary }}</p>
+    <span class="pest-card-link">View pest {{ icon("arrow-right") }}</span>
+  </div>
+</a>

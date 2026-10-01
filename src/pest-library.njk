@@ -1,40 +1,61 @@
 ---
 layout: layouts/base.njk
-title: "Pest Library | Identify Common Pests in Ontario | Zero Pest Control"
-description: "Browse our pest library to identify common ants, cockroaches, wasps, rodents, and more found in Sudbury and Northern Ontario homes and businesses."
+title: "Pest Library | Identify Common Pests in Sudbury & Northern Ontario | Zero Pest Control"
+description: "Identify common pests in Sudbury and Northern Ontario — rodents, ants, cockroaches, bed bugs, wasps, flies and more. See signs, risks and prevention tips for each."
 permalink: /pest-library/
 ---
 {% from "partials/icons.njk" import icon %}
+{% set categoryOrder = ["Rodents", "Ants", "Cockroaches", "Bed Bugs, Fleas & Ticks", "Stinging Insects", "Flies & Mosquitoes", "Pantry & Fabric Pests", "Occasional Invaders"] %}
+{% set total = collections.pestLibrary | length %}
 
 <section class="page-hero">
   <div class="container">
     <p class="breadcrumb"><a href="/">Home</a> / Pest Library</p>
-    <h1>Identify Common Pests in Ontario</h1>
-    <p class="lede">Browse our pest library to quickly compare common insects and rodents found in Ontario homes and businesses.</p>
+    <h1>Pest Library</h1>
+    <p class="lede">Not sure what you're dealing with? Search or browse {{ total }} common pests found in Sudbury and Northern Ontario — how to identify them, the signs to look for, and what they can cause.</p>
+    <label class="pest-search" for="pest-search">
+      {{ icon("search") }}
+      <span class="visually-hidden">Search pests</span>
+      <input type="search" id="pest-search" placeholder="Search pests, e.g. ant, mouse, wasp" autocomplete="off">
+    </label>
   </div>
 </section>
 
-<section class="section">
+<section class="section section--tight-top" data-pest-library>
   <div class="container">
-    <div class="draft-notice reveal">
+    {% if site.pestLibraryDraft %}
+    <div class="draft-notice">
       {{ icon("alert-triangle") }}
-      <span>[DRAFT &ndash; REVIEW] Every entry below was written to fill pages that had no content in the original site export. Please have a technician review each entry for accuracy before launch — see individual pages for details.</span>
+      <span>[DRAFT &ndash; REVIEW] Entries pending technician review before launch.</span>
     </div>
+    {% endif %}
 
-    {% set categories = collections.pestLibrary | groupby("data.category") %}
-    {% for category, items in categories %}
-    <div class="section-head reveal" style="margin-top: {% if loop.first %}0{% else %}3rem{% endif %};">
-      <h2>{{ category }}</h2>
-    </div>
-    <div class="pest-grid">
-      {% for item in items %}
-      <a class="card pest-card reveal" href="{{ item.url }}">
-        <div class="icon-badge">{{ icon(item.data.pestIcon) }}</div>
-        <h3 style="font-size:1rem;">{{ item.data.commonName }}</h3>
-      </a>
+    <div class="pest-filters" role="group" aria-label="Filter pests by type">
+      <button type="button" class="pest-filter is-active" data-pest-filter="all" aria-pressed="true">All <span>{{ total }}</span></button>
+      {% for cat in categoryOrder %}
+      {% set count = collections.pestLibrary | inCategory(cat) | length %}
+      <button type="button" class="pest-filter" data-pest-filter="{{ cat | slugify2 }}" aria-pressed="false">{{ cat }} <span>{{ count }}</span></button>
       {% endfor %}
     </div>
+
+    <p class="pest-results" data-pest-results aria-live="polite">Showing all {{ total }} pests</p>
+
+    {% for cat in categoryOrder %}
+    <div class="pest-group" data-pest-group="{{ cat | slugify2 }}">
+      <h2 class="pest-group-title">{{ cat }}</h2>
+      <div class="pest-grid">
+        {% for item in collections.pestLibrary %}{% if item.data.category == cat %}
+          {% include "partials/pest-card.njk" %}
+        {% endif %}{% endfor %}
+      </div>
+    </div>
     {% endfor %}
+
+    <div class="pest-empty" data-pest-empty hidden>
+      <h2>No pests match your search</h2>
+      <p>Try another name, or describe what you're seeing and we'll help identify it.</p>
+      <a class="btn btn--primary" href="/contact/#quote">Ask Us to Identify It</a>
+    </div>
   </div>
 </section>
 
@@ -42,11 +63,11 @@ permalink: /pest-library/
   <div class="container">
     <div class="cta-banner reveal">
       <div>
-        <h2>Don't See Your Pest Listed?</h2>
-        <p>We treat far more than what's listed here. Reach out and describe what you're seeing — we'll help identify it.</p>
+        <h2>Not Sure What You're Seeing?</h2>
+        <p>Describe the pest or send us a photo — a licensed local technician will help identify it and recommend next steps.</p>
       </div>
       <div class="cta-banner-actions">
-        <a class="btn btn--primary" href="/contact/">Get a Free Quote</a>
+        <a class="btn btn--primary" href="/contact/#quote">Get a Free Quote</a>
         <a class="btn btn--outline-invert" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
       </div>
     </div>

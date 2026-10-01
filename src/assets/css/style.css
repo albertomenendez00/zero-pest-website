@@ -745,13 +745,132 @@ body.nav-open { overflow: hidden; }
 .reveal { opacity: 1; transform: translateY(14px); transition: transform 0.5s ease; }
 .reveal.is-visible { transform: translateY(0); }
 
-/* ---- Pest library grid ---- */
+/* ---- Pest Library ----
+   Library page: search box + category filter chips + grouped card grid.
+   Pest pages: hero photo, quick-facts strip, four info cards, related pests.
+   Photos live in src/assets/images/pests/<slug>.(webp|jpg|png); until a file
+   exists, .pest-photo--empty shows a neutral placeholder. Photos are shown
+   with object-fit: contain on white so cut-out insect images aren't cropped. */
+.section--tight-top { padding-top: var(--space-section-tight); }
+
+.pest-search {
+  position: relative; display: flex; align-items: center; max-width: 560px; margin-top: var(--space-150);
+}
+.pest-search svg { position: absolute; left: var(--space-110); width: 20px; height: 20px; stroke: var(--ink-faint); pointer-events: none; }
+.pest-search input {
+  width: 100%; font: inherit; font-size: var(--text-100); color: var(--ink);
+  padding: var(--space-90) var(--space-125) var(--space-90) calc(var(--space-110) + 30px);
+  background: var(--paper); border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow-sm);
+}
+.pest-search input:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 4px var(--red-tint); }
+
+.pest-filters { display: flex; flex-wrap: wrap; gap: var(--space-60); margin-bottom: var(--space-100); }
+.pest-filter {
+  display: inline-flex; align-items: center; gap: var(--space-45); cursor: pointer;
+  font: inherit; font-size: var(--text-88); font-weight: var(--fw-semibold); color: var(--ink-soft);
+  background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: var(--space-45) var(--space-90);
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.pest-filter span { font-size: var(--text-78); color: var(--ink-faint); }
+.pest-filter:hover { border-color: var(--ink); color: var(--ink); }
+.pest-filter.is-active { background: var(--ink); border-color: var(--ink); color: var(--ink-invert); }
+.pest-filter.is-active span { color: var(--text-on-dark-soft); }
+.pest-results { font-size: var(--text-88); color: var(--ink-faint); margin-bottom: var(--space-200); }
+/* Phones: one swipeable row of filter chips instead of many wrapped rows. */
+@media (max-width: 720px) {
+  .pest-filters {
+    flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
+    margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); padding-bottom: var(--space-25);
+    scroll-padding-inline: var(--gutter);
+  }
+  .pest-filters::-webkit-scrollbar { display: none; }
+  .pest-filter { flex-shrink: 0; }
+}
+
+.pest-group + .pest-group { margin-top: var(--space-300); }
+.pest-group-title { font-size: var(--text-h3); margin-bottom: var(--space-110); }
 .pest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-125); }
-@media (max-width: 980px) { .pest-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 720px) { .pest-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 460px) { .pest-grid { grid-template-columns: 1fr; } }
-.pest-card { text-align: center; }
-.pest-card .icon-badge { margin-inline: auto; }
+@media (max-width: 1080px) { .pest-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px) { .pest-grid { grid-template-columns: repeat(2, 1fr); } }
+
+
+.pest-card {
+  display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--radius); overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+.pest-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); border-color: transparent; }
+.pest-card[hidden], .pest-group[hidden], .pest-empty[hidden] { display: none; }
+.pest-card-body { display: flex; flex-direction: column; align-items: flex-start; flex: 1; padding: var(--space-110) var(--space-125) var(--space-125); }
+.pest-card-body h3 { font-size: var(--text-105); margin: var(--space-60) 0 var(--space-35); }
+.pest-card-body p {
+  font-size: var(--text-88); color: var(--ink-soft); line-height: 1.55; margin-bottom: var(--space-90);
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden;
+}
+.pest-card-link { display: inline-flex; align-items: center; gap: var(--space-35); margin-top: auto; font-size: var(--text-88); font-weight: var(--fw-bold); color: var(--red); }
+.pest-card-link svg { width: 15px; height: 15px; stroke: currentColor; transition: transform 0.2s ease; }
+.pest-card:hover .pest-card-link svg { transform: translateX(3px); }
+
+.pest-photo {
+  position: relative; display: grid; place-items: center; overflow: hidden;
+  aspect-ratio: 4/3; background: var(--paper);
+}
+.pest-photo img { width: 100%; height: 100%; object-fit: contain; padding: var(--space-75); }
+.pest-photo--thumb { border-bottom: 1px solid var(--line); }
+.pest-photo--hero { border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+.pest-photo--empty {
+  background:
+    linear-gradient(135deg, var(--line-soft) 25%, transparent 25%) 0 0/24px 24px,
+    linear-gradient(135deg, var(--line-soft) 25%, transparent 25%) 12px 12px/24px 24px,
+    var(--paper-soft);
+}
+.pest-photo--empty span {
+  font-size: var(--text-78); font-weight: var(--fw-semibold); letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--ink-faint); background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: var(--space-30) var(--space-75);
+}
+
+.risk-badge {
+  display: inline-flex; align-items: center; gap: var(--space-35);
+  font-size: var(--text-75); font-weight: var(--fw-bold); letter-spacing: 0.06em; text-transform: uppercase;
+  border-radius: 999px; padding: var(--space-25) var(--space-65); border: 1px solid transparent;
+}
+.risk-badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.risk-badge--high { background: var(--red-tint); color: var(--red-dark); border-color: var(--error-border); }
+.risk-badge--moderate { background: var(--draft-bg); color: var(--draft-text); border-color: var(--draft-border); }
+.risk-badge--low { background: var(--success-bg); color: var(--success-text); border-color: var(--success-border); }
+
+.pest-tags { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-60); margin-top: var(--space-125); }
+.pest-tags .risk-badge { font-size: var(--text-78); padding: var(--space-40) var(--space-80); }
+.pest-tags .pill { font-size: var(--text-80); padding: var(--space-35) var(--space-75); background: var(--paper); }
+
+.fact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-100); margin: 0 0 var(--space-200); }
+@media (max-width: 900px) { .fact-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px) { .fact-grid { grid-template-columns: 1fr; } }
+.fact { background: var(--paper-soft); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-100) var(--space-125); }
+.fact dt { font-size: var(--text-75); font-weight: var(--fw-bold); letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); margin-bottom: var(--space-30); }
+.fact dd { margin: 0; font-weight: var(--fw-semibold); color: var(--ink); font-size: var(--text-95); line-height: 1.45; }
+
+.pest-info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gap-grid); }
+@media (max-width: 760px) { .pest-info-grid { grid-template-columns: 1fr; } }
+.card.pest-info:hover { transform: none; box-shadow: none; border-color: var(--line); }
+.pest-info-head { display: flex; align-items: center; gap: var(--space-85); margin-bottom: var(--space-110); }
+.pest-info-head .icon-badge { margin: 0; }
+.pest-info-head h2 { font-size: var(--text-h3); margin: 0; }
+
+.pest-empty { text-align: center; padding: var(--space-300) var(--space-100); border: 1px dashed var(--line); border-radius: var(--radius-lg); }
+.pest-empty h2 { font-size: var(--text-h3); margin-bottom: var(--space-50); }
+.pest-empty p { margin-bottom: var(--space-125); }
+
+/* Small phones: keep two compact cards per row (photo, risk, name) so the
+   40 pests stay quick to scan; the summary is on each pest's page. */
+@media (max-width: 460px) {
+  .pest-grid { gap: var(--space-75); }
+  .pest-card-body { padding: var(--space-75) var(--space-85) var(--space-90); }
+  .pest-card-body p { display: none; }
+  .pest-card-body h3 { font-size: var(--text-95); margin: var(--space-45) 0 var(--space-60); }
+  .pest-card-body .risk-badge { font-size: var(--text-62); padding: var(--space-15) var(--space-50); }
+  .pest-photo--empty span { font-size: var(--text-62); padding: var(--space-25) var(--space-55); white-space: nowrap; }
+}
 
 .category-tag {
   display: inline-block; font-size: var(--text-75); font-weight: var(--fw-bold); text-transform: uppercase; letter-spacing: 0.06em;

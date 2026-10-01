@@ -72,11 +72,56 @@ Available icon names for `pestIcon` are listed in `src/_includes/partials/icons.
 
 Same pattern, in `src/industries/`. Copy `restaurants.md`, rename it, and edit the frontmatter (`h1`, `navLabel`, `problems`, `benefits`, `stepInspect`/`stepTreat`/`stepMaintain`, `closingHeading`, `closingText`).
 
-### Add a new Pest Library entry
+### Pest Library
 
-Same pattern, in `src/pest-library/`. Copy any file (e.g. `house-mouse.md`), rename it, and fill in `commonName`, `category`, `pestIcon`, `summary`, `appearance`, `habitat`, `risks`, `preventionTips`, and `relatedService`. It will automatically appear on `/pest-library/`, grouped under its `category`.
+The library (`/pest-library/`) has 40 entries, one Markdown file each in `src/pest-library/`. The page has a live search box and category filter chips; each card links to that pest's page.
 
-**Every Pest Library entry currently on the site is marked `[DRAFT – REVIEW]`** — the original site's Pest Library posts had no content at all, so these were written from scratch using general, publicly known pest-identification facts. Please have a technician confirm each one is accurate before removing the draft notice (delete the `draft-notice` block in `src/_includes/layouts/pest.njk`'s usage, or simply leave individual entries as-is once reviewed — the notice is site-wide, so remove it from `layouts/pest.njk` once every entry has been checked).
+**Fields in each entry:** `commonName`, `category` (must match one of the categories listed in `src/pest-library.njk`), `keywords` (extra search terms, optional), `summary`, `cardSummary` (one sentence for the card), `facts` (Size / Colour / Active season / Where found), `riskLevel` (`High`, `Moderate` or `Low`), `impacts` (short tags), `identify`, `signs`, `risks`, `prevention`, `whenToCall`, and `relatedService` (optional link to a service page).
+
+**Adding photos:** save each photo in `src/assets/images/pests/`, named exactly after the entry's file name, as `.jpg`, `.png` or `.webp` (e.g. `german-cockroach.jpg`). It then appears automatically on both the library card and the pest's own page; until then a "Photo coming soon" placeholder shows. Photos are shown whole on a white background (not cropped), so cut-out insect images on white work best. File names:
+
+- `american-cockroach`
+- `bed-bug`
+- `big-headed-ant`
+- `bottle-fly`
+- `boxelder-bug`
+- `brown-banded-cockroach`
+- `carpenter-ant`
+- `carpenter-bee`
+- `carpet-beetle`
+- `centipede`
+- `citronella-ant`
+- `clothes-moth`
+- `cluster-fly`
+- `deer-mouse`
+- `drain-fly`
+- `earwig`
+- `european-fire-ant`
+- `flea`
+- `fruit-fly`
+- `german-cockroach`
+- `hornet`
+- `house-fly`
+- `house-mouse`
+- `indian-meal-moth`
+- `millipede`
+- `mosquito`
+- `norway-rat`
+- `oriental-cockroach`
+- `pavement-ant`
+- `pharaoh-ant`
+- `phorid-fly`
+- `roof-rat`
+- `silverfish`
+- `sowbug-and-pillbug`
+- `spider`
+- `stored-product-pests`
+- `tick`
+- `wasp`
+- `whitefly`
+- `yellow-jacket`
+
+**Review flag:** every entry is general identification information. Once a technician has reviewed them, set `pestLibraryDraft: false` in `src/_data/site.js` to remove the "[DRAFT – REVIEW]" notice everywhere.
 
 ### Add a photo to a section
 
@@ -270,8 +315,7 @@ Search the codebase for `[ADD:` and `[DRAFT` to find every spot flagged during t
 
 - **Photos.** All photo spots now use real photos (`photo-frame` blocks in `src/index.njk`, `src/residential.njk`, `src/commercial.njk` and `src/safety-compliance.njk`). See *Add a photo to a section* above to add more.
 - **Street address & postal code** — `src/_data/site.js` (`address` object), used in the SEO schema.
-- **Pest Library entries** — all 17 are marked `[DRAFT – REVIEW]`; written from general pest-identification knowledge since the originals were empty. Please have a technician verify accuracy.
-- **Honey bee removal policy** — `src/pest-library/honey-bees.md` flags that we don't know whether you offer live removal/relocation or refer out to a beekeeper.
+- **Pest Library entries** — all 40 show a `[DRAFT – REVIEW]` notice until a technician checks them (see *Pest Library* above). Photos still need adding to `src/assets/images/pests/`.
 - **Privacy Policy & Terms of Service** — both are general small-business templates, not legal advice. Have a lawyer review before launch, especially the guarantee/liability language in the Terms and the data-retention specifics in the Privacy Policy.
 - **Social/Google Business Profile links** — `src/_data/site.js` (`social` object) is empty; add if you have active profiles.
 - **Reviews, awards, certifications, and specific pricing** were not in the WordPress export, and none have been invented — none appear on the site. Add them once you can confirm the exact wording/numbers.

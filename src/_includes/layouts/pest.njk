@@ -2,51 +2,96 @@
 layout: layouts/base.njk
 ---
 {% from "partials/icons.njk" import icon %}
+{% set photo = page.fileSlug | pestPhoto %}
 
-<section class="page-hero">
+<section class="page-hero page-hero--media">
   <div class="container">
     <p class="breadcrumb"><a href="/">Home</a> / <a href="/pest-library/">Pest Library</a> / {{ commonName }}</p>
-    <span class="category-tag">{{ category }}</span>
-    <div class="icon-badge" style="margin-bottom:1.25rem;">{{ icon(pestIcon) }}</div>
-    <h1>{{ commonName }}</h1>
-    <p class="lede">{{ summary }}</p>
+    <div class="page-hero-grid">
+      <div>
+        <span class="category-tag">{{ category }}</span>
+        <h1>{{ commonName }}</h1>
+        <p class="lede">{{ summary }}</p>
+        <div class="pest-tags">
+          <span class="risk-badge risk-badge--{{ riskLevel | lower }}">{{ riskLevel }} risk</span>
+          {% for i in impacts %}<span class="pill">{{ i }}</span>{% endfor %}
+        </div>
+        <div class="page-hero-ctas">
+          <a class="btn btn--primary" href="/contact/#quote">Get a Free Quote</a>
+          <a class="btn btn--outline" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>
+        </div>
+      </div>
+      <div class="pest-photo pest-photo--hero{% if not photo %} pest-photo--empty{% endif %}">
+        {% if photo %}<img src="{{ photo }}" alt="{{ commonName }}" width="800" height="600" fetchpriority="high">{% else %}<span>Photo coming soon</span>{% endif %}
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container container--narrow">
-    <div class="draft-notice reveal">
+<section class="section section--tight-top">
+  <div class="container">
+    {% if site.pestLibraryDraft %}
+    <div class="draft-notice">
       {{ icon("alert-triangle") }}
-      <span>[DRAFT &ndash; REVIEW] This pest library entry was written to fill a page that had no content in the original site export. It covers general, well-established pest-identification facts. Please have it reviewed by a Zero Pest Control technician for accuracy and local relevance before publishing.</span>
+      <span>[DRAFT &ndash; REVIEW] Entry pending technician review before launch.</span>
+    </div>
+    {% endif %}
+
+    <h2 class="visually-hidden">Quick facts</h2>
+    <dl class="fact-grid">
+      {% for f in facts %}
+      <div class="fact">
+        <dt>{{ f.label }}</dt>
+        <dd>{{ f.value }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+
+    <div class="pest-info-grid">
+      <div class="card pest-info">
+        <div class="pest-info-head"><div class="icon-badge icon-badge--sm">{{ icon("search") }}</div><h2>How to Identify</h2></div>
+        <ul class="check-list">{% for x in identify %}<li>{{ icon("check") }} <span>{{ x }}</span></li>{% endfor %}</ul>
+      </div>
+      <div class="card pest-info">
+        <div class="pest-info-head"><div class="icon-badge icon-badge--sm">{{ icon("eye") }}</div><h2>Signs to Look For</h2></div>
+        <ul class="check-list">{% for x in signs %}<li>{{ icon("check") }} <span>{{ x }}</span></li>{% endfor %}</ul>
+      </div>
+      <div class="card pest-info">
+        <div class="pest-info-head"><div class="icon-badge icon-badge--sm">{{ icon("alert-triangle") }}</div><h2>Why It Matters</h2></div>
+        <ul class="check-list problem-list">{% for x in risks %}<li>{{ icon("x-circle") }} <span>{{ x }}</span></li>{% endfor %}</ul>
+      </div>
+      <div class="card pest-info">
+        <div class="pest-info-head"><div class="icon-badge icon-badge--sm">{{ icon("shield") }}</div><h2>Prevention Tips</h2></div>
+        <ul class="check-list">{% for x in prevention %}<li>{{ icon("check") }} <span>{{ x }}</span></li>{% endfor %}</ul>
+      </div>
     </div>
 
-    <div class="prose reveal">
-      <h2>Appearance &amp; Identification</h2>
-      <p>{{ appearance }}</p>
-
-      <h2>Habitat &amp; Behaviour</h2>
-      <p>{{ habitat }}</p>
-
-      <h2>Why It's a Concern</h2>
-      <ul>
-        {% for r in risks %}<li>{{ r }}</li>{% endfor %}
-      </ul>
-
-      <h2>Prevention Tips</h2>
-      <ul>
-        {% for t in preventionTips %}<li>{{ t }}</li>{% endfor %}
-      </ul>
-    </div>
-
-    <div class="cta-banner reveal" style="margin-top:2.5rem;">
+    <div class="cta-banner" style="margin-top: var(--space-section-head);">
       <div>
-        <h2>Seeing Signs of {{ commonName }}?</h2>
-        <p>Get a fast inspection and clear quote from a licensed local technician.</p>
+        <h2>When to Call a Professional</h2>
+        <p>{{ whenToCall }}</p>
       </div>
       <div class="cta-banner-actions">
-        <a class="btn btn--primary" href="/contact/">Get a Free Quote</a>
-        {% if relatedService %}<a class="btn btn--outline-invert" href="{{ relatedService }}">Related Service</a>{% endif %}
+        <a class="btn btn--primary" href="/contact/#quote">Get a Free Quote</a>
+        {% if relatedService %}<a class="btn btn--outline-invert" href="{{ relatedService }}">View Our Service</a>{% else %}<a class="btn btn--outline-invert" href="tel:{{ site.phoneHref }}">{{ icon("phone") }} Call {{ site.phone }}</a>{% endif %}
       </div>
     </div>
   </div>
 </section>
+
+{% set related = [] %}
+{% for item in collections.pestLibrary %}{% if item.data.category == category and item.url != page.url and related.length < 4 %}{% set related = (related.push(item), related) %}{% endif %}{% endfor %}
+{% if related.length %}
+<section class="section section--soft">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-eyebrow">More {{ category }}</p>
+      <h2>Related Pests</h2>
+    </div>
+    <div class="pest-grid">
+      {% for item in related %}{% include "partials/pest-card.njk" %}{% endfor %}
+    </div>
+    <p class="text-center" style="margin-top: var(--space-200);"><a class="btn btn--outline" href="/pest-library/">Back to the Pest Library</a></p>
+  </div>
+</section>
+{% endif %}
