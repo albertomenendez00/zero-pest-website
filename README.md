@@ -287,7 +287,7 @@ These aren't fonts, sizes, colours, or spacing, but live in `variables.css` alon
 
 The form on `/contact/` (`src/_includes/partials/quote-form.njk`) sends each submission by email using the free [Web3Forms](https://web3forms.com) service (250 submissions/month on the free plan). It works on any host, including Cloudflare.
 
-- **Setup:** create an access key at web3forms.com using the inbox that should receive quote requests (e.g. `service@zeropestcontrol.ca`), then paste the key into `src/_data/site.js` → `web3formsKey`. The key is meant to be public; it only lets the form send to that inbox.
+- **Setup:** done — the access key in `src/_data/site.js` → `web3formsKey` sends requests to the inbox it was created with. To change the receiving inbox, create a new key at web3forms.com with that email and replace it. The key is meant to be public; it only lets the form send to that inbox.
 - Each email arrives with the subject "New quote request from zeropestcontrol.ca". Hitting **Reply** answers the customer directly.
 - A hidden `botcheck` honeypot field blocks simple spam bots.
 - `src/assets/js/main.js` submits the form in the background so visitors see an inline success message instead of a page reload.

@@ -13,7 +13,7 @@ module.exports = {
   // Shows the "[DRAFT – REVIEW]" notice on the Pest Library until a technician
   // has checked every entry. Set to false to hide it everywhere.
   pestLibraryDraft: true,
-  web3formsKey: "[ADD: Web3Forms access key]",
+  web3formsKey: "c39e6e0a-6450-4caf-8e5f-a5dd7c43226e",
   hours: [
     { label: "Monday – Friday", value: "8:00 am – 5:00 pm" },
     { label: "Saturday – Sunday", value: "Closed" },
