@@ -47,8 +47,8 @@
     }
   }
 
-  /* Quote / contact form: client-side validation + Netlify AJAX submit */
-  var forms = document.querySelectorAll("form[data-netlify-ajax]");
+  /* Quote / contact form: client-side validation + Web3Forms submit (emails the business) */
+  var forms = document.querySelectorAll("form[data-ajax-form]");
   forms.forEach(function (form) {
     var successBox = form.parentElement.querySelector(".form-success");
     var errorBox = form.parentElement.querySelector(".form-error");
@@ -64,9 +64,9 @@
         return;
       }
 
-      // Honeypot: if filled, silently pretend success (bot trap)
-      var honeypot = form.querySelector('input[name="bot-field"]');
-      if (honeypot && honeypot.value) {
+      // Honeypot: if ticked, silently pretend success (bot trap)
+      var honeypot = form.querySelector('input[name="botcheck"]');
+      if (honeypot && honeypot.checked) {
         form.reset();
         if (successBox) successBox.classList.add("is-visible");
         return;
@@ -79,23 +79,26 @@
         submitBtn.textContent = "Sending...";
       }
 
-      var data = new FormData(form);
+      var payload = {};
+      new FormData(form).forEach(function (value, key) {
+        if (key !== "botcheck") payload[key] = value;
+      });
+      // Let "Reply" in the business inbox go straight to the customer
+      if (payload.email) payload.replyto = payload.email;
 
-      fetch("/", {
+      fetch(form.action, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(data).toString(),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
       })
         .then(function (response) {
-          if (response.ok) {
-            form.reset();
-            if (successBox) successBox.classList.add("is-visible");
-            if (window.location.hash !== "#sent") {
-              history.replaceState(null, "", window.location.pathname);
-            }
-          } else {
-            throw new Error("Form submission failed");
-          }
+          return response.json().then(function (json) {
+            if (!response.ok || !json.success) throw new Error(json.message || "Form submission failed");
+          });
+        })
+        .then(function () {
+          form.reset();
+          if (successBox) successBox.classList.add("is-visible");
         })
         .catch(function () {
           if (errorBox) errorBox.classList.add("is-visible");

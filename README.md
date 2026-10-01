@@ -6,7 +6,7 @@ A fast, modern static website for Zero Pest Control, built with [Eleventy](https
 
 - **Framework:** Eleventy 2 (static site generator), Nunjucks templates, plain CSS (no framework).
 - **Hosting:** Netlify, built from this Git repo.
-- **Forms:** The quote request form on `/contact/` uses Netlify Forms (no backend needed).
+- **Forms:** The quote request form on `/contact/` emails each request via Web3Forms (no backend needed).
 - **Content:** Every editable page is a `.md` or `.njk` file under `src/`.
 
 ## Local development
@@ -238,14 +238,14 @@ These aren't fonts, sizes, colours, or spacing, but live in `variables.css` alon
 
 **Not tokenized:** a handful of one-off, structural values (e.g. the skip-link's off-screen `-3rem`, the honeypot field's `-9999px`, the `74px` mobile-call-bar body offset, small decorative pixel sizes like icon widths/heights and underline thickness) are implementation details rather than design choices, and were left as plain values to avoid any risk of changing layout behaviour.
 
-## The quote form (Netlify Forms)
+## The quote form (Web3Forms → business email)
 
-The form on `/contact/` (`src/_includes/partials/quote-form.njk`) is wired for [Netlify Forms](https://docs.netlify.com/manage/forms/setup/):
+The form on `/contact/` (`src/_includes/partials/quote-form.njk`) sends each submission by email using the free [Web3Forms](https://web3forms.com) service (250 submissions/month on the free plan). It works on any host, including Cloudflare.
 
-- `data-netlify="true"` and a hidden `form-name` field register it with Netlify at build time — no extra setup needed once deployed.
-- `data-netlify-honeypot="bot-field"` adds a hidden spam-trap field.
-- `src/assets/js/main.js` submits the form via `fetch()` so visitors see an inline success message instead of a page reload, and shows the browser's built-in validation messages for missing required fields.
-- **After your first deploy**, go to your Netlify site dashboard → **Forms** to see submissions, and set up **email notifications** so submissions land in your inbox (Site settings → Forms → Form notifications).
+- **Setup:** create an access key at web3forms.com using the inbox that should receive quote requests (e.g. `service@zeropestcontrol.ca`), then paste the key into `src/_data/site.js` → `web3formsKey`. The key is meant to be public; it only lets the form send to that inbox.
+- Each email arrives with the subject "New quote request from zeropestcontrol.ca". Hitting **Reply** answers the customer directly.
+- A hidden `botcheck` honeypot field blocks simple spam bots.
+- `src/assets/js/main.js` submits the form in the background so visitors see an inline success message instead of a page reload.
 
 ## Deploying to Netlify
 

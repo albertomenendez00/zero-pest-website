@@ -2,14 +2,16 @@
 <div class="form-card" id="quote">
   <form
     name="quote-request"
+    action="https://api.web3forms.com/submit"
     method="POST"
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
-    data-netlify-ajax
+    data-ajax-form
   >
-    <input type="hidden" name="form-name" value="quote-request">
+    {# Web3Forms emails each submission to the inbox the access key was created with. #}
+    <input type="hidden" name="access_key" value="{{ site.web3formsKey }}">
+    <input type="hidden" name="subject" value="New quote request from zeropestcontrol.ca">
+    <input type="hidden" name="from_name" value="Zero Pest Control Website">
     <p class="honeypot-field">
-      <label>Don't fill this out if you're human: <input name="bot-field"></label>
+      <label>Don't fill this out if you're human: <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
     </p>
 
     <div class="form-row form-row--2">

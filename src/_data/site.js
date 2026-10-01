@@ -8,6 +8,9 @@ module.exports = {
   phone: "(705) 980-2006",
   phoneHref: "+17059802006",
   email: "service@zeropestcontrol.ca",
+  // Web3Forms access key for the quote form. Create it at https://web3forms.com
+  // with the inbox that should receive quote requests, then paste it here.
+  web3formsKey: "[ADD: Web3Forms access key]",
   hours: [
     { label: "Monday – Friday", value: "8:00 am – 5:00 pm" },
     { label: "Saturday – Sunday", value: "Closed" },
