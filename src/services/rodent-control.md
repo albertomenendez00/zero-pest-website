@@ -5,6 +5,12 @@ order: 1
 pestName: "Rodents"
 cardTitle: "Rodent Control"
 pestIcon: "rodent"
+heroImage:
+  name: "rodent-control"
+  alt: "Close-up of a house mouse"
+  width: 1200
+  height: 800
+  focus: "55% 40%"
 h1: "Mouse & Rat Control in Sudbury & Northern Ontario"
 tagline: "Why they appear, what attracts them, and when to take action."
 intro: "Hearing scratching in the walls, finding droppings, or seeing signs of mice or rats? Zero Pest Control provides rodent inspections, treatment, entry-point recommendations, and follow-up support."
