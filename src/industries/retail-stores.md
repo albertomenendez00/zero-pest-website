@@ -4,7 +4,7 @@ description: "Discreet pest control for retail businesses and commercial spaces 
 order: 3
 industryIcon: "store"
 navLabel: "Retail Stores"
-h1: "Pest Control for Retail Stores & Commercial Spaces"
+h1: "Retail Stores & Commercial Spaces"
 tagline: "Protect your customers, staff, inventory, and brand with discreet pest control service for retail businesses across Sudbury and Northern Ontario."
 badges: ["Discreet Service", "Fast Response", "Safe for Retail Environments"]
 problemsHeading: "Pest Problems in Retail Stores Spread Fast"

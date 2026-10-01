@@ -4,7 +4,7 @@ description: "Fast pest control support for apartments, rental units, condos, an
 order: 2
 industryIcon: "home"
 navLabel: "Property Management"
-h1: "Pest Control for Property Managers & Rental Buildings"
+h1: "Property Managers & Rental Buildings"
 tagline: "Fast pest control support for apartments, rental units, condos, and multi-unit buildings across Sudbury and Northern Ontario."
 badges: ["Discreet Service for Tenants", "Fast Response", "Safe & Compliant Treatments"]
 problemsHeading: "Pest Issues in Managed Properties Escalate Quickly"
