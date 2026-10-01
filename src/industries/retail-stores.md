@@ -1,5 +1,5 @@
 ---
-title: "Pest Control for Retail Stores | Zero Pest Control"
+title: "Retail Store Pest Control in Sudbury | Zero Pest Control"
 description: "Discreet pest control for retail businesses and commercial spaces across Sudbury and Northern Ontario."
 order: 3
 industryIcon: "store"

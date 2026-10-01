@@ -4,7 +4,7 @@ description: "Discreet, compliant pest control for restaurants and food service 
 order: 1
 industryIcon: "utensils"
 navLabel: "Restaurants"
-h1: "Restaurant Pest Control"
+h1: "Restaurants & Food Service"
 tagline: "Protect your kitchen, customers, and reputation with fast, discreet, and fully compliant pest control."
 badges: ["Discreet Service", "Fast Response", "Safe for Food Environments"]
 problemsHeading: "Pest Issues in Restaurants Escalate Fast"

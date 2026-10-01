@@ -1,5 +1,5 @@
 ---
-title: "Pest Control for Property Managers | Zero Pest Control"
+title: "Property Management Pest Control in Sudbury | Zero Pest Control"
 description: "Fast pest control support for apartments, rental units, condos, and multi-unit buildings across Sudbury and Northern Ontario."
 order: 2
 industryIcon: "home"

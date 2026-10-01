@@ -1,10 +1,10 @@
 ---
-title: "Healthcare & Education Pest Control | Zero Pest Control"
+title: "Healthcare & School Pest Control in Sudbury | Zero Pest Control"
 description: "Careful, scheduled pest control for clinics, long-term care homes, schools, childcare centres, and campuses across Sudbury and Northern Ontario."
 order: 6
 industryIcon: "heart-pulse"
 navLabel: "Healthcare & Education"
-h1: "Healthcare & Education Pest Control"
+h1: "Healthcare & Education"
 tagline: "Careful, scheduled pest control for clinics, long-term care homes, schools, childcare centres, and campuses across Sudbury and Northern Ontario."
 badges: ["Discreet Service", "Fast Response", "Safe for Sensitive Environments"]
 problemsHeading: "Pest Issues in Care & Learning Spaces Need Fast Attention"

@@ -1,10 +1,10 @@
 ---
-title: "Warehouse & Storage Pest Control | Zero Pest Control"
+title: "Warehouse & Storage Pest Control in Sudbury | Zero Pest Control"
 description: "Scheduled pest prevention for warehouses, storage facilities, and distribution centres across Sudbury and Northern Ontario."
 order: 4
 industryIcon: "warehouse"
 navLabel: "Warehouse & Storage"
-h1: "Warehouse & Storage Pest Control"
+h1: "Warehouses & Storage Facilities"
 tagline: "Protect inventory, loading docks, storage areas, and staff spaces with scheduled pest prevention for warehouses and storage facilities."
 badges: ["Inventory Protection", "Fast Response", "Facility-Safe Treatments"]
 problemsHeading: "Pest Issues in Warehouses Can Lead to Major Losses"
