@@ -5,6 +5,12 @@ order: 5
 pestName: "Cockroaches"
 cardTitle: "Cockroach Control"
 pestIcon: "roach"
+heroImage:
+  name: "cockroach-control"
+  alt: "Close-up of a German cockroach"
+  width: 1200
+  height: 800
+  focus: "55% 55%"
 h1: "Cockroach Control in Sudbury & Northern Ontario"
 tagline: "Why they appear, what attracts them, and when to take action."
 intro: "Fast, targeted cockroach control for homes, apartments, restaurants, rental units, and commercial kitchens. We identify activity, apply strategic treatment, and provide prevention guidance to reduce the risk of re-infestation."

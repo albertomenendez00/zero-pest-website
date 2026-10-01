@@ -5,6 +5,12 @@ order: 2
 pestName: "Bed Bugs"
 cardTitle: "Bed Bug Treatment"
 pestIcon: "bedbug"
+heroImage:
+  name: "bed-bug-treatment"
+  alt: "Unmade bed with white sheets and pillows"
+  width: 1200
+  height: 800
+  focus: "50% 50%"
 h1: "Bed Bug Treatment in Sudbury & Northern Ontario"
 tagline: "Why they appear, what attracts them, and when to take action."
 intro: "Discreet, professional bed bug treatment for homes, apartments, rentals, hotels, and shared living spaces. We help identify the issue, explain preparation steps, and provide targeted treatment options."

@@ -5,6 +5,12 @@ order: 4
 pestName: "Wasps & Hornets"
 cardTitle: "Wasp & Hornet Removal"
 pestIcon: "wasp"
+heroImage:
+  name: "wasp-hornet-removal"
+  alt: "Yellowjacket wasps feeding on fruit"
+  width: 1200
+  height: 800
+  focus: "32% 55%"
 h1: "Wasp & Hornet Nest Removal in Sudbury & Northern Ontario"
 tagline: "Why they appear, what attracts them, and when to take action."
 intro: "Found a nest near your home, deck, shed, roofline, yard, or business entrance? Zero Pest Control provides fast wasp and hornet removal with targeted treatment and prevention advice."

@@ -5,6 +5,12 @@ order: 7
 pestName: "Flies"
 cardTitle: "Fly & Cluster Fly Control"
 pestIcon: "fly"
+heroImage:
+  name: "fly-cluster-fly-control"
+  alt: "Close-up of a house fly"
+  width: 1200
+  height: 874
+  focus: "72% 72%"
 h1: "Fly & Cluster Fly Control in Sudbury & Northern Ontario"
 tagline: "Why they appear, what attracts them, and when to take action."
 intro: "Seeing flies around windows, drains, garbage areas, attics, or wall voids? Zero Pest Control helps identify the source and reduce fly activity with targeted treatment, sanitation guidance, and exclusion recommendations."

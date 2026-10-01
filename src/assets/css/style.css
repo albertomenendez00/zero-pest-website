@@ -689,6 +689,15 @@ body.nav-open { overflow: hidden; }
 .page-hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: var(--gap-split); align-items: center; }
 .page-hero--media h1 { text-wrap: balance; }
 .page-hero-grid .photo-frame { box-shadow: var(--shadow-lg); }
+/* Pest close-ups: recognisable but toned down — desaturated, dimmer, with
+   an extra dark veil on top of the usual brand overlay. */
+.photo-frame--muted img { filter: saturate(0.55) brightness(0.8) contrast(1.05); }
+.photo-frame--muted::after {
+  background:
+    linear-gradient(var(--photo-mute), var(--photo-mute)),
+    linear-gradient(to top, var(--photo-shade-strong) 0%, var(--photo-shade-soft) 40%, transparent 65%),
+    linear-gradient(135deg, var(--photo-tint-red) 0%, transparent 50%);
+}
 @media (max-width: 900px) {
   .page-hero-grid { grid-template-columns: 1fr; }
   .page-hero-grid .photo-frame { aspect-ratio: 16/10; }

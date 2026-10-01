@@ -5,6 +5,12 @@ order: 3
 pestName: "Ants"
 cardTitle: "Ant Control"
 pestIcon: "ant"
+heroImage:
+  name: "ant-control"
+  alt: "Close-up of a carpenter ant"
+  width: 1200
+  height: 671
+  focus: "50% 45%"
 h1: "Ant Control in Sudbury & Northern Ontario"
 tagline: "Why they appear, what attracts them, and when to take action."
 intro: "Seeing ants in your kitchen, basement, bathroom, or around your foundation? Zero Pest Control provides targeted ant treatments to help reduce activity, locate the source, and prevent the problem from spreading."

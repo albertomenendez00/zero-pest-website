@@ -5,6 +5,12 @@ order: 6
 pestName: "Spiders"
 cardTitle: "Spider Control"
 pestIcon: "spider"
+heroImage:
+  name: "spider-control"
+  alt: "Orb-weaver spider on its web"
+  width: 1200
+  height: 800
+  focus: "38% 45%"
 h1: "Spider Control in Sudbury & Northern Ontario"
 tagline: "Why they appear, what attracts them, and when to take action."
 intro: "Reduce spiders, webs, egg sacs, and insect activity around your home or business with targeted treatment and prevention recommendations."
