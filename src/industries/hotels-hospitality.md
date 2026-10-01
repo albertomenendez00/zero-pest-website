@@ -3,6 +3,12 @@ title: "Hotel & Hospitality Pest Control in Sudbury | Zero Pest Control"
 description: "Discreet pest control for hotels, motels, lodges, and short-term rentals across Northern Ontario."
 order: 5
 industryIcon: "hotel"
+heroImage:
+  name: "industry-hotel"
+  alt: "Clean, well-kept hotel guest room"
+  width: 1200
+  height: 900
+  focus: "55% 55%"
 navLabel: "Hotels & Hospitality"
 h1: "Hotels & Hospitality"
 tagline: "Discreet pest control for hotels, motels, lodges, short-term rentals, and hospitality properties across Northern Ontario."

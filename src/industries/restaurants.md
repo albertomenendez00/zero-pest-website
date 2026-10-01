@@ -3,6 +3,12 @@ title: "Restaurant Pest Control in Sudbury & Northern Ontario | Zero Pest Contro
 description: "Discreet, compliant pest control for restaurants and food service businesses in Sudbury, Espanola, Elliot Lake, Blind River, and Manitoulin."
 order: 1
 industryIcon: "utensils"
+heroImage:
+  name: "industry-restaurant"
+  alt: "Stocked shelves in a food store"
+  width: 1200
+  height: 675
+  focus: "55% 45%"
 navLabel: "Restaurants"
 h1: "Restaurants & Food Service"
 tagline: "Protect your kitchen, customers, and reputation with fast, discreet, and fully compliant pest control."
